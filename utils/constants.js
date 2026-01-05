@@ -1,0 +1,5316 @@
+// Langues disponibles
+export const LANGUAGES = [
+  { id: 'en', name: 'Anglais', flag: '🇬🇧', color: '#4169E1', code: 'en-US' },
+  { id: 'es', name: 'Espagnol', flag: '🇪🇸', color: '#FFD700', code: 'es-ES' },
+  { id: 'zh', name: 'Chinois', flag: '🇨🇳', color: '#DC143C', code: 'zh-CN' },
+  { id: 'tr', name: 'Turc', flag: '🇹🇷', color: '#E30A17', code: 'tr-TR' },
+  { id: 'de', name: 'Allemand', flag: '🇩🇪', color: '#000000', code: 'de-DE' },
+  { id: 'ja', name: 'Japonais', flag: '🇯🇵', color: '#BC002D', code: 'ja-JP' },
+  { id: 'ko', name: 'Coréen', flag: '🇰🇷', color: '#003478', code: 'ko-KR' },
+  { id: 'it', name: 'Italien', flag: '🇮🇹', color: '#009246', code: 'it-IT' },
+  { id: 'ru', name: 'Russe', flag: '🇷🇺', color: '#D52B1E', code: 'ru-RU' },
+];
+
+// Structure de curriculum étendu pour toutes les langues (style Duolingo)
+export const CURRICULUM = {
+  en: [
+    {
+      id: 1,
+      title: 'Les bases',
+      description: 'Salutations et expressions essentielles',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#4169E1',
+      lessons: [
+        {
+          id: 'en-1-1',
+          title: 'Salutations',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Hello', phonetic: '/həˈloʊ/', translation: 'Bonjour' },
+            { word: 'Goodbye', phonetic: '/ɡʊdˈbaɪ/', translation: 'Au revoir' },
+            { word: 'Thank you', phonetic: '/θæŋk juː/', translation: 'Merci' },
+            { word: 'Please', phonetic: '/pliːz/', translation: 'S\'il vous plaît' },
+            { word: 'Yes', phonetic: '/jes/', translation: 'Oui' },
+            { word: 'No', phonetic: '/noʊ/', translation: 'Non' },
+            { word: 'Sorry', phonetic: '/ˈsɒri/', translation: 'Pardon' },
+            { word: 'Excuse me', phonetic: '/ɪkˈskjuːz miː/', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'en-1-2',
+          title: 'Nombres 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'One', phonetic: '/wʌn/', translation: 'Un' },
+            { word: 'Two', phonetic: '/tuː/', translation: 'Deux' },
+            { word: 'Three', phonetic: '/θriː/', translation: 'Trois' },
+            { word: 'Four', phonetic: '/fɔːr/', translation: 'Quatre' },
+            { word: 'Five', phonetic: '/faɪv/', translation: 'Cinq' },
+            { word: 'Six', phonetic: '/sɪks/', translation: 'Six' },
+            { word: 'Seven', phonetic: '/ˈsevən/', translation: 'Sept' },
+            { word: 'Eight', phonetic: '/eɪt/', translation: 'Huit' },
+            { word: 'Nine', phonetic: '/naɪn/', translation: 'Neuf' },
+            { word: 'Ten', phonetic: '/ten/', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'en-1-3',
+          title: 'Couleurs',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Red', phonetic: '/red/', translation: 'Rouge' },
+            { word: 'Blue', phonetic: '/bluː/', translation: 'Bleu' },
+            { word: 'Green', phonetic: '/ɡriːn/', translation: 'Vert' },
+            { word: 'Yellow', phonetic: '/ˈjeloʊ/', translation: 'Jaune' },
+            { word: 'Black', phonetic: '/blæk/', translation: 'Noir' },
+            { word: 'White', phonetic: '/waɪt/', translation: 'Blanc' },
+            { word: 'Orange', phonetic: '/ˈɔːrɪndʒ/', translation: 'Orange' },
+            { word: 'Purple', phonetic: '/ˈpɜːrpl/', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'en-1-4',
+          title: 'Nourriture basique',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Water', phonetic: '/ˈwɔːtər/', translation: 'Eau' },
+            { word: 'Food', phonetic: '/fuːd/', translation: 'Nourriture' },
+            { word: 'Bread', phonetic: '/bred/', translation: 'Pain' },
+            { word: 'Milk', phonetic: '/mɪlk/', translation: 'Lait' },
+            { word: 'Coffee', phonetic: '/ˈkɒfi/', translation: 'Café' },
+            { word: 'Tea', phonetic: '/tiː/', translation: 'Thé' },
+            { word: 'Apple', phonetic: '/ˈæpl/', translation: 'Pomme' },
+            { word: 'Banana', phonetic: '/bəˈnɑːnə/', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'en-1-test',
+          title: 'Test du chapitre 1',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Phrases quotidiennes',
+      description: 'Expressions pour la vie de tous les jours',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#2196F3',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'en-2-1',
+          title: 'Se présenter',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'My name is...', phonetic: '/maɪ neɪm ɪz/', translation: 'Je m\'appelle...' },
+            { word: 'How are you?', phonetic: '/haʊ ɑːr juː/', translation: 'Comment allez-vous ?' },
+            { word: 'I am fine', phonetic: '/aɪ æm faɪn/', translation: 'Je vais bien' },
+            { word: 'Nice to meet you', phonetic: '/naɪs tuː miːt juː/', translation: 'Enchanté' },
+            { word: 'What is your name?', phonetic: '/wɒt ɪz jɔːr neɪm/', translation: 'Comment vous appelez-vous ?' },
+            { word: 'Where are you from?', phonetic: '/wer ɑːr juː frɒm/', translation: 'D\'où venez-vous ?' },
+            { word: 'I am from...', phonetic: '/aɪ æm frɒm/', translation: 'Je viens de...' },
+            { word: 'How old are you?', phonetic: '/haʊ oʊld ɑːr juː/', translation: 'Quel âge avez-vous ?' },
+          ]
+        },
+        {
+          id: 'en-2-2',
+          title: 'La famille',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Family', phonetic: '/ˈfæməli/', translation: 'Famille' },
+            { word: 'Mother', phonetic: '/ˈmʌðər/', translation: 'Mère' },
+            { word: 'Father', phonetic: '/ˈfɑːðər/', translation: 'Père' },
+            { word: 'Brother', phonetic: '/ˈbrʌðər/', translation: 'Frère' },
+            { word: 'Sister', phonetic: '/ˈsɪstər/', translation: 'Sœur' },
+            { word: 'Son', phonetic: '/sʌn/', translation: 'Fils' },
+            { word: 'Daughter', phonetic: '/ˈdɔːtər/', translation: 'Fille' },
+            { word: 'Friend', phonetic: '/frend/', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'en-2-3',
+          title: 'Nombres 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Eleven', phonetic: '/ɪˈlevən/', translation: 'Onze' },
+            { word: 'Twelve', phonetic: '/twelv/', translation: 'Douze' },
+            { word: 'Thirteen', phonetic: '/θɜːrˈtiːn/', translation: 'Treize' },
+            { word: 'Fourteen', phonetic: '/fɔːrˈtiːn/', translation: 'Quatorze' },
+            { word: 'Fifteen', phonetic: '/fɪfˈtiːn/', translation: 'Quinze' },
+            { word: 'Sixteen', phonetic: '/sɪkˈstiːn/', translation: 'Seize' },
+            { word: 'Seventeen', phonetic: '/sevənˈtiːn/', translation: 'Dix-sept' },
+            { word: 'Eighteen', phonetic: '/eɪˈtiːn/', translation: 'Dix-huit' },
+            { word: 'Nineteen', phonetic: '/naɪnˈtiːn/', translation: 'Dix-neuf' },
+            { word: 'Twenty', phonetic: '/ˈtwenti/', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'en-2-4',
+          title: 'Objets quotidiens',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'House', phonetic: '/haʊs/', translation: 'Maison' },
+            { word: 'Car', phonetic: '/kɑːr/', translation: 'Voiture' },
+            { word: 'Book', phonetic: '/bʊk/', translation: 'Livre' },
+            { word: 'Pen', phonetic: '/pen/', translation: 'Stylo' },
+            { word: 'Phone', phonetic: '/fəʊn/', translation: 'Téléphone' },
+            { word: 'Key', phonetic: '/kiː/', translation: 'Clé' },
+            { word: 'Money', phonetic: '/ˈmʌni/', translation: 'Argent' },
+            { word: 'Time', phonetic: '/taɪm/', translation: 'Temps/Heure' },
+          ]
+        },
+        {
+          id: 'en-2-test',
+          title: 'Test du chapitre 2',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Voyager',
+      description: 'Expressions pour voyager',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'en-3-1',
+          title: 'À l\'aéroport',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Airport', phonetic: '/ˈeəpɔːt/', translation: 'Aéroport' },
+            { word: 'Ticket', phonetic: '/ˈtɪkɪt/', translation: 'Billet' },
+            { word: 'Passport', phonetic: '/ˈpɑːspɔːt/', translation: 'Passeport' },
+            { word: 'Luggage', phonetic: '/ˈlʌɡɪdʒ/', translation: 'Bagages' },
+            { word: 'Flight', phonetic: '/flaɪt/', translation: 'Vol' },
+            { word: 'Gate', phonetic: '/ɡeɪt/', translation: 'Porte' },
+            { word: 'Boarding', phonetic: '/ˈbɔːrdɪŋ/', translation: 'Embarquement' },
+            { word: 'Delay', phonetic: '/dɪˈleɪ/', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'en-3-2',
+          title: 'À l\'hôtel',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Hotel', phonetic: '/hoʊˈtel/', translation: 'Hôtel' },
+            { word: 'Room', phonetic: '/ruːm/', translation: 'Chambre' },
+            { word: 'Reservation', phonetic: '/ˌrezərˈveɪʃən/', translation: 'Réservation' },
+            { word: 'Check-in', phonetic: '/ˈtʃek ɪn/', translation: 'Enregistrement' },
+            { word: 'Check-out', phonetic: '/ˈtʃek aʊt/', translation: 'Départ' },
+            { word: 'Breakfast', phonetic: '/ˈbrekfəst/', translation: 'Petit déjeuner' },
+            { word: 'Wi-Fi', phonetic: '/ˈwaɪ faɪ/', translation: 'Wi-Fi' },
+            { word: 'Reception', phonetic: '/rɪˈsepʃən/', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'en-3-3',
+          title: 'Restaurant',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Restaurant', phonetic: '/ˈrestərɑːnt/', translation: 'Restaurant' },
+            { word: 'Menu', phonetic: '/ˈmenjuː/', translation: 'Menu' },
+            { word: 'Table', phonetic: '/ˈteɪbəl/', translation: 'Table' },
+            { word: 'Order', phonetic: '/ˈɔːrdər/', translation: 'Commander' },
+            { word: 'Bill', phonetic: '/bɪl/', translation: 'Addition' },
+            { word: 'Tip', phonetic: '/tɪp/', translation: 'Pourboire' },
+            { word: 'Delicious', phonetic: '/dɪˈlɪʃəs/', translation: 'Délicieux' },
+            { word: 'Waiter/Waitress', phonetic: '/ˈweɪtər/ˈweɪtrəs/', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'en-3-4',
+          title: 'Directions',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Where is...?', phonetic: '/wer ɪz/', translation: 'Où est... ?' },
+            { word: 'Left', phonetic: '/left/', translation: 'Gauche' },
+            { word: 'Right', phonetic: '/raɪt/', translation: 'Droite' },
+            { word: 'Straight', phonetic: '/streɪt/', translation: 'Tout droit' },
+            { word: 'Near', phonetic: '/nɪər/', translation: 'Près' },
+            { word: 'Far', phonetic: '/fɑːr/', translation: 'Loin' },
+            { word: 'Map', phonetic: '/mæp/', translation: 'Carte' },
+            { word: 'Street', phonetic: '/striːt/', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'en-3-test',
+          title: 'Test du chapitre 3',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Travail et affaires',
+      description: 'Vocabulaire professionnel',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'en-4-1',
+          title: 'Bureau',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Office', phonetic: '/ˈɒfɪs/', translation: 'Bureau' },
+            { word: 'Computer', phonetic: '/kəmˈpjuːtər/', translation: 'Ordinateur' },
+            { word: 'Meeting', phonetic: '/ˈmiːtɪŋ/', translation: 'Réunion' },
+            { word: 'Email', phonetic: '/ˈiːmeɪl/', translation: 'Email' },
+            { word: 'Schedule', phonetic: '/ˈʃedjuːl/', translation: 'Emploi du temps' },
+            { word: 'Presentation', phonetic: '/ˌpreznˈteɪʃən/', translation: 'Présentation' },
+            { word: 'Report', phonetic: '/rɪˈpɔːt/', translation: 'Rapport' },
+            { word: 'Deadline', phonetic: '/ˈdedlaɪn/', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'en-4-2',
+          title: 'Professions',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Doctor', phonetic: '/ˈdɒktər/', translation: 'Docteur' },
+            { word: 'Teacher', phonetic: '/ˈtiːtʃər/', translation: 'Professeur' },
+            { word: 'Engineer', phonetic: '/ˌendʒɪˈnɪər/', translation: 'Ingénieur' },
+            { word: 'Lawyer', phonetic: '/ˈlɔːjər/', translation: 'Avocat' },
+            { word: 'Nurse', phonetic: '/nɜːrs/', translation: 'Infirmier/Infirmière' },
+            { word: 'Police officer', phonetic: '/pəˈliːs ˈɒfɪsər/', translation: 'Policier' },
+            { word: 'Chef', phonetic: '/ʃef/', translation: 'Chef cuisinier' },
+            { word: 'Artist', phonetic: '/ˈɑːrtɪst/', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'en-4-3',
+          title: 'Temps et dates',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Monday', phonetic: '/ˈmʌndeɪ/', translation: 'Lundi' },
+            { word: 'Tuesday', phonetic: '/ˈtjuːzdeɪ/', translation: 'Mardi' },
+            { word: 'Wednesday', phonetic: '/ˈwenzdeɪ/', translation: 'Mercredi' },
+            { word: 'Thursday', phonetic: '/ˈθɜːrzdeɪ/', translation: 'Jeudi' },
+            { word: 'Friday', phonetic: '/ˈfraɪdeɪ/', translation: 'Vendredi' },
+            { word: 'Saturday', phonetic: '/ˈsætərdeɪ/', translation: 'Samedi' },
+            { word: 'Sunday', phonetic: '/ˈsʌndeɪ/', translation: 'Dimanche' },
+            { word: 'Weekend', phonetic: '/ˈwiːkend/', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'en-4-4',
+          title: 'Nombres 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Thirty', phonetic: '/ˈθɜːrti/', translation: 'Trente' },
+            { word: 'Forty', phonetic: '/ˈfɔːrti/', translation: 'Quarante' },
+            { word: 'Fifty', phonetic: '/ˈfɪfti/', translation: 'Cinquante' },
+            { word: 'Sixty', phonetic: '/ˈsɪksti/', translation: 'Soixante' },
+            { word: 'Seventy', phonetic: '/ˈsevənti/', translation: 'Soixante-dix' },
+            { word: 'Eighty', phonetic: '/ˈeɪti/', translation: 'Quatre-vingts' },
+            { word: 'Ninety', phonetic: '/ˈnaɪnti/', translation: 'Quatre-vingt-dix' },
+            { word: 'One hundred', phonetic: '/wʌn ˈhʌndrəd/', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'en-4-test',
+          title: 'Test du chapitre 4',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Culture et société',
+      description: 'Vie sociale et culturelle',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'en-5-1',
+          title: 'Hobbies',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Music', phonetic: '/ˈmjuːzɪk/', translation: 'Musique' },
+            { word: 'Movie', phonetic: '/ˈmuːvi/', translation: 'Film' },
+            { word: 'Sport', phonetic: '/spɔːrt/', translation: 'Sport' },
+            { word: 'Reading', phonetic: '/ˈriːdɪŋ/', translation: 'Lecture' },
+            { word: 'Cooking', phonetic: '/ˈkʊkɪŋ/', translation: 'Cuisine' },
+            { word: 'Traveling', phonetic: '/ˈtrævəlɪŋ/', translation: 'Voyage' },
+            { word: 'Photography', phonetic: '/fəˈtɒɡrəfi/', translation: 'Photographie' },
+            { word: 'Painting', phonetic: '/ˈpeɪntɪŋ/', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'en-5-2',
+          title: 'Émotions',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Happy', phonetic: '/ˈhæpi/', translation: 'Heureux' },
+            { word: 'Sad', phonetic: '/sæd/', translation: 'Triste' },
+            { word: 'Angry', phonetic: '/ˈæŋɡri/', translation: 'En colère' },
+            { word: 'Excited', phonetic: '/ɪkˈsaɪtɪd/', translation: 'Excité' },
+            { word: 'Tired', phonetic: '/ˈtaɪərd/', translation: 'Fatigué' },
+            { word: 'Surprised', phonetic: '/sərˈpraɪzd/', translation: 'Surpris' },
+            { word: 'Scared', phonetic: '/skeərd/', translation: 'Effrayé' },
+            { word: 'Nervous', phonetic: '/ˈnɜːrvəs/', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'en-5-3',
+          title: 'Santé',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Hospital', phonetic: '/ˈhɒspɪtl/', translation: 'Hôpital' },
+            { word: 'Doctor', phonetic: '/ˈdɒktər/', translation: 'Docteur' },
+            { word: 'Medicine', phonetic: '/ˈmedɪsn/', translation: 'Médicament' },
+            { word: 'Pain', phonetic: '/peɪn/', translation: 'Douleur' },
+            { word: 'Headache', phonetic: '/ˈhedeɪk/', translation: 'Mal de tête' },
+            { word: 'Fever', phonetic: '/ˈfiːvər/', translation: 'Fièvre' },
+            { word: 'Healthy', phonetic: '/ˈhelθi/', translation: 'En bonne santé' },
+            { word: 'Sick', phonetic: '/sɪk/', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'en-5-4',
+          title: 'Météo',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Sunny', phonetic: '/ˈsʌni/', translation: 'Ensoleillé' },
+            { word: 'Rainy', phonetic: '/ˈreɪni/', translation: 'Pluvieux' },
+            { word: 'Cloudy', phonetic: '/ˈklaʊdi/', translation: 'Nuageux' },
+            { word: 'Windy', phonetic: '/ˈwɪndi/', translation: 'Venteux' },
+            { word: 'Snow', phonetic: '/snəʊ/', translation: 'Neige' },
+            { word: 'Hot', phonetic: '/hɒt/', translation: 'Chaud' },
+            { word: 'Cold', phonetic: '/kəʊld/', translation: 'Froid' },
+            { word: 'Temperature', phonetic: '/ˈtemprətʃər/', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'en-5-test',
+          title: 'Test du chapitre 5',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'Grammaire intermédiaire',
+      description: 'Structure des phrases complexes',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'en-6-1',
+          title: 'Verbes courants',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'To eat', phonetic: '/tuː iːt/', translation: 'Manger' },
+            { word: 'To drink', phonetic: '/tuː drɪŋk/', translation: 'Boire' },
+            { word: 'To sleep', phonetic: '/tuː sliːp/', translation: 'Dormir' },
+            { word: 'To work', phonetic: '/tuː wɜːrk/', translation: 'Travailler' },
+            { word: 'To learn', phonetic: '/tuː lɜːrn/', translation: 'Apprendre' },
+            { word: 'To speak', phonetic: '/tuː spiːk/', translation: 'Parler' },
+            { word: 'To understand', phonetic: '/tuː ˌʌndərˈstænd/', translation: 'Comprendre' },
+            { word: 'To write', phonetic: '/tuː raɪt/', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'en-6-2',
+          title: 'Temps du passé',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Yesterday', phonetic: '/ˈjestərdeɪ/', translation: 'Hier' },
+            { word: 'Last week', phonetic: '/lɑːst wiːk/', translation: 'La semaine dernière' },
+            { word: 'Last month', phonetic: '/lɑːst mʌnθ/', translation: 'Le mois dernier' },
+            { word: 'Last year', phonetic: '/lɑːst jɪər/', translation: 'L\'année dernière' },
+            { word: 'Before', phonetic: '/bɪˈfɔːr/', translation: 'Avant' },
+            { word: 'Ago', phonetic: '/əˈɡoʊ/', translation: 'Il y a' },
+            { word: 'Was/Were', phonetic: '/wɒz/wɜːr/', translation: 'Était/Étaient' },
+            { word: 'Did', phonetic: '/dɪd/', translation: 'Faisait (auxiliaire)' },
+          ]
+        },
+        {
+          id: 'en-6-3',
+          title: 'Temps du futur',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Tomorrow', phonetic: '/təˈmɒroʊ/', translation: 'Demain' },
+            { word: 'Next week', phonetic: '/nekst wiːk/', translation: 'La semaine prochaine' },
+            { word: 'Next month', phonetic: '/nekst mʌnθ/', translation: 'Le mois prochain' },
+            { word: 'Next year', phonetic: '/nekst jɪər/', translation: 'L\'année prochaine' },
+            { word: 'Will', phonetic: '/wɪl/', translation: 'Vais/vas/va... (futur)' },
+            { word: 'Going to', phonetic: '/ˈɡoʊɪŋ tuː/', translation: 'Va (futur proche)' },
+            { word: 'Soon', phonetic: '/suːn/', translation: 'Bientôt' },
+            { word: 'Later', phonetic: '/ˈleɪtər/', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'en-6-4',
+          title: 'Adjectifs comparatifs',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Bigger', phonetic: '/ˈbɪɡər/', translation: 'Plus grand' },
+            { word: 'Smaller', phonetic: '/ˈsmɔːlər/', translation: 'Plus petit' },
+            { word: 'Better', phonetic: '/ˈbetər/', translation: 'Meilleur' },
+            { word: 'Worse', phonetic: '/wɜːrs/', translation: 'Pire' },
+            { word: 'More beautiful', phonetic: '/mɔːr ˈbjuːtɪfl/', translation: 'Plus beau' },
+            { word: 'Less expensive', phonetic: '/les ɪkˈspensɪv/', translation: 'Moins cher' },
+            { word: 'The best', phonetic: '/ðə best/', translation: 'Le meilleur' },
+            { word: 'The worst', phonetic: '/ðə wɜːrst/', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'en-6-test',
+          title: 'Test du chapitre 6',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: 'Avancé',
+      description: 'Vocabulaire spécialisé',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'en-7-1',
+          title: 'Technologie',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Internet', phonetic: '/ˈɪntərnet/', translation: 'Internet' },
+            { word: 'Smartphone', phonetic: '/ˈsmɑːrtfoʊn/', translation: 'Smartphone' },
+            { word: 'Software', phonetic: '/ˈsɒftweər/', translation: 'Logiciel' },
+            { word: 'Hardware', phonetic: '/ˈhɑːrdwer/', translation: 'Matériel' },
+            { word: 'App', phonetic: '/æp/', translation: 'Application' },
+            { word: 'Password', phonetic: '/ˈpɑːswɜːrd/', translation: 'Mot de passe' },
+            { word: 'Download', phonetic: '/ˈdaʊnloʊd/', translation: 'Télécharger' },
+            { word: 'Upload', phonetic: '/ˈʌploʊd/', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'en-7-2',
+          title: 'Économie',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Bank', phonetic: '/bæŋk/', translation: 'Banque' },
+            { word: 'Money', phonetic: '/ˈmʌni/', translation: 'Argent' },
+            { word: 'Salary', phonetic: '/ˈsæləri/', translation: 'Salaire' },
+            { word: 'Price', phonetic: '/praɪs/', translation: 'Prix' },
+            { word: 'Market', phonetic: '/ˈmɑːrkɪt/', translation: 'Marché' },
+            { word: 'Investment', phonetic: '/ɪnˈvestmənt/', translation: 'Investissement' },
+            { word: 'Tax', phonetic: '/tæks/', translation: 'Taxe' },
+            { word: 'Budget', phonetic: '/ˈbʌdʒɪt/', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'en-7-3',
+          title: 'Politique',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Government', phonetic: '/ˈɡʌvərnmənt/', translation: 'Gouvernement' },
+            { word: 'President', phonetic: '/ˈprezɪdənt/', translation: 'Président' },
+            { word: 'Election', phonetic: '/ɪˈlekʃən/', translation: 'Élection' },
+            { word: 'Law', phonetic: '/lɔː/', translation: 'Loi' },
+            { word: 'Freedom', phonetic: '/ˈfriːdəm/', translation: 'Liberté' },
+            { word: 'Democracy', phonetic: '/dɪˈmɒkrəsi/', translation: 'Démocratie' },
+            { word: 'Politics', phonetic: '/ˈpɒlətɪks/', translation: 'Politique' },
+            { word: 'Vote', phonetic: '/vəʊt/', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'en-7-4',
+          title: 'Environnement',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Environment', phonetic: '/ɪnˈvaɪrənmənt/', translation: 'Environnement' },
+            { word: 'Pollution', phonetic: '/pəˈluːʃən/', translation: 'Pollution' },
+            { word: 'Climate', phonetic: '/ˈklaɪmət/', translation: 'Climat' },
+            { word: 'Recycling', phonetic: '/ˌriːˈsaɪklɪŋ/', translation: 'Recyclage' },
+            { word: 'Nature', phonetic: '/ˈneɪtʃər/', translation: 'Nature' },
+            { word: 'Energy', phonetic: '/ˈenərdʒi/', translation: 'Énergie' },
+            { word: 'Sustainable', phonetic: '/səˈsteɪnəbl/', translation: 'Durable' },
+            { word: 'Ecosystem', phonetic: '/ˈiːkoʊsɪstəm/', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'en-7-test',
+          title: 'Test final',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Maîtrise',
+      description: 'Perfectionnement linguistique',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'en-8-1',
+          title: 'Idiomes',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Break a leg', phonetic: '/breɪk ə leɡ/', translation: 'Bonne chance' },
+            { word: 'Piece of cake', phonetic: '/piːs əv keɪk/', translation: 'Très facile' },
+            { word: 'Cost an arm and a leg', phonetic: '/kɒst ən ɑːrm ənd ə leɡ/', translation: 'Coûter très cher' },
+            { word: 'Hit the books', phonetic: '/hɪt ðə bʊks/', translation: 'Étudier sérieusement' },
+            { word: 'When pigs fly', phonetic: '/wen pɪɡz flaɪ/', translation: 'Quand les cochons voleront' },
+            { word: 'Bite the bullet', phonetic: '/baɪt ðə ˈbʊlɪt/', translation: 'Prendre son courage à deux mains' },
+            { word: 'Cut corners', phonetic: '/kʌt ˈkɔːrnərz/', translation: 'Prendre des raccourcis' },
+            { word: 'Break the ice', phonetic: '/breɪk ði aɪs/', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'en-8-2',
+          title: 'Expressions formelles',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Furthermore', phonetic: '/ˈfɜːrðərmɔːr/', translation: 'De plus' },
+            { word: 'Nevertheless', phonetic: '/ˌnevərðəˈles/', translation: 'Néanmoins' },
+            { word: 'Consequently', phonetic: '/ˈkɒnsɪkwəntli/', translation: 'Par conséquent' },
+            { word: 'Alternatively', phonetic: '/ɔːlˈtɜːrnətɪvli/', translation: 'Alternativement' },
+            { word: 'Specifically', phonetic: '/spəˈsɪfɪkli/', translation: 'Spécifiquement' },
+            { word: 'Ultimately', phonetic: '/ˈʌltɪmətli/', translation: 'Finalement' },
+            { word: 'Significantly', phonetic: '/sɪɡˈnɪfɪkəntli/', translation: 'Significativement' },
+            { word: 'Essentially', phonetic: '/ɪˈsenʃəli/', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'en-8-3',
+          title: 'Négociation',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Agreement', phonetic: '/əˈɡriːmənt/', translation: 'Accord' },
+            { word: 'Compromise', phonetic: '/ˈkɒmprəmaɪz/', translation: 'Compromis' },
+            { word: 'Negotiation', phonetic: '/nɪˌɡoʊʃiˈeɪʃən/', translation: 'Négociation' },
+            { word: 'Contract', phonetic: '/ˈkɒntrækt/', translation: 'Contrat' },
+            { word: 'Terms', phonetic: '/tɜːrmz/', translation: 'Conditions' },
+            { word: 'Deadline', phonetic: '/ˈdedlaɪn/', translation: 'Date limite' },
+            { word: 'Partnership', phonetic: '/ˈpɑːrtnərʃɪp/', translation: 'Partenariat' },
+            { word: 'Resolution', phonetic: '/ˌrezəˈluːʃən/', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'en-8-4',
+          title: 'Culture anglaise',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Tea time', phonetic: '/ˈtiː taɪm/', translation: 'Heure du thé' },
+            { word: 'Fish and chips', phonetic: '/fɪʃ ənd tʃɪps/', translation: 'Poisson frites' },
+            { word: 'Pub', phonetic: '/pʌb/', translation: 'Bar' },
+            { word: 'Royal family', phonetic: '/ˈrɔɪəl ˈfæməli/', translation: 'Famille royale' },
+            { word: 'Big Ben', phonetic: '/bɪɡ ben/', translation: 'Big Ben' },
+            { word: 'London Eye', phonetic: '/ˈlʌndən aɪ/', translation: 'London Eye' },
+            { word: 'Red bus', phonetic: '/red bʌs/', translation: 'Bus rouge' },
+            { word: 'Queuing', phonetic: '/ˈkjuːɪŋ/', translation: 'Faire la queue' },
+          ]
+        },
+        {
+          id: 'en-8-test',
+          title: 'Examen final',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  es: [
+    {
+      id: 1,
+      title: 'Los básicos',
+      description: 'Saludos y expresiones esenciales',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#FFD700',
+      lessons: [
+        {
+          id: 'es-1-1',
+          title: 'Saludos',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Hola', phonetic: '/ˈola/', translation: 'Bonjour' },
+            { word: 'Adiós', phonetic: '/aˈðjos/', translation: 'Au revoir' },
+            { word: 'Gracias', phonetic: '/ˈɡɾasjas/', translation: 'Merci' },
+            { word: 'Por favor', phonetic: '/poɾ faˈβoɾ/', translation: 'S\'il vous plaît' },
+            { word: 'Sí', phonetic: '/si/', translation: 'Oui' },
+            { word: 'No', phonetic: '/no/', translation: 'Non' },
+            { word: 'Perdón', phonetic: '/peɾˈðon/', translation: 'Pardon' },
+            { word: 'Disculpe', phonetic: '/disˈkulpe/', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'es-1-2',
+          title: 'Números 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Uno', phonetic: '/ˈuno/', translation: 'Un' },
+            { word: 'Dos', phonetic: '/dos/', translation: 'Deux' },
+            { word: 'Tres', phonetic: '/tɾes/', translation: 'Trois' },
+            { word: 'Cuatro', phonetic: '/ˈkwatɾo/', translation: 'Quatre' },
+            { word: 'Cinco', phonetic: '/ˈsiŋko/', translation: 'Cinq' },
+            { word: 'Seis', phonetic: '/sejs/', translation: 'Six' },
+            { word: 'Siete', phonetic: '/ˈsjete/', translation: 'Sept' },
+            { word: 'Ocho', phonetic: '/ˈotʃo/', translation: 'Huit' },
+            { word: 'Nueve', phonetic: '/ˈnweβe/', translation: 'Neuf' },
+            { word: 'Diez', phonetic: '/djes/', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'es-1-3',
+          title: 'Colores',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Rojo', phonetic: '/ˈro.xo/', translation: 'Rouge' },
+            { word: 'Azul', phonetic: '/aˈθul/', translation: 'Bleu' },
+            { word: 'Verde', phonetic: '/ˈberðe/', translation: 'Vert' },
+            { word: 'Amarillo', phonetic: '/amaˈɾiʎo/', translation: 'Jaune' },
+            { word: 'Negro', phonetic: '/ˈneɡɾo/', translation: 'Noir' },
+            { word: 'Blanco', phonetic: '/ˈblanko/', translation: 'Blanc' },
+            { word: 'Naranja', phonetic: '/naˈɾan.xa/', translation: 'Orange' },
+            { word: 'Morado', phonetic: '/moˈɾaðo/', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'es-1-4',
+          title: 'Comida básica',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Agua', phonetic: '/ˈaɡwa/', translation: 'Eau' },
+            { word: 'Comida', phonetic: '/koˈmiða/', translation: 'Nourriture' },
+            { word: 'Pan', phonetic: '/pan/', translation: 'Pain' },
+            { word: 'Leche', phonetic: '/ˈletʃe/', translation: 'Lait' },
+            { word: 'Café', phonetic: '/kaˈfe/', translation: 'Café' },
+            { word: 'Té', phonetic: '/te/', translation: 'Thé' },
+            { word: 'Manzana', phonetic: '/manˈθana/', translation: 'Pomme' },
+            { word: 'Plátano', phonetic: '/ˈplatano/', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'es-1-test',
+          title: 'Prueba del capítulo 1',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Frases cotidianas',
+      description: 'Expresiones para la vida diaria',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#FFC107',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'es-2-1',
+          title: 'Presentaciones',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Me llamo...', phonetic: '/me ˈʎamo/', translation: 'Je m\'appelle...' },
+            { word: '¿Cómo estás?', phonetic: '/ˈkomo esˈtas/', translation: 'Comment vas-tu ?' },
+            { word: 'Estoy bien', phonetic: '/esˈtoi ˈbjen/', translation: 'Je vais bien' },
+            { word: 'Mucho gusto', phonetic: '/ˈmutʃo ˈɡusto/', translation: 'Enchanté' },
+            { word: '¿Cómo te llamas?', phonetic: '/ˈkomo te ˈʎamas/', translation: 'Comment t\'appelles-tu ?' },
+            { word: '¿De dónde eres?', phonetic: '/de ˈdonde ˈeɾes/', translation: 'D\'où es-tu ?' },
+            { word: 'Soy de...', phonetic: '/soi de/', translation: 'Je suis de...' },
+            { word: '¿Cuántos años tienes?', phonetic: '/ˈkwantos ˈaɲos ˈtjenes/', translation: 'Quel âge as-tu ?' },
+          ]
+        },
+        {
+          id: 'es-2-2',
+          title: 'La familia',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Familia', phonetic: '/faˈmilja/', translation: 'Famille' },
+            { word: 'Madre', phonetic: '/ˈmaðɾe/', translation: 'Mère' },
+            { word: 'Padre', phonetic: '/ˈpaðɾe/', translation: 'Père' },
+            { word: 'Hermano', phonetic: '/eɾˈmano/', translation: 'Frère' },
+            { word: 'Hermana', phonetic: '/eɾˈmana/', translation: 'Sœur' },
+            { word: 'Hijo', phonetic: '/ˈixo/', translation: 'Fils' },
+            { word: 'Hija', phonetic: '/ˈixa/', translation: 'Fille' },
+            { word: 'Amigo/Amiga', phonetic: '/aˈmiɡo/aˈmiɡa/', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'es-2-3',
+          title: 'Números 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Once', phonetic: '/ˈonθe/', translation: 'Onze' },
+            { word: 'Doce', phonetic: '/ˈdoθe/', translation: 'Douze' },
+            { word: 'Trece', phonetic: '/ˈtɾeθe/', translation: 'Treize' },
+            { word: 'Catorce', phonetic: '/kaˈtoɾθe/', translation: 'Quatorze' },
+            { word: 'Quince', phonetic: '/ˈkinθe/', translation: 'Quinze' },
+            { word: 'Dieciséis', phonetic: '/djeθiˈsejs/', translation: 'Seize' },
+            { word: 'Diecisiete', phonetic: '/djeθiˈsjete/', translation: 'Dix-sept' },
+            { word: 'Dieciocho', phonetic: '/djeθiˈotʃo/', translation: 'Dix-huit' },
+            { word: 'Diecinueve', phonetic: '/djeθiˈnweβe/', translation: 'Dix-neuf' },
+            { word: 'Veinte', phonetic: '/ˈbeinte/', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'es-2-4',
+          title: 'Objetos cotidianos',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Casa', phonetic: '/ˈkasa/', translation: 'Maison' },
+            { word: 'Coche', phonetic: '/ˈkotʃe/', translation: 'Voiture' },
+            { word: 'Libro', phonetic: '/ˈliβɾo/', translation: 'Livre' },
+            { word: 'Bolígrafo', phonetic: '/boˈliɡɾafo/', translation: 'Stylo' },
+            { word: 'Teléfono', phonetic: '/teˈlefono/', translation: 'Téléphone' },
+            { word: 'Llave', phonetic: '/ˈʎaβe/', translation: 'Clé' },
+            { word: 'Dinero', phonetic: '/diˈneɾo/', translation: 'Argent' },
+            { word: 'Tiempo', phonetic: '/ˈtjempo/', translation: 'Temps' },
+          ]
+        },
+        {
+          id: 'es-2-test',
+          title: 'Prueba del capítulo 2',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Viajar',
+      description: 'Expresiones para viajar',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'es-3-1',
+          title: 'En el aeropuerto',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Aeropuerto', phonetic: '/aeɾoˈpweɾto/', translation: 'Aéroport' },
+            { word: 'Billete', phonetic: '/biˈʎete/', translation: 'Billet' },
+            { word: 'Pasaporte', phonetic: '/pasaˈpoɾte/', translation: 'Passeport' },
+            { word: 'Equipaje', phonetic: '/ekiˈpaxe/', translation: 'Bagages' },
+            { word: 'Vuelo', phonetic: '/ˈbwelo/', translation: 'Vol' },
+            { word: 'Puerta', phonetic: '/ˈpweɾta/', translation: 'Porte' },
+            { word: 'Embarque', phonetic: '/emˈbaɾke/', translation: 'Embarquement' },
+            { word: 'Retraso', phonetic: '/reˈtɾaso/', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'es-3-2',
+          title: 'En el hotel',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Hotel', phonetic: '/oˈtel/', translation: 'Hôtel' },
+            { word: 'Habitación', phonetic: '/aβitaˈθjon/', translation: 'Chambre' },
+            { word: 'Reserva', phonetic: '/reˈseɾβa/', translation: 'Réservation' },
+            { word: 'Registro', phonetic: '/reˈxistɾo/', translation: 'Enregistrement' },
+            { word: 'Salida', phonetic: '/saˈliða/', translation: 'Départ' },
+            { word: 'Desayuno', phonetic: '/desaˈʝuno/', translation: 'Petit déjeuner' },
+            { word: 'Wi-Fi', phonetic: '/wi fi/', translation: 'Wi-Fi' },
+            { word: 'Recepción', phonetic: '/reθepˈθjon/', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'es-3-3',
+          title: 'Restaurante',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Restaurante', phonetic: '/restauˈɾante/', translation: 'Restaurant' },
+            { word: 'Menú', phonetic: '/meˈnu/', translation: 'Menu' },
+            { word: 'Mesa', phonetic: '/ˈmesa/', translation: 'Table' },
+            { word: 'Ordenar', phonetic: '/oɾðeˈnaɾ/', translation: 'Commander' },
+            { word: 'Cuenta', phonetic: '/ˈkwenta/', translation: 'Addition' },
+            { word: 'Propina', phonetic: '/pɾoˈpina/', translation: 'Pourboire' },
+            { word: 'Delicioso', phonetic: '/deliˈθjoso/', translation: 'Délicieux' },
+            { word: 'Camarero/Camarera', phonetic: '/kamaˈɾeɾo/kamaˈɾeɾa/', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'es-3-4',
+          title: 'Direcciones',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '¿Dónde está...?', phonetic: '/ˈdonde esˈta/', translation: 'Où est... ?' },
+            { word: 'Izquierda', phonetic: '/iθˈkjeɾða/', translation: 'Gauche' },
+            { word: 'Derecha', phonetic: '/deˈɾetʃa/', translation: 'Droite' },
+            { word: 'Recto', phonetic: '/ˈrekto/', translation: 'Tout droit' },
+            { word: 'Cerca', phonetic: '/ˈθeɾka/', translation: 'Près' },
+            { word: 'Lejos', phonetic: '/ˈlexos/', translation: 'Loin' },
+            { word: 'Mapa', phonetic: '/ˈmapa/', translation: 'Carte' },
+            { word: 'Calle', phonetic: '/ˈkaʎe/', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'es-3-test',
+          title: 'Prueba del capítulo 3',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Trabajo y negocios',
+      description: 'Vocabulario profesional',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'es-4-1',
+          title: 'Oficina',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Oficina', phonetic: '/ofiˈθina/', translation: 'Bureau' },
+            { word: 'Computadora', phonetic: '/komputaˈðoɾa/', translation: 'Ordinateur' },
+            { word: 'Reunión', phonetic: '/reuˈnjon/', translation: 'Réunion' },
+            { word: 'Correo electrónico', phonetic: '/koˈɾeo elekˈtɾoniko/', translation: 'Email' },
+            { word: 'Horario', phonetic: '/oˈɾaɾjo/', translation: 'Emploi du temps' },
+            { word: 'Presentación', phonetic: '/pɾesentaˈθjon/', translation: 'Présentation' },
+            { word: 'Informe', phonetic: '/imˈfoɾme/', translation: 'Rapport' },
+            { word: 'Plazo', phonetic: '/ˈplaθo/', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'es-4-2',
+          title: 'Profesiones',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Médico', phonetic: '/ˈmediko/', translation: 'Docteur' },
+            { word: 'Profesor', phonetic: '/pɾoˈfesoɾ/', translation: 'Professeur' },
+            { word: 'Ingeniero', phonetic: '/inxenˈjeɾo/', translation: 'Ingénieur' },
+            { word: 'Abogado', phonetic: '/aβoˈɣaðo/', translation: 'Avocat' },
+            { word: 'Enfermero/Enfermera', phonetic: '/enfeɾˈmeɾo/enfeɾˈmeɾa/', translation: 'Infirmier/Infirmière' },
+            { word: 'Policía', phonetic: '/poliˈθia/', translation: 'Policier' },
+            { word: 'Chef', phonetic: '/tʃef/', translation: 'Chef cuisinier' },
+            { word: 'Artista', phonetic: '/aɾˈtista/', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'es-4-3',
+          title: 'Tiempo y fechas',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Lunes', phonetic: '/ˈlunes/', translation: 'Lundi' },
+            { word: 'Martes', phonetic: '/ˈmaɾtes/', translation: 'Mardi' },
+            { word: 'Miércoles', phonetic: '/ˈmjeɾkoles/', translation: 'Mercredi' },
+            { word: 'Jueves', phonetic: '/ˈxweβes/', translation: 'Jeudi' },
+            { word: 'Viernes', phonetic: '/ˈbjeɾnes/', translation: 'Vendredi' },
+            { word: 'Sábado', phonetic: '/ˈsaβaðo/', translation: 'Samedi' },
+            { word: 'Domingo', phonetic: '/doˈminɡo/', translation: 'Dimanche' },
+            { word: 'Fin de semana', phonetic: '/fin de seˈmana/', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'es-4-4',
+          title: 'Números 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Treinta', phonetic: '/ˈtɾeinta/', translation: 'Trente' },
+            { word: 'Cuarenta', phonetic: '/kwaˈɾenta/', translation: 'Quarante' },
+            { word: 'Cincuenta', phonetic: '/θinˈkwenta/', translation: 'Cinquante' },
+            { word: 'Sesenta', phonetic: '/seˈsenta/', translation: 'Soixante' },
+            { word: 'Setenta', phonetic: '/seˈtenta/', translation: 'Soixante-dix' },
+            { word: 'Ochenta', phonetic: '/oˈtʃenta/', translation: 'Quatre-vingts' },
+            { word: 'Noventa', phonetic: '/noˈβenta/', translation: 'Quatre-vingt-dix' },
+            { word: 'Cien', phonetic: '/θjen/', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'es-4-test',
+          title: 'Prueba del capítulo 4',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Cultura y sociedad',
+      description: 'Vida social y cultural',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'es-5-1',
+          title: 'Pasatiempos',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Música', phonetic: '/ˈmusika/', translation: 'Musique' },
+            { word: 'Película', phonetic: '/peˈlikula/', translation: 'Film' },
+            { word: 'Deporte', phonetic: '/deˈpoɾte/', translation: 'Sport' },
+            { word: 'Lectura', phonetic: '/lekˈtuɾa/', translation: 'Lecture' },
+            { word: 'Cocina', phonetic: '/koˈθina/', translation: 'Cuisine' },
+            { word: 'Viaje', phonetic: '/ˈbjaxe/', translation: 'Voyage' },
+            { word: 'Fotografía', phonetic: '/fotoɡɾaˈfia/', translation: 'Photographie' },
+            { word: 'Pintura', phonetic: '/pinˈtuɾa/', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'es-5-2',
+          title: 'Emociones',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Feliz', phonetic: '/feˈliθ/', translation: 'Heureux' },
+            { word: 'Triste', phonetic: '/ˈtɾiste/', translation: 'Triste' },
+            { word: 'Enojado', phonetic: '/enoˈxaðo/', translation: 'En colère' },
+            { word: 'Emocionado', phonetic: '/emoθjoˈnaðo/', translation: 'Excité' },
+            { word: 'Cansado', phonetic: '/kanˈsaðo/', translation: 'Fatigué' },
+            { word: 'Sorprendido', phonetic: '/soɾpɾenˈdiðo/', translation: 'Surpris' },
+            { word: 'Asustado', phonetic: '/asusˈtaðo/', translation: 'Effrayé' },
+            { word: 'Nervioso', phonetic: '/neɾˈβjoso/', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'es-5-3',
+          title: 'Salud',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Hospital', phonetic: '/ospiˈtal/', translation: 'Hôpital' },
+            { word: 'Doctor', phonetic: '/dokˈtoɾ/', translation: 'Docteur' },
+            { word: 'Medicina', phonetic: '/mediˈθina/', translation: 'Médicament' },
+            { word: 'Dolor', phonetic: '/doˈloɾ/', translation: 'Douleur' },
+            { word: 'Dolor de cabeza', phonetic: '/doˈloɾ de kaˈβeθa/', translation: 'Mal de tête' },
+            { word: 'Fiebre', phonetic: '/ˈfjeβɾe/', translation: 'Fièvre' },
+            { word: 'Saludable', phonetic: '/saluˈðaβle/', translation: 'En bonne santé' },
+            { word: 'Enfermo', phonetic: '/enˈfeɾmo/', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'es-5-4',
+          title: 'Clima',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Soleado', phonetic: '/soleˈaðo/', translation: 'Ensoleillé' },
+            { word: 'Lluvioso', phonetic: '/ʎuˈβjoso/', translation: 'Pluvieux' },
+            { word: 'Nublado', phonetic: '/nuˈβlaðo/', translation: 'Nuageux' },
+            { word: 'Ventoso', phonetic: '/benˈtoso/', translation: 'Venteux' },
+            { word: 'Nieve', phonetic: '/ˈnjeβe/', translation: 'Neige' },
+            { word: 'Calor', phonetic: '/kaˈloɾ/', translation: 'Chaud' },
+            { word: 'Frío', phonetic: '/ˈfɾio/', translation: 'Froid' },
+            { word: 'Temperatura', phonetic: '/tempeɾaˈtuɾa/', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'es-5-test',
+          title: 'Prueba del capítulo 5',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'Gramática intermedia',
+      description: 'Estructura de oraciones complejas',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'es-6-1',
+          title: 'Verbos comunes',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Comer', phonetic: '/koˈmeɾ/', translation: 'Manger' },
+            { word: 'Beber', phonetic: '/beˈβeɾ/', translation: 'Boire' },
+            { word: 'Dormir', phonetic: '/doɾˈmiɾ/', translation: 'Dormir' },
+            { word: 'Trabajar', phonetic: '/tɾaβaˈxaɾ/', translation: 'Travailler' },
+            { word: 'Aprender', phonetic: '/apɾenˈdeɾ/', translation: 'Apprendre' },
+            { word: 'Hablar', phonetic: '/aˈβlaɾ/', translation: 'Parler' },
+            { word: 'Entender', phonetic: '/entenˈdeɾ/', translation: 'Comprendre' },
+            { word: 'Escribir', phonetic: '/eskɾiˈβiɾ/', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'es-6-2',
+          title: 'Tiempo pasado',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Ayer', phonetic: '/aˈʝeɾ/', translation: 'Hier' },
+            { word: 'La semana pasada', phonetic: '/la seˈmana paˈsaða/', translation: 'La semaine dernière' },
+            { word: 'El mes pasado', phonetic: '/el mes paˈsaðo/', translation: 'Le mois dernier' },
+            { word: 'El año pasado', phonetic: '/el ˈaɲo paˈsaðo/', translation: 'L\'année dernière' },
+            { word: 'Antes', phonetic: '/ˈantes/', translation: 'Avant' },
+            { word: 'Hace', phonetic: '/ˈaθe/', translation: 'Il y a' },
+            { word: 'Era/Eran', phonetic: '/ˈeɾa/ˈeɾan/', translation: 'Était/Étaient' },
+            { word: 'Hice/Hiciste', phonetic: '/ˈiθe/iˈθiste/', translation: 'J\'ai fait/Tu as fait' },
+          ]
+        },
+        {
+          id: 'es-6-3',
+          title: 'Tiempo futuro',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Mañana', phonetic: '/maˈɲana/', translation: 'Demain' },
+            { word: 'La próxima semana', phonetic: '/la ˈpɾokxima seˈmana/', translation: 'La semaine prochaine' },
+            { word: 'El próximo mes', phonetic: '/el ˈpɾokximo mes/', translation: 'Le mois prochain' },
+            { word: 'El próximo año', phonetic: '/el ˈpɾokximo ˈaɲo/', translation: 'L\'année prochaine' },
+            { word: 'Voy a', phonetic: '/ˈboi a/', translation: 'Je vais' },
+            { word: 'Vas a', phonetic: '/bas a/', translation: 'Tu vas' },
+            { word: 'Pronto', phonetic: '/ˈpɾonto/', translation: 'Bientôt' },
+            { word: 'Más tarde', phonetic: '/mas ˈtaɾðe/', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'es-6-4',
+          title: 'Adjetivos comparativos',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Más grande', phonetic: '/mas ˈɡɾande/', translation: 'Plus grand' },
+            { word: 'Más pequeño', phonetic: '/mas peˈkeɲo/', translation: 'Plus petit' },
+            { word: 'Mejor', phonetic: '/meˈxoɾ/', translation: 'Meilleur' },
+            { word: 'Peor', phonetic: '/peˈoɾ/', translation: 'Pire' },
+            { word: 'Más bonito', phonetic: '/mas boˈnito/', translation: 'Plus beau' },
+            { word: 'Menos caro', phonetic: '/ˈmenos ˈkaɾo/', translation: 'Moins cher' },
+            { word: 'El mejor', phonetic: '/el meˈxoɾ/', translation: 'Le meilleur' },
+            { word: 'El peor', phonetic: '/el peˈoɾ/', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'es-6-test',
+          title: 'Prueba del capítulo 6',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: 'Avanzado',
+      description: 'Vocabulario especializado',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'es-7-1',
+          title: 'Tecnología',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Internet', phonetic: '/inteɾˈnet/', translation: 'Internet' },
+            { word: 'Teléfono inteligente', phonetic: '/teˈlefono inteliˈxente/', translation: 'Smartphone' },
+            { word: 'Software', phonetic: '/ˈsoftweɾ/', translation: 'Logiciel' },
+            { word: 'Hardware', phonetic: '/ˈaɾdweɾ/', translation: 'Matériel' },
+            { word: 'Aplicación', phonetic: '/aplikaˈθjon/', translation: 'Application' },
+            { word: 'Contraseña', phonetic: '/kontɾaˈseɲa/', translation: 'Mot de passe' },
+            { word: 'Descargar', phonetic: '/deskaɾˈɡaɾ/', translation: 'Télécharger' },
+            { word: 'Subir', phonetic: '/suˈβiɾ/', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'es-7-2',
+          title: 'Economía',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Banco', phonetic: '/ˈbanko/', translation: 'Banque' },
+            { word: 'Dinero', phonetic: '/diˈneɾo/', translation: 'Argent' },
+            { word: 'Salario', phonetic: '/saˈlaɾjo/', translation: 'Salaire' },
+            { word: 'Precio', phonetic: '/ˈpɾeθjo/', translation: 'Prix' },
+            { word: 'Mercado', phonetic: '/meɾˈkaðo/', translation: 'Marché' },
+            { word: 'Inversión', phonetic: '/imbeɾˈsjon/', translation: 'Investissement' },
+            { word: 'Impuesto', phonetic: '/imˈpwesto/', translation: 'Taxe' },
+            { word: 'Presupuesto', phonetic: '/pɾesuˈpwesto/', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'es-7-3',
+          title: 'Política',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Gobierno', phonetic: '/ɡoˈβjeɾno/', translation: 'Gouvernement' },
+            { word: 'Presidente', phonetic: '/pɾesiˈðente/', translation: 'Président' },
+            { word: 'Elección', phonetic: '/elekˈθjon/', translation: 'Élection' },
+            { word: 'Ley', phonetic: '/ˈleʝ/', translation: 'Loi' },
+            { word: 'Libertad', phonetic: '/liβeɾˈtað/', translation: 'Liberté' },
+            { word: 'Democracia', phonetic: '/demoˈkɾaθja/', translation: 'Démocratie' },
+            { word: 'Política', phonetic: '/poˈlitika/', translation: 'Politique' },
+            { word: 'Votar', phonetic: '/boˈtaɾ/', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'es-7-4',
+          title: 'Medio ambiente',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Medio ambiente', phonetic: '/ˈmeðjo amˈbjente/', translation: 'Environnement' },
+            { word: 'Contaminación', phonetic: '/kontaminaˈθjon/', translation: 'Pollution' },
+            { word: 'Clima', phonetic: '/ˈklima/', translation: 'Climat' },
+            { word: 'Reciclaje', phonetic: '/reθiˈklaxe/', translation: 'Recyclage' },
+            { word: 'Naturaleza', phonetic: '/natuɾaˈleθa/', translation: 'Nature' },
+            { word: 'Energía', phonetic: '/eneɾˈxia/', translation: 'Énergie' },
+            { word: 'Sostenible', phonetic: '/sosteniβle/', translation: 'Durable' },
+            { word: 'Ecosistema', phonetic: '/ekosisˈtema/', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'es-7-test',
+          title: 'Prueba final',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Dominio',
+      description: 'Perfeccionamiento lingüístico',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'es-8-1',
+          title: 'Modismos',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Buena suerte', phonetic: '/ˈbwena ˈsweɾte/', translation: 'Bonne chance' },
+            { word: 'Pan comido', phonetic: '/pan koˈmiðo/', translation: 'Très facile' },
+            { word: 'Costar un ojo de la cara', phonetic: '/kosˈtaɾ un ˈoxo de la ˈkaɾa/', translation: 'Coûter très cher' },
+            { word: 'Ponerse las pilas', phonetic: '/poˈneɾse las ˈpilas/', translation: 'Se mettre au travail' },
+            { word: 'Cuando las ranas críen pelo', phonetic: '/ˈkwando las ˈɾanas ˈkɾjen ˈpelo/', translation: 'Quand les poules auront des dents' },
+            { word: 'Apretar los dientes', phonetic: '/apɾeˈtaɾ los ˈdjentes/', translation: 'Serrer les dents' },
+            { word: 'Tomar atajos', phonetic: '/toˈmaɾ aˈtaxos/', translation: 'Prendre des raccourcis' },
+            { word: 'Romper el hielo', phonetic: '/romˈpeɾ el ˈjelo/', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'es-8-2',
+          title: 'Expresiones formales',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Además', phonetic: '/aˈðemas/', translation: 'De plus' },
+            { word: 'Sin embargo', phonetic: '/sin emˈbaɾɡo/', translation: 'Néanmoins' },
+            { word: 'Por consiguiente', phonetic: '/poɾ konsiˈɣjente/', translation: 'Par conséquent' },
+            { word: 'Alternativamente', phonetic: '/alteɾnatiβaˈmente/', translation: 'Alternativement' },
+            { word: 'Específicamente', phonetic: '/espeˈθifikamente/', translation: 'Spécifiquement' },
+            { word: 'Finalmente', phonetic: '/finalˈmente/', translation: 'Finalement' },
+            { word: 'Significativamente', phonetic: '/siɡnifikaˈtiβamente/', translation: 'Significativement' },
+            { word: 'Esencialmente', phonetic: '/esenˈθjalmente/', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'es-8-3',
+          title: 'Negociación',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Acuerdo', phonetic: '/aˈkweɾðo/', translation: 'Accord' },
+            { word: 'Compromiso', phonetic: '/kompɾoˈmiso/', translation: 'Compromis' },
+            { word: 'Negociación', phonetic: '/neɡoθjaˈθjon/', translation: 'Négociation' },
+            { word: 'Contrato', phonetic: '/konˈtɾato/', translation: 'Contrat' },
+            { word: 'Términos', phonetic: '/ˈteɾminos/', translation: 'Conditions' },
+            { word: 'Plazo límite', phonetic: '/ˈplaθo ˈlimite/', translation: 'Date limite' },
+            { word: 'Asociación', phonetic: '/asoθjaˈθjon/', translation: 'Partenariat' },
+            { word: 'Resolución', phonetic: '/resoˈluθjon/', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'es-8-4',
+          title: 'Cultura española',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Siesta', phonetic: '/ˈsjesta/', translation: 'Siesta' },
+            { word: 'Paella', phonetic: '/paˈeʎa/', translation: 'Paella' },
+            { word: 'Tapas', phonetic: '/ˈtapas/', translation: 'Tapas' },
+            { word: 'Flamenco', phonetic: '/flaˈmenko/', translation: 'Flamenco' },
+            { word: 'Sagrada Familia', phonetic: '/saˈɣɾaða faˈmilja/', translation: 'Sagrada Familia' },
+            { word: 'Plaza Mayor', phonetic: '/ˈplaθa maˈʝoɾ/', translation: 'Plaza Mayor' },
+            { word: 'Corrida de toros', phonetic: '/koˈriða de ˈtoɾos/', translation: 'Corrida' },
+            { word: 'Fiesta', phonetic: '/ˈfjesta/', translation: 'Fête' },
+          ]
+        },
+        {
+          id: 'es-8-test',
+          title: 'Examen final',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  zh: [
+    {
+      id: 1,
+      title: '基础 1',
+      description: '基本问候和表达',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#DC143C',
+      lessons: [
+        {
+          id: 'zh-1-1',
+          title: '问候语',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: '你好', phonetic: 'nǐ hǎo', translation: 'Bonjour' },
+            { word: '再见', phonetic: 'zài jiàn', translation: 'Au revoir' },
+            { word: '谢谢', phonetic: 'xiè xie', translation: 'Merci' },
+            { word: '请', phonetic: 'qǐng', translation: 'S\'il vous plaît' },
+            { word: '是', phonetic: 'shì', translation: 'Oui' },
+            { word: '不是', phonetic: 'bù shì', translation: 'Non' },
+            { word: '对不起', phonetic: 'duì bu qǐ', translation: 'Pardon' },
+            { word: '请问', phonetic: 'qǐng wèn', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'zh-1-2',
+          title: '数字 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '一', phonetic: 'yī', translation: 'Un' },
+            { word: '二', phonetic: 'èr', translation: 'Deux' },
+            { word: '三', phonetic: 'sān', translation: 'Trois' },
+            { word: '四', phonetic: 'sì', translation: 'Quatre' },
+            { word: '五', phonetic: 'wǔ', translation: 'Cinq' },
+            { word: '六', phonetic: 'liù', translation: 'Six' },
+            { word: '七', phonetic: 'qī', translation: 'Sept' },
+            { word: '八', phonetic: 'bā', translation: 'Huit' },
+            { word: '九', phonetic: 'jiǔ', translation: 'Neuf' },
+            { word: '十', phonetic: 'shí', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'zh-1-3',
+          title: '颜色',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: '红色', phonetic: 'hóng sè', translation: 'Rouge' },
+            { word: '蓝色', phonetic: 'lán sè', translation: 'Bleu' },
+            { word: '绿色', phonetic: 'lǜ sè', translation: 'Vert' },
+            { word: '黄色', phonetic: 'huáng sè', translation: 'Jaune' },
+            { word: '黑色', phonetic: 'hēi sè', translation: 'Noir' },
+            { word: '白色', phonetic: 'bái sè', translation: 'Blanc' },
+            { word: '橙色', phonetic: 'chéng sè', translation: 'Orange' },
+            { word: '紫色', phonetic: 'zǐ sè', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'zh-1-4',
+          title: '基本食物',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '水', phonetic: 'shuǐ', translation: 'Eau' },
+            { word: '食物', phonetic: 'shí wù', translation: 'Nourriture' },
+            { word: '面包', phonetic: 'miàn bāo', translation: 'Pain' },
+            { word: '牛奶', phonetic: 'niú nǎi', translation: 'Lait' },
+            { word: '咖啡', phonetic: 'kā fēi', translation: 'Café' },
+            { word: '茶', phonetic: 'chá', translation: 'Thé' },
+            { word: '苹果', phonetic: 'píng guǒ', translation: 'Pomme' },
+            { word: '香蕉', phonetic: 'xiāng jiāo', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'zh-1-test',
+          title: '第1章测试',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: '日常用语',
+      description: '日常生活表达',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#FF8C00',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'zh-2-1',
+          title: '自我介绍',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '我叫...', phonetic: 'wǒ jiào', translation: 'Je m\'appelle...' },
+            { word: '你好吗？', phonetic: 'nǐ hǎo ma', translation: 'Comment allez-vous ?' },
+            { word: '我很好', phonetic: 'wǒ hěn hǎo', translation: 'Je vais bien' },
+            { word: '很高兴认识你', phonetic: 'hěn gāo xìng rèn shì nǐ', translation: 'Enchanté' },
+            { word: '你叫什么名字？', phonetic: 'nǐ jiào shén me míng zi', translation: 'Comment vous appelez-vous ?' },
+            { word: '你来自哪里？', phonetic: 'nǐ lái zì nǎ lǐ', translation: 'D\'où venez-vous ?' },
+            { word: '我来自...', phonetic: 'wǒ lái zì', translation: 'Je viens de...' },
+            { word: '你多大了？', phonetic: 'nǐ duō dà le', translation: 'Quel âge avez-vous ?' },
+          ]
+        },
+        {
+          id: 'zh-2-2',
+          title: '家庭',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '家庭', phonetic: 'jiā tíng', translation: 'Famille' },
+            { word: '母亲', phonetic: 'mǔ qīn', translation: 'Mère' },
+            { word: '父亲', phonetic: 'fù qīn', translation: 'Père' },
+            { word: '哥哥', phonetic: 'gē ge', translation: 'Frère aîné' },
+            { word: '姐姐', phonetic: 'jiě jie', translation: 'Sœur aînée' },
+            { word: '儿子', phonetic: 'ér zi', translation: 'Fils' },
+            { word: '女儿', phonetic: 'nǚ ér', translation: 'Fille' },
+            { word: '朋友', phonetic: 'péng yǒu', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'zh-2-3',
+          title: '数字 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '十一', phonetic: 'shí yī', translation: 'Onze' },
+            { word: '十二', phonetic: 'shí èr', translation: 'Douze' },
+            { word: '十三', phonetic: 'shí sān', translation: 'Treize' },
+            { word: '十四', phonetic: 'shí sì', translation: 'Quatorze' },
+            { word: '十五', phonetic: 'shí wǔ', translation: 'Quinze' },
+            { word: '十六', phonetic: 'shí liù', translation: 'Seize' },
+            { word: '十七', phonetic: 'shí qī', translation: 'Dix-sept' },
+            { word: '十八', phonetic: 'shí bā', translation: 'Dix-huit' },
+            { word: '十九', phonetic: 'shí jiǔ', translation: 'Dix-neuf' },
+            { word: '二十', phonetic: 'èr shí', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'zh-2-4',
+          title: '日常物品',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '房子', phonetic: 'fáng zi', translation: 'Maison' },
+            { word: '汽车', phonetic: 'qì chē', translation: 'Voiture' },
+            { word: '书', phonetic: 'shū', translation: 'Livre' },
+            { word: '笔', phonetic: 'bǐ', translation: 'Stylo' },
+            { word: '电话', phonetic: 'diàn huà', translation: 'Téléphone' },
+            { word: '钥匙', phonetic: 'yào shi', translation: 'Clé' },
+            { word: '钱', phonetic: 'qián', translation: 'Argent' },
+            { word: '时间', phonetic: 'shí jiān', translation: 'Temps' },
+          ]
+        },
+        {
+          id: 'zh-2-test',
+          title: '第2章测试',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: '旅行',
+      description: '旅行表达',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'zh-3-1',
+          title: '在机场',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '机场', phonetic: 'jī chǎng', translation: 'Aéroport' },
+            { word: '票', phonetic: 'piào', translation: 'Billet' },
+            { word: '护照', phonetic: 'hù zhào', translation: 'Passeport' },
+            { word: '行李', phonetic: 'xíng li', translation: 'Bagages' },
+            { word: '航班', phonetic: 'háng bān', translation: 'Vol' },
+            { word: '登机口', phonetic: 'dēng jī kǒu', translation: 'Porte' },
+            { word: '登机', phonetic: 'dēng jī', translation: 'Embarquement' },
+            { word: '延误', phonetic: 'yán wù', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'zh-3-2',
+          title: '在酒店',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '酒店', phonetic: 'jiǔ diàn', translation: 'Hôtel' },
+            { word: '房间', phonetic: 'fáng jiān', translation: 'Chambre' },
+            { word: '预订', phonetic: 'yù dìng', translation: 'Réservation' },
+            { word: '入住', phonetic: 'rù zhù', translation: 'Enregistrement' },
+            { word: '退房', phonetic: 'tuì fáng', translation: 'Départ' },
+            { word: '早餐', phonetic: 'zǎo cān', translation: 'Petit déjeuner' },
+            { word: '无线网络', phonetic: 'wú xiàn wǎng luò', translation: 'Wi-Fi' },
+            { word: '前台', phonetic: 'qián tái', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'zh-3-3',
+          title: '餐厅',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '餐厅', phonetic: 'cān tīng', translation: 'Restaurant' },
+            { word: '菜单', phonetic: 'cài dān', translation: 'Menu' },
+            { word: '桌子', phonetic: 'zhuō zi', translation: 'Table' },
+            { word: '点菜', phonetic: 'diǎn cài', translation: 'Commander' },
+            { word: '账单', phonetic: 'zhàng dān', translation: 'Addition' },
+            { word: '小费', phonetic: 'xiǎo fèi', translation: 'Pourboire' },
+            { word: '好吃', phonetic: 'hǎo chī', translation: 'Délicieux' },
+            { word: '服务员', phonetic: 'fú wù yuán', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'zh-3-4',
+          title: '方向',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '...在哪里？', phonetic: 'zài nǎ lǐ', translation: 'Où est... ?' },
+            { word: '左边', phonetic: 'zuǒ biān', translation: 'Gauche' },
+            { word: '右边', phonetic: 'yòu biān', translation: 'Droite' },
+            { word: '直走', phonetic: 'zhí zǒu', translation: 'Tout droit' },
+            { word: '附近', phonetic: 'fù jìn', translation: 'Près' },
+            { word: '远', phonetic: 'yuǎn', translation: 'Loin' },
+            { word: '地图', phonetic: 'dì tú', translation: 'Carte' },
+            { word: '街道', phonetic: 'jiē dào', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'zh-3-test',
+          title: '第3章测试',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: '工作与商务',
+      description: '专业词汇',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'zh-4-1',
+          title: '办公室',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '办公室', phonetic: 'bàn gōng shì', translation: 'Bureau' },
+            { word: '电脑', phonetic: 'diàn nǎo', translation: 'Ordinateur' },
+            { word: '会议', phonetic: 'huì yì', translation: 'Réunion' },
+            { word: '电子邮件', phonetic: 'diàn zǐ yóu jiàn', translation: 'Email' },
+            { word: '日程', phonetic: 'rì chéng', translation: 'Emploi du temps' },
+            { word: '演示', phonetic: 'yǎn shì', translation: 'Présentation' },
+            { word: '报告', phonetic: 'bào gào', translation: 'Rapport' },
+            { word: '截止日期', phonetic: 'jié zhǐ rì qī', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'zh-4-2',
+          title: '职业',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '医生', phonetic: 'yī shēng', translation: 'Docteur' },
+            { word: '老师', phonetic: 'lǎo shī', translation: 'Professeur' },
+            { word: '工程师', phonetic: 'gōng chéng shī', translation: 'Ingénieur' },
+            { word: '律师', phonetic: 'lǜ shī', translation: 'Avocat' },
+            { word: '护士', phonetic: 'hù shi', translation: 'Infirmier/Infirmière' },
+            { word: '警察', phonetic: 'jǐng chá', translation: 'Policier' },
+            { word: '厨师', phonetic: 'chú shī', translation: 'Chef cuisinier' },
+            { word: '艺术家', phonetic: 'yì shù jiā', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'zh-4-3',
+          title: '时间和日期',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '星期一', phonetic: 'xīng qī yī', translation: 'Lundi' },
+            { word: '星期二', phonetic: 'xīng qī èr', translation: 'Mardi' },
+            { word: '星期三', phonetic: 'xīng qī sān', translation: 'Mercredi' },
+            { word: '星期四', phonetic: 'xīng qī sì', translation: 'Jeudi' },
+            { word: '星期五', phonetic: 'xīng qī wǔ', translation: 'Vendredi' },
+            { word: '星期六', phonetic: 'xīng qī liù', translation: 'Samedi' },
+            { word: '星期日', phonetic: 'xīng qī rì', translation: 'Dimanche' },
+            { word: '周末', phonetic: 'zhōu mò', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'zh-4-4',
+          title: '数字 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '三十', phonetic: 'sān shí', translation: 'Trente' },
+            { word: '四十', phonetic: 'sì shí', translation: 'Quarante' },
+            { word: '五十', phonetic: 'wǔ shí', translation: 'Cinquante' },
+            { word: '六十', phonetic: 'liù shí', translation: 'Soixante' },
+            { word: '七十', phonetic: 'qī shí', translation: 'Soixante-dix' },
+            { word: '八十', phonetic: 'bā shí', translation: 'Quatre-vingts' },
+            { word: '九十', phonetic: 'jiǔ shí', translation: 'Quatre-vingt-dix' },
+            { word: '一百', phonetic: 'yī bǎi', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'zh-4-test',
+          title: '第4章测试',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: '文化与社会',
+      description: '社交和文化生活',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'zh-5-1',
+          title: '爱好',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '音乐', phonetic: 'yīn yuè', translation: 'Musique' },
+            { word: '电影', phonetic: 'diàn yǐng', translation: 'Film' },
+            { word: '运动', phonetic: 'yùn dòng', translation: 'Sport' },
+            { word: '阅读', phonetic: 'yuè dú', translation: 'Lecture' },
+            { word: '烹饪', phonetic: 'pēng rèn', translation: 'Cuisine' },
+            { word: '旅行', phonetic: 'lǚ xíng', translation: 'Voyage' },
+            { word: '摄影', phonetic: 'shè yǐng', translation: 'Photographie' },
+            { word: '绘画', phonetic: 'huì huà', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'zh-5-2',
+          title: '情绪',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '开心', phonetic: 'kāi xīn', translation: 'Heureux' },
+            { word: '难过', phonetic: 'nán guò', translation: 'Triste' },
+            { word: '生气', phonetic: 'shēng qì', translation: 'En colère' },
+            { word: '兴奋', phonetic: 'xīng fèn', translation: 'Excité' },
+            { word: '累', phonetic: 'lèi', translation: 'Fatigué' },
+            { word: '惊讶', phonetic: 'jīng yà', translation: 'Surpris' },
+            { word: '害怕', phonetic: 'hài pà', translation: 'Effrayé' },
+            { word: '紧张', phonetic: 'jǐn zhāng', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'zh-5-3',
+          title: '健康',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '医院', phonetic: 'yī yuàn', translation: 'Hôpital' },
+            { word: '医生', phonetic: 'yī shēng', translation: 'Docteur' },
+            { word: '药', phonetic: 'yào', translation: 'Médicament' },
+            { word: '疼痛', phonetic: 'téng tòng', translation: 'Douleur' },
+            { word: '头痛', phonetic: 'tóu tòng', translation: 'Mal de tête' },
+            { word: '发烧', phonetic: 'fā shāo', translation: 'Fièvre' },
+            { word: '健康', phonetic: 'jiàn kāng', translation: 'En bonne santé' },
+            { word: '生病', phonetic: 'shēng bìng', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'zh-5-4',
+          title: '天气',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '晴天', phonetic: 'qíng tiān', translation: 'Ensoleillé' },
+            { word: '雨天', phonetic: 'yǔ tiān', translation: 'Pluvieux' },
+            { word: '多云', phonetic: 'duō yún', translation: 'Nuageux' },
+            { word: '刮风', phonetic: 'guā fēng', translation: 'Venteux' },
+            { word: '雪', phonetic: 'xuě', translation: 'Neige' },
+            { word: '热', phonetic: 'rè', translation: 'Chaud' },
+            { word: '冷', phonetic: 'lěng', translation: 'Froid' },
+            { word: '温度', phonetic: 'wēn dù', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'zh-5-test',
+          title: '第5章测试',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: '中级语法',
+      description: '复杂句子结构',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'zh-6-1',
+          title: '常用动词',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '吃', phonetic: 'chī', translation: 'Manger' },
+            { word: '喝', phonetic: 'hē', translation: 'Boire' },
+            { word: '睡觉', phonetic: 'shuì jiào', translation: 'Dormir' },
+            { word: '工作', phonetic: 'gōng zuò', translation: 'Travailler' },
+            { word: '学习', phonetic: 'xué xí', translation: 'Apprendre' },
+            { word: '说话', phonetic: 'shuō huà', translation: 'Parler' },
+            { word: '理解', phonetic: 'lǐ jiě', translation: 'Comprendre' },
+            { word: '写', phonetic: 'xiě', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'zh-6-2',
+          title: '过去时',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '昨天', phonetic: 'zuó tiān', translation: 'Hier' },
+            { word: '上周', phonetic: 'shàng zhōu', translation: 'La semaine dernière' },
+            { word: '上个月', phonetic: 'shàng gè yuè', translation: 'Le mois dernier' },
+            { word: '去年', phonetic: 'qù nián', translation: 'L\'année dernière' },
+            { word: '以前', phonetic: 'yǐ qián', translation: 'Avant' },
+            { word: '...以前', phonetic: 'yǐ qián', translation: 'Il y a...' },
+            { word: '是', phonetic: 'shì', translation: 'Était' },
+            { word: '做了', phonetic: 'zuò le', translation: 'A fait' },
+          ]
+        },
+        {
+          id: 'zh-6-3',
+          title: '将来时',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '明天', phonetic: 'míng tiān', translation: 'Demain' },
+            { word: '下周', phonetic: 'xià zhōu', translation: 'La semaine prochaine' },
+            { word: '下个月', phonetic: 'xià gè yuè', translation: 'Le mois prochain' },
+            { word: '明年', phonetic: 'míng nián', translation: 'L\'année prochaine' },
+            { word: '会', phonetic: 'huì', translation: 'Vais (futur)' },
+            { word: '要', phonetic: 'yào', translation: 'Va (futur proche)' },
+            { word: '很快', phonetic: 'hěn kuài', translation: 'Bientôt' },
+            { word: '以后', phonetic: 'yǐ hòu', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'zh-6-4',
+          title: '比较形容词',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '更大', phonetic: 'gèng dà', translation: 'Plus grand' },
+            { word: '更小', phonetic: 'gèng xiǎo', translation: 'Plus petit' },
+            { word: '更好', phonetic: 'gèng hǎo', translation: 'Meilleur' },
+            { word: '更差', phonetic: 'gèng chà', translation: 'Pire' },
+            { word: '更漂亮', phonetic: 'gèng piào liang', translation: 'Plus beau' },
+            { word: '更便宜', phonetic: 'gèng pián yi', translation: 'Moins cher' },
+            { word: '最好', phonetic: 'zuì hǎo', translation: 'Le meilleur' },
+            { word: '最差', phonetic: 'zuì chà', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'zh-6-test',
+          title: '第6章测试',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: '高级',
+      description: '专业词汇',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'zh-7-1',
+          title: '科技',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '互联网', phonetic: 'hù lián wǎng', translation: 'Internet' },
+            { word: '智能手机', phonetic: 'zhì néng shǒu jī', translation: 'Smartphone' },
+            { word: '软件', phonetic: 'ruǎn jiàn', translation: 'Logiciel' },
+            { word: '硬件', phonetic: 'yìng jiàn', translation: 'Matériel' },
+            { word: '应用', phonetic: 'yìng yòng', translation: 'Application' },
+            { word: '密码', phonetic: 'mì mǎ', translation: 'Mot de passe' },
+            { word: '下载', phonetic: 'xià zǎi', translation: 'Télécharger' },
+            { word: '上传', phonetic: 'shàng chuán', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'zh-7-2',
+          title: '经济',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '银行', phonetic: 'yín háng', translation: 'Banque' },
+            { word: '钱', phonetic: 'qián', translation: 'Argent' },
+            { word: '工资', phonetic: 'gōng zī', translation: 'Salaire' },
+            { word: '价格', phonetic: 'jià gé', translation: 'Prix' },
+            { word: '市场', phonetic: 'shì chǎng', translation: 'Marché' },
+            { word: '投资', phonetic: 'tóu zī', translation: 'Investissement' },
+            { word: '税', phonetic: 'shuì', translation: 'Taxe' },
+            { word: '预算', phonetic: 'yù suàn', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'zh-7-3',
+          title: '政治',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '政府', phonetic: 'zhèng fǔ', translation: 'Gouvernement' },
+            { word: '总统', phonetic: 'zǒng tǒng', translation: 'Président' },
+            { word: '选举', phonetic: 'xuǎn jǔ', translation: 'Élection' },
+            { word: '法律', phonetic: 'fǎ lǜ', translation: 'Loi' },
+            { word: '自由', phonetic: 'zì yóu', translation: 'Liberté' },
+            { word: '民主', phonetic: 'mín zhǔ', translation: 'Démocratie' },
+            { word: '政治', phonetic: 'zhèng zhì', translation: 'Politique' },
+            { word: '投票', phonetic: 'tóu piào', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'zh-7-4',
+          title: '环境',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '环境', phonetic: 'huán jìng', translation: 'Environnement' },
+            { word: '污染', phonetic: 'wū rǎn', translation: 'Pollution' },
+            { word: '气候', phonetic: 'qì hòu', translation: 'Climat' },
+            { word: '回收', phonetic: 'huí shōu', translation: 'Recyclage' },
+            { word: '自然', phonetic: 'zì rán', translation: 'Nature' },
+            { word: '能源', phonetic: 'néng yuán', translation: 'Énergie' },
+            { word: '可持续', phonetic: 'kě chí xù', translation: 'Durable' },
+            { word: '生态系统', phonetic: 'shēng tài xì tǒng', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'zh-7-test',
+          title: '最终测试',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: '精通',
+      description: '语言完善',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'zh-8-1',
+          title: '成语',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '一路顺风', phonetic: 'yī lù shùn fēng', translation: 'Bonne chance' },
+            { word: '小菜一碟', phonetic: 'xiǎo cài yī dié', translation: 'Très facile' },
+            { word: '价值连城', phonetic: 'jià zhí lián chéng', translation: 'Très cher' },
+            { word: '用功读书', phonetic: 'yòng gōng dú shū', translation: 'Étudier sérieusement' },
+            { word: '太阳从西边出来', phonetic: 'tài yáng cóng xī biān chū lái', translation: 'Quand les cochons voleront' },
+            { word: '硬着头皮', phonetic: 'yìng zhe tóu pí', translation: 'Prendre son courage à deux mains' },
+            { word: '走捷径', phonetic: 'zǒu jié jìng', translation: 'Prendre des raccourcis' },
+            { word: '打破僵局', phonetic: 'dǎ pò jiāng jú', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'zh-8-2',
+          title: '正式表达',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '此外', phonetic: 'cǐ wài', translation: 'De plus' },
+            { word: '然而', phonetic: 'rán ér', translation: 'Néanmoins' },
+            { word: '因此', phonetic: 'yīn cǐ', translation: 'Par conséquent' },
+            { word: '或者', phonetic: 'huò zhě', translation: 'Alternativement' },
+            { word: '具体来说', phonetic: 'jù tǐ lái shuō', translation: 'Spécifiquement' },
+            { word: '最终', phonetic: 'zuì zhōng', translation: 'Finalement' },
+            { word: '显著地', phonetic: 'xiǎn zhù de', translation: 'Significativement' },
+            { word: '本质上', phonetic: 'běn zhì shàng', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'zh-8-3',
+          title: '谈判',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '协议', phonetic: 'xié yì', translation: 'Accord' },
+            { word: '妥协', phonetic: 'tuǒ xié', translation: 'Compromis' },
+            { word: '谈判', phonetic: 'tán pàn', translation: 'Négociation' },
+            { word: '合同', phonetic: 'hé tong', translation: 'Contrat' },
+            { word: '条款', phonetic: 'tiáo kuǎn', translation: 'Conditions' },
+            { word: '最后期限', phonetic: 'zuì hòu qī xiàn', translation: 'Date limite' },
+            { word: '伙伴关系', phonetic: 'huǒ bàn guān xi', translation: 'Partenariat' },
+            { word: '解决方案', phonetic: 'jiě jué fāng àn', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'zh-8-4',
+          title: '中国文化',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '茶文化', phonetic: 'chá wén huà', translation: 'Culture du thé' },
+            { word: '饺子', phonetic: 'jiǎo zi', translation: 'Ravioli chinois' },
+            { word: '长城', phonetic: 'cháng chéng', translation: 'Grande Muraille' },
+            { word: '故宫', phonetic: 'gù gōng', translation: 'Cité Interdite' },
+            { word: '春节', phonetic: 'chūn jié', translation: 'Fête du Printemps' },
+            { word: '太极拳', phonetic: 'tài jí quán', translation: 'Tai-chi' },
+            { word: '书法', phonetic: 'shū fǎ', translation: 'Calligraphie' },
+            { word: '筷子', phonetic: 'kuài zi', translation: 'Baguettes' },
+          ]
+        },
+        {
+          id: 'zh-8-test',
+          title: '最终考试',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  tr: [
+    {
+      id: 1,
+      title: 'Temeller',
+      description: 'Temel selamlar ve ifadeler',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#E30A17',
+      lessons: [
+        {
+          id: 'tr-1-1',
+          title: 'Selamlar',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Merhaba', phonetic: '/mer.ha.ba/', translation: 'Bonjour' },
+            { word: 'Hoşça kal', phonetic: '/hoʃ.tʃa kal/', translation: 'Au revoir' },
+            { word: 'Teşekkür ederim', phonetic: '/te.ʃek.kyɾ e.de.ɾim/', translation: 'Merci' },
+            { word: 'Lütfen', phonetic: '/lyt.fen/', translation: 'S\'il vous plaît' },
+            { word: 'Evet', phonetic: '/e.vet/', translation: 'Oui' },
+            { word: 'Hayır', phonetic: '/ha.jɯɾ/', translation: 'Non' },
+            { word: 'Özür dilerim', phonetic: '/œ.zyɾ di.le.ɾim/', translation: 'Pardon' },
+            { word: 'Affedersiniz', phonetic: '/af.fe.deɾ.si.niz/', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'tr-1-2',
+          title: 'Sayılar 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Bir', phonetic: '/biɾ/', translation: 'Un' },
+            { word: 'İki', phonetic: '/i.ki/', translation: 'Deux' },
+            { word: 'Üç', phonetic: '/ytʃ/', translation: 'Trois' },
+            { word: 'Dört', phonetic: '/dœɾt/', translation: 'Quatre' },
+            { word: 'Beş', phonetic: '/beʃ/', translation: 'Cinq' },
+            { word: 'Altı', phonetic: '/al.tɯ/', translation: 'Six' },
+            { word: 'Yedi', phonetic: '/je.di/', translation: 'Sept' },
+            { word: 'Sekiz', phonetic: '/se.kiz/', translation: 'Huit' },
+            { word: 'Dokuz', phonetic: '/do.kuz/', translation: 'Neuf' },
+            { word: 'On', phonetic: '/on/', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'tr-1-3',
+          title: 'Renkler',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Kırmızı', phonetic: '/kɯɾ.mɯ.zɯ/', translation: 'Rouge' },
+            { word: 'Mavi', phonetic: '/ma.vi/', translation: 'Bleu' },
+            { word: 'Yeşil', phonetic: '/je.ʃil/', translation: 'Vert' },
+            { word: 'Sarı', phonetic: '/sa.ɾɯ/', translation: 'Jaune' },
+            { word: 'Siyah', phonetic: '/si.jah/', translation: 'Noir' },
+            { word: 'Beyaz', phonetic: '/be.jaz/', translation: 'Blanc' },
+            { word: 'Turuncu', phonetic: '/tu.ɾun.dʒu/', translation: 'Orange' },
+            { word: 'Mor', phonetic: '/moɾ/', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'tr-1-4',
+          title: 'Temel Yiyecekler',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Su', phonetic: '/su/', translation: 'Eau' },
+            { word: 'Yemek', phonetic: '/je.mek/', translation: 'Nourriture' },
+            { word: 'Ekmek', phonetic: '/ek.mek/', translation: 'Pain' },
+            { word: 'Süt', phonetic: '/syt/', translation: 'Lait' },
+            { word: 'Kahve', phonetic: '/kah.ve/', translation: 'Café' },
+            { word: 'Çay', phonetic: '/tʃaj/', translation: 'Thé' },
+            { word: 'Elma', phonetic: '/el.ma/', translation: 'Pomme' },
+            { word: 'Muz', phonetic: '/muz/', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'tr-1-test',
+          title: 'Bölüm 1 Testi',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Günlük İfadeler',
+      description: 'Günlük yaşam için ifadeler',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#FFB300',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'tr-2-1',
+          title: 'Tanışma',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Benim adım...', phonetic: '/be.nim a.dɯm/', translation: 'Je m\'appelle...' },
+            { word: 'Nasılsınız?', phonetic: '/na.sɯɫ.sɯ.nɯz/', translation: 'Comment allez-vous ?' },
+            { word: 'İyiyim', phonetic: '/i.ji.jim/', translation: 'Je vais bien' },
+            { word: 'Tanıştığıma memnun oldum', phonetic: '/ta.nɯʃ.tɯ.ɰɯ.ma mem.nun ol.dum/', translation: 'Enchanté' },
+            { word: 'Adınız ne?', phonetic: '/a.dɯ.nɯz ne/', translation: 'Comment vous appelez-vous ?' },
+            { word: 'Nerelisiniz?', phonetic: '/ne.ɾe.li.si.niz/', translation: 'D\'où venez-vous ?' },
+            { word: '...\'lıyım', phonetic: '/lɯ.jɯm/', translation: 'Je suis de...' },
+            { word: 'Kaç yaşındasınız?', phonetic: '/katʃ ja.ʃɯn.da.sɯ.nɯz/', translation: 'Quel âge avez-vous ?' },
+          ]
+        },
+        {
+          id: 'tr-2-2',
+          title: 'Aile',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Aile', phonetic: '/a.i.le/', translation: 'Famille' },
+            { word: 'Anne', phonetic: '/an.ne/', translation: 'Mère' },
+            { word: 'Baba', phonetic: '/ba.ba/', translation: 'Père' },
+            { word: 'Erkek kardeş', phonetic: '/eɾ.kek kaɾ.deʃ/', translation: 'Frère' },
+            { word: 'Kız kardeş', phonetic: '/kɯz kaɾ.deʃ/', translation: 'Sœur' },
+            { word: 'Oğul', phonetic: '/o.ul/', translation: 'Fils' },
+            { word: 'Kız', phonetic: '/kɯz/', translation: 'Fille' },
+            { word: 'Arkadaş', phonetic: '/aɾ.ka.daʃ/', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'tr-2-3',
+          title: 'Sayılar 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'On bir', phonetic: '/on biɾ/', translation: 'Onze' },
+            { word: 'On iki', phonetic: '/on i.ki/', translation: 'Douze' },
+            { word: 'On üç', phonetic: '/on ytʃ/', translation: 'Treize' },
+            { word: 'On dört', phonetic: '/on dœɾt/', translation: 'Quatorze' },
+            { word: 'On beş', phonetic: '/on beʃ/', translation: 'Quinze' },
+            { word: 'On altı', phonetic: '/on al.tɯ/', translation: 'Seize' },
+            { word: 'On yedi', phonetic: '/on je.di/', translation: 'Dix-sept' },
+            { word: 'On sekiz', phonetic: '/on se.kiz/', translation: 'Dix-huit' },
+            { word: 'On dokuz', phonetic: '/on do.kuz/', translation: 'Dix-neuf' },
+            { word: 'Yirmi', phonetic: '/jiɾ.mi/', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'tr-2-4',
+          title: 'Günlük Eşyalar',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Ev', phonetic: '/ev/', translation: 'Maison' },
+            { word: 'Araba', phonetic: '/a.ɾa.ba/', translation: 'Voiture' },
+            { word: 'Kitap', phonetic: '/ki.tap/', translation: 'Livre' },
+            { word: 'Kalem', phonetic: '/ka.lem/', translation: 'Stylo' },
+            { word: 'Telefon', phonetic: '/te.le.fon/', translation: 'Téléphone' },
+            { word: 'Anahtar', phonetic: '/a.nah.taɾ/', translation: 'Clé' },
+            { word: 'Para', phonetic: '/pa.ɾa/', translation: 'Argent' },
+            { word: 'Zaman', phonetic: '/za.man/', translation: 'Temps' },
+          ]
+        },
+        {
+          id: 'tr-2-test',
+          title: 'Bölüm 2 Testi',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Seyahat',
+      description: 'Seyahat için ifadeler',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'tr-3-1',
+          title: 'Havalimanında',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Havalimanı', phonetic: '/ha.va.li.ma.nɯ/', translation: 'Aéroport' },
+            { word: 'Bilet', phonetic: '/bi.let/', translation: 'Billet' },
+            { word: 'Pasaport', phonetic: '/pa.sa.poɾt/', translation: 'Passeport' },
+            { word: 'Bagaj', phonetic: '/ba.ɡaʒ/', translation: 'Bagages' },
+            { word: 'Uçuş', phonetic: '/u.tʃuʃ/', translation: 'Vol' },
+            { word: 'Kapı', phonetic: '/ka.pɯ/', translation: 'Porte' },
+            { word: 'Biniş', phonetic: '/bi.niʃ/', translation: 'Embarquement' },
+            { word: 'Gecikme', phonetic: '/ɡe.dʒik.me/', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'tr-3-2',
+          title: 'Otelde',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Otel', phonetic: '/o.tel/', translation: 'Hôtel' },
+            { word: 'Oda', phonetic: '/o.da/', translation: 'Chambre' },
+            { word: 'Rezervasyon', phonetic: '/ɾe.zeɾ.vas.jon/', translation: 'Réservation' },
+            { word: 'Check-in', phonetic: '/tʃek in/', translation: 'Enregistrement' },
+            { word: 'Check-out', phonetic: '/tʃek aut/', translation: 'Départ' },
+            { word: 'Kahvaltı', phonetic: '/kah.val.tɯ/', translation: 'Petit déjeuner' },
+            { word: 'Wi-Fi', phonetic: '/wi fi/', translation: 'Wi-Fi' },
+            { word: 'Resepsiyon', phonetic: '/ɾe.sep.si.jon/', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'tr-3-3',
+          title: 'Restoran',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Restoran', phonetic: '/ɾes.to.ɾan/', translation: 'Restaurant' },
+            { word: 'Menü', phonetic: '/me.ny/', translation: 'Menu' },
+            { word: 'Masa', phonetic: '/ma.sa/', translation: 'Table' },
+            { word: 'Sipariş vermek', phonetic: '/si.pa.ɾiʃ veɾ.mek/', translation: 'Commander' },
+            { word: 'Hesap', phonetic: '/he.sap/', translation: 'Addition' },
+            { word: 'Bahşiş', phonetic: '/bah.ʃiʃ/', translation: 'Pourboire' },
+            { word: 'Lezzetli', phonetic: '/lez.zet.li/', translation: 'Délicieux' },
+            { word: 'Garson', phonetic: '/ɡaɾ.son/', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'tr-3-4',
+          title: 'Yönler',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '... nerede?', phonetic: '/ne.ɾe.de/', translation: 'Où est... ?' },
+            { word: 'Sol', phonetic: '/sol/', translation: 'Gauche' },
+            { word: 'Sağ', phonetic: '/saɰ/', translation: 'Droite' },
+            { word: 'Düz', phonetic: '/dyz/', translation: 'Tout droit' },
+            { word: 'Yakın', phonetic: '/ja.kɯn/', translation: 'Près' },
+            { word: 'Uzak', phonetic: '/u.zak/', translation: 'Loin' },
+            { word: 'Harita', phonetic: '/ha.ɾi.ta/', translation: 'Carte' },
+            { word: 'Sokak', phonetic: '/so.kak/', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'tr-3-test',
+          title: 'Bölüm 3 Testi',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'İş ve İş Dünyası',
+      description: 'Profesyonel kelime bilgisi',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'tr-4-1',
+          title: 'Ofis',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Ofis', phonetic: '/o.fis/', translation: 'Bureau' },
+            { word: 'Bilgisayar', phonetic: '/bil.ɡi.sa.jaɾ/', translation: 'Ordinateur' },
+            { word: 'Toplantı', phonetic: '/top.lan.tɯ/', translation: 'Réunion' },
+            { word: 'E-posta', phonetic: '/e pos.ta/', translation: 'Email' },
+            { word: 'Program', phonetic: '/pɾo.ɡɾam/', translation: 'Emploi du temps' },
+            { word: 'Sunum', phonetic: '/su.num/', translation: 'Présentation' },
+            { word: 'Rapor', phonetic: '/ɾa.poɾ/', translation: 'Rapport' },
+            { word: 'Son teslim tarihi', phonetic: '/son tes.lim ta.ɾi.hi/', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'tr-4-2',
+          title: 'Meslekler',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Doktor', phonetic: '/dok.toɾ/', translation: 'Docteur' },
+            { word: 'Öğretmen', phonetic: '/œːɾ.ɾet.men/', translation: 'Professeur' },
+            { word: 'Mühendis', phonetic: '/my.hen.dis/', translation: 'Ingénieur' },
+            { word: 'Avukat', phonetic: '/a.vu.kat/', translation: 'Avocat' },
+            { word: 'Hemşire', phonetic: '/hem.ʃi.ɾe/', translation: 'Infirmier/Infirmière' },
+            { word: 'Polis', phonetic: '/po.lis/', translation: 'Policier' },
+            { word: 'Şef', phonetic: '/ʃef/', translation: 'Chef cuisinier' },
+            { word: 'Sanatçı', phonetic: '/sa.nat.tʃɯ/', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'tr-4-3',
+          title: 'Zaman ve Tarihler',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Pazartesi', phonetic: '/pa.zaɾ.te.si/', translation: 'Lundi' },
+            { word: 'Salı', phonetic: '/sa.lɯ/', translation: 'Mardi' },
+            { word: 'Çarşamba', phonetic: '/tʃaɾ.ʃam.ba/', translation: 'Mercredi' },
+            { word: 'Perşembe', phonetic: '/peɾ.ʃem.be/', translation: 'Jeudi' },
+            { word: 'Cuma', phonetic: '/dʒu.ma/', translation: 'Vendredi' },
+            { word: 'Cumartesi', phonetic: '/dʒu.maɾ.te.si/', translation: 'Samedi' },
+            { word: 'Pazar', phonetic: '/pa.zaɾ/', translation: 'Dimanche' },
+            { word: 'Hafta sonu', phonetic: '/haf.ta so.nu/', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'tr-4-4',
+          title: 'Sayılar 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Otuz', phonetic: '/o.tuz/', translation: 'Trente' },
+            { word: 'Kırk', phonetic: '/kɯɾk/', translation: 'Quarante' },
+            { word: 'Elli', phonetic: '/el.li/', translation: 'Cinquante' },
+            { word: 'Altmış', phonetic: '/alt.mɯʃ/', translation: 'Soixante' },
+            { word: 'Yetmiş', phonetic: '/jet.miʃ/', translation: 'Soixante-dix' },
+            { word: 'Seksen', phonetic: '/sek.sen/', translation: 'Quatre-vingts' },
+            { word: 'Doksan', phonetic: '/dok.san/', translation: 'Quatre-vingt-dix' },
+            { word: 'Yüz', phonetic: '/jyz/', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'tr-4-test',
+          title: 'Bölüm 4 Testi',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Kültür ve Toplum',
+      description: 'Sosyal ve kültürel yaşam',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'tr-5-1',
+          title: 'Hobiler',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Müzik', phonetic: '/my.zik/', translation: 'Musique' },
+            { word: 'Film', phonetic: '/film/', translation: 'Film' },
+            { word: 'Spor', phonetic: '/spoɾ/', translation: 'Sport' },
+            { word: 'Okuma', phonetic: '/o.ku.ma/', translation: 'Lecture' },
+            { word: 'Yemek pişirme', phonetic: '/je.mek pi.ʃiɾ.me/', translation: 'Cuisine' },
+            { word: 'Seyahat', phonetic: '/se.ja.hat/', translation: 'Voyage' },
+            { word: 'Fotoğrafçılık', phonetic: '/fo.toː.ɾaf.tʃɯ.ɫɯk/', translation: 'Photographie' },
+            { word: 'Resim', phonetic: '/ɾe.sim/', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'tr-5-2',
+          title: 'Duygular',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Mutlu', phonetic: '/mut.lu/', translation: 'Heureux' },
+            { word: 'Üzgün', phonetic: '/yz.ɡyn/', translation: 'Triste' },
+            { word: 'Kızgın', phonetic: '/kɯz.ɡɯn/', translation: 'En colère' },
+            { word: 'Heyecanlı', phonetic: '/he.je.dʒan.lɯ/', translation: 'Excité' },
+            { word: 'Yorgun', phonetic: '/joɾ.ɡun/', translation: 'Fatigué' },
+            { word: 'Şaşırmış', phonetic: '/ʃa.ʃɯɾ.mɯʃ/', translation: 'Surpris' },
+            { word: 'Korkmuş', phonetic: '/koɾk.muʃ/', translation: 'Effrayé' },
+            { word: 'Sinirli', phonetic: '/si.niɾ.li/', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'tr-5-3',
+          title: 'Sağlık',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Hastane', phonetic: '/has.ta.ne/', translation: 'Hôpital' },
+            { word: 'Doktor', phonetic: '/dok.toɾ/', translation: 'Docteur' },
+            { word: 'İlaç', phonetic: '/i.latʃ/', translation: 'Médicament' },
+            { word: 'Ağrı', phonetic: '/aɰ.ɾɯ/', translation: 'Douleur' },
+            { word: 'Baş ağrısı', phonetic: '/baʃ aɰ.ɾɯ.sɯ/', translation: 'Mal de tête' },
+            { word: 'Ateş', phonetic: '/a.teʃ/', translation: 'Fièvre' },
+            { word: 'Sağlıklı', phonetic: '/saɰ.ɫɯk.lɯ/', translation: 'En bonne santé' },
+            { word: 'Hasta', phonetic: '/has.ta/', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'tr-5-4',
+          title: 'Hava Durumu',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Güneşli', phonetic: '/ɡy.neʃ.li/', translation: 'Ensoleillé' },
+            { word: 'Yağmurlu', phonetic: '/jaɰ.muɾ.lu/', translation: 'Pluvieux' },
+            { word: 'Bulutlu', phonetic: '/bu.lut.lu/', translation: 'Nuageux' },
+            { word: 'Rüzgarlı', phonetic: '/ɾyz.ɡaɾ.lɯ/', translation: 'Venteux' },
+            { word: 'Kar', phonetic: '/kaɾ/', translation: 'Neige' },
+            { word: 'Sıcak', phonetic: '/sɯ.dʒak/', translation: 'Chaud' },
+            { word: 'Soğuk', phonetic: '/so.uk/', translation: 'Froid' },
+            { word: 'Sıcaklık', phonetic: '/sɯ.dʒak.lɯk/', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'tr-5-test',
+          title: 'Bölüm 5 Testi',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'Orta Düzey Gramer',
+      description: 'Karmaşık cümle yapısı',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'tr-6-1',
+          title: 'Yaygın Fiiller',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Yemek', phonetic: '/je.mek/', translation: 'Manger' },
+            { word: 'İçmek', phonetic: '/itʃ.mek/', translation: 'Boire' },
+            { word: 'Uyumak', phonetic: '/u.ju.mak/', translation: 'Dormir' },
+            { word: 'Çalışmak', phonetic: '/tʃa.lɯʃ.mak/', translation: 'Travailler' },
+            { word: 'Öğrenmek', phonetic: '/œːɾ.ɾen.mek/', translation: 'Apprendre' },
+            { word: 'Konuşmak', phonetic: '/ko.nuʃ.mak/', translation: 'Parler' },
+            { word: 'Anlamak', phonetic: '/an.la.mak/', translation: 'Comprendre' },
+            { word: 'Yazmak', phonetic: '/jaz.mak/', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'tr-6-2',
+          title: 'Geçmiş Zaman',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Dün', phonetic: '/dyn/', translation: 'Hier' },
+            { word: 'Geçen hafta', phonetic: '/ɡe.tʃen haf.ta/', translation: 'La semaine dernière' },
+            { word: 'Geçen ay', phonetic: '/ɡe.tʃen aj/', translation: 'Le mois dernier' },
+            { word: 'Geçen yıl', phonetic: '/ɡe.tʃen jɯl/', translation: 'L\'année dernière' },
+            { word: 'Önce', phonetic: '/œn.dʒe/', translation: 'Avant' },
+            { word: 'Önceki', phonetic: '/œn.dʒe.ki/', translation: 'Il y a' },
+            { word: 'Oldu/Oldular', phonetic: '/ol.du/ol.du.laɾ/', translation: 'Était/Étaient' },
+            { word: 'Yaptı/Yaptınız', phonetic: '/jap.tɯ/jap.tɯ.nɯz/', translation: 'A fait/Avez fait' },
+          ]
+        },
+        {
+          id: 'tr-6-3',
+          title: 'Gelecek Zaman',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Yarın', phonetic: '/ja.ɾɯn/', translation: 'Demain' },
+            { word: 'Gelecek hafta', phonetic: '/ɡe.le.dʒek haf.ta/', translation: 'La semaine prochaine' },
+            { word: 'Gelecek ay', phonetic: '/ɡe.le.dʒek aj/', translation: 'Le mois prochain' },
+            { word: 'Gelecek yıl', phonetic: '/ɡe.le.dʒek jɯl/', translation: 'L\'année prochaine' },
+            { word: 'Yapacağım', phonetic: '/ja.pa.dʒa.ɰɯm/', translation: 'Je vais faire' },
+            { word: 'Gideceğim', phonetic: '/ɡi.de.dʒe.ɰim/', translation: 'Je vais aller' },
+            { word: 'Yakında', phonetic: '/ja.kɯn.da/', translation: 'Bientôt' },
+            { word: 'Sonra', phonetic: '/son.ɾa/', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'tr-6-4',
+          title: 'Karşılaştırmalı Sıfatlar',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Daha büyük', phonetic: '/da.ha by.jyk/', translation: 'Plus grand' },
+            { word: 'Daha küçük', phonetic: '/da.ha ky.tʃyk/', translation: 'Plus petit' },
+            { word: 'Daha iyi', phonetic: '/da.ha i.ji/', translation: 'Meilleur' },
+            { word: 'Daha kötü', phonetic: '/da.ha kœ.ty/', translation: 'Pire' },
+            { word: 'Daha güzel', phonetic: '/da.ha ɡy.zel/', translation: 'Plus beau' },
+            { word: 'Daha ucuz', phonetic: '/da.ha u.dʒuz/', translation: 'Moins cher' },
+            { word: 'En iyi', phonetic: '/en i.ji/', translation: 'Le meilleur' },
+            { word: 'En kötü', phonetic: '/en kœ.ty/', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'tr-6-test',
+          title: 'Bölüm 6 Testi',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: 'İleri Düzey',
+      description: 'Uzmanlaşmış kelime bilgisi',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'tr-7-1',
+          title: 'Teknoloji',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'İnternet', phonetic: '/in.teɾ.net/', translation: 'Internet' },
+            { word: 'Akıllı telefon', phonetic: '/a.kɯɫ.lɯ te.le.fon/', translation: 'Smartphone' },
+            { word: 'Yazılım', phonetic: '/ja.zɯ.lɯm/', translation: 'Logiciel' },
+            { word: 'Donanım', phonetic: '/do.na.nɯm/', translation: 'Matériel' },
+            { word: 'Uygulama', phonetic: '/uj.ɡu.la.ma/', translation: 'Application' },
+            { word: 'Parola', phonetic: '/pa.ɾo.la/', translation: 'Mot de passe' },
+            { word: 'İndirmek', phonetic: '/in.diɾ.mek/', translation: 'Télécharger' },
+            { word: 'Yüklemek', phonetic: '/jyk.le.mek/', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'tr-7-2',
+          title: 'Ekonomi',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Banka', phonetic: '/ban.ka/', translation: 'Banque' },
+            { word: 'Para', phonetic: '/pa.ɾa/', translation: 'Argent' },
+            { word: 'Maaş', phonetic: '/ma.aʃ/', translation: 'Salaire' },
+            { word: 'Fiyat', phonetic: '/fi.jat/', translation: 'Prix' },
+            { word: 'Pazar', phonetic: '/pa.zaɾ/', translation: 'Marché' },
+            { word: 'Yatırım', phonetic: '/ja.tɯ.ɾɯm/', translation: 'Investissement' },
+            { word: 'Vergi', phonetic: '/veɾ.ɡi/', translation: 'Taxe' },
+            { word: 'Bütçe', phonetic: '/byt.tʃe/', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'tr-7-3',
+          title: 'Politika',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Hükümet', phonetic: '/hy.ky.met/', translation: 'Gouvernement' },
+            { word: 'Başkan', phonetic: '/baʃ.kan/', translation: 'Président' },
+            { word: 'Seçim', phonetic: '/se.tʃim/', translation: 'Élection' },
+            { word: 'Kanun', phonetic: '/ka.nun/', translation: 'Loi' },
+            { word: 'Özgürlük', phonetic: '/œz.ɡyɾ.lyk/', translation: 'Liberté' },
+            { word: 'Demokrasi', phonetic: '/de.mok.ɾa.si/', translation: 'Démocratie' },
+            { word: 'Politika', phonetic: '/po.li.ti.ka/', translation: 'Politique' },
+            { word: 'Oy vermek', phonetic: '/oj veɾ.mek/', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'tr-7-4',
+          title: 'Çevre',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Çevre', phonetic: '/tʃev.ɾe/', translation: 'Environnement' },
+            { word: 'Kirlilik', phonetic: '/kiɾ.li.lik/', translation: 'Pollution' },
+            { word: 'İklim', phonetic: '/ik.lim/', translation: 'Climat' },
+            { word: 'Geri dönüşüm', phonetic: '/ɡe.ɾi dœ.ny.ʃym/', translation: 'Recyclage' },
+            { word: 'Doğa', phonetic: '/do.a/', translation: 'Nature' },
+            { word: 'Enerji', phonetic: '/e.neɾ.ʒi/', translation: 'Énergie' },
+            { word: 'Sürdürülebilir', phonetic: '/syɾ.dy.ɾy.le.bi.liɾ/', translation: 'Durable' },
+            { word: 'Ekosistem', phonetic: '/e.ko.sis.tem/', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'tr-7-test',
+          title: 'Final Testi',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Ustalık',
+      description: 'Dil geliştirme',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'tr-8-1',
+          title: 'Deyimler',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Kolay gelsin', phonetic: '/ko.laj ɡel.sin/', translation: 'Bonne chance' },
+            { word: 'Çocuk oyuncağı', phonetic: '/tʃo.dʒuk o.jun.dʒa.ɰɯ/', translation: 'Très facile' },
+            { word: 'Pahalıya patlamak', phonetic: '/pa.ha.lɯ.ja pat.la.mak/', translation: 'Coûter très cher' },
+            { word: 'Kitaplara gömülmek', phonetic: '/ki.tap.la.ɾa ɡœ.myɫ.mek/', translation: 'Étudier sérieusement' },
+            { word: 'Kırk yılda bir', phonetic: '/kɯɾk jɯɫ.da biɾ/', translation: 'Quand les cochons voleront' },
+            { word: 'Dişini sıkmak', phonetic: '/di.ʃi.ni sɯk.mak/', translation: 'Prendre son courage à deux mains' },
+            { word: 'Kestirmeden gitmek', phonetic: '/kes.tiɾ.me.den ɡit.mek/', translation: 'Prendre des raccourcis' },
+            { word: 'Buzları kırmak', phonetic: '/buz.la.ɾɯ kɯɾ.mak/', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'tr-8-2',
+          title: 'Resmi İfadeler',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Ayrıca', phonetic: '/aj.ɾɯ.dʒa/', translation: 'De plus' },
+            { word: 'Ancak', phonetic: '/an.dʒak/', translation: 'Néanmoins' },
+            { word: 'Sonuç olarak', phonetic: '/so.nutʃ o.la.ɾak/', translation: 'Par conséquent' },
+            { word: 'Alternatif olarak', phonetic: '/al.teɾ.na.tif o.la.ɾak/', translation: 'Alternativement' },
+            { word: 'Spesifik olarak', phonetic: '/spe.si.fik o.la.ɾak/', translation: 'Spécifiquement' },
+            { word: 'Nihayet', phonetic: '/ni.ha.jet/', translation: 'Finalement' },
+            { word: 'Önemli ölçüde', phonetic: '/œ.nem.li œl.tʃy.de/', translation: 'Significativement' },
+            { word: 'Esasen', phonetic: '/e.sa.sen/', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'tr-8-3',
+          title: 'Müzakere',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Anlaşma', phonetic: '/an.laʃ.ma/', translation: 'Accord' },
+            { word: 'Uzlaşma', phonetic: '/uz.laʃ.ma/', translation: 'Compromis' },
+            { word: 'Müzakere', phonetic: '/my.za.ke.ɾe/', translation: 'Négociation' },
+            { word: 'Sözleşme', phonetic: '/sœz.leʃ.me/', translation: 'Contrat' },
+            { word: 'Koşullar', phonetic: '/ko.ʃul.laɾ/', translation: 'Conditions' },
+            { word: 'Son tarih', phonetic: '/son ta.ɾih/', translation: 'Date limite' },
+            { word: 'Ortaklık', phonetic: '/oɾ.tak.lɯk/', translation: 'Partenariat' },
+            { word: 'Çözüm', phonetic: '/tʃœ.zym/', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'tr-8-4',
+          title: 'Türk Kültürü',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Çay saati', phonetic: '/tʃaj sa.a.ti/', translation: 'Heure du thé' },
+            { word: 'Kebap', phonetic: '/ke.bap/', translation: 'Kebab' },
+            { word: 'Lokanta', phonetic: '/lo.kan.ta/', translation: 'Restaurant' },
+            { word: 'Türk kahvesi', phonetic: '/tyɾk kah.ve.si/', translation: 'Café turc' },
+            { word: 'Ayasofya', phonetic: '/a.ja.sof.ja/', translation: 'Sainte-Sophie' },
+            { word: 'Kapalıçarşı', phonetic: '/ka.pa.lɯ.tʃaɾ.ʃɯ/', translation: 'Grand Bazar' },
+            { word: 'Meze', phonetic: '/me.ze/', translation: 'Meze' },
+            { word: 'Misafirperverlik', phonetic: '/mi.sa.fiɾ.peɾ.veɾ.lik/', translation: 'Hospitalité' },
+          ]
+        },
+        {
+          id: 'tr-8-test',
+          title: 'Final Sınavı',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  de: [
+    {
+      id: 1,
+      title: 'Grundlagen',
+      description: 'Grundlegende Begrüßungen und Ausdrücke',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#000000',
+      lessons: [
+        {
+          id: 'de-1-1',
+          title: 'Begrüßungen',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Hallo', phonetic: '/ˈhalo/', translation: 'Bonjour' },
+            { word: 'Auf Wiedersehen', phonetic: '/aʊf ˈviːdɐzeːən/', translation: 'Au revoir' },
+            { word: 'Danke', phonetic: '/ˈdaŋkə/', translation: 'Merci' },
+            { word: 'Bitte', phonetic: '/ˈbɪtə/', translation: 'S\'il vous plaît' },
+            { word: 'Ja', phonetic: '/jaː/', translation: 'Oui' },
+            { word: 'Nein', phonetic: '/naɪ̯n/', translation: 'Non' },
+            { word: 'Entschuldigung', phonetic: '/ɛntˈʃʊldɪɡʊŋ/', translation: 'Pardon' },
+            { word: 'Entschuldigen Sie', phonetic: '/ɛntˈʃʊldɪɡən ziː/', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'de-1-2',
+          title: 'Zahlen 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Eins', phonetic: '/aɪ̯ns/', translation: 'Un' },
+            { word: 'Zwei', phonetic: '/tsvaɪ̯/', translation: 'Deux' },
+            { word: 'Drei', phonetic: '/dʁaɪ̯/', translation: 'Trois' },
+            { word: 'Vier', phonetic: '/fiːɐ̯/', translation: 'Quatre' },
+            { word: 'Fünf', phonetic: '/fʏnf/', translation: 'Cinq' },
+            { word: 'Sechs', phonetic: '/zɛks/', translation: 'Six' },
+            { word: 'Sieben', phonetic: '/ˈziːbən/', translation: 'Sept' },
+            { word: 'Acht', phonetic: '/axt/', translation: 'Huit' },
+            { word: 'Neun', phonetic: '/nɔɪ̯n/', translation: 'Neuf' },
+            { word: 'Zehn', phonetic: '/tseːn/', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'de-1-3',
+          title: 'Farben',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Rot', phonetic: '/ʁoːt/', translation: 'Rouge' },
+            { word: 'Blau', phonetic: '/blaʊ̯/', translation: 'Bleu' },
+            { word: 'Grün', phonetic: '/ɡʁyːn/', translation: 'Vert' },
+            { word: 'Gelb', phonetic: '/ɡɛlp/', translation: 'Jaune' },
+            { word: 'Schwarz', phonetic: '/ʃvaʁts/', translation: 'Noir' },
+            { word: 'Weiß', phonetic: '/vaɪ̯s/', translation: 'Blanc' },
+            { word: 'Orange', phonetic: '/oˈʁaŋʃ/', translation: 'Orange' },
+            { word: 'Lila', phonetic: '/ˈliːla/', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'de-1-4',
+          title: 'Grundnahrungsmittel',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Wasser', phonetic: '/ˈvasɐ/', translation: 'Eau' },
+            { word: 'Essen', phonetic: '/ˈɛsən/', translation: 'Nourriture' },
+            { word: 'Brot', phonetic: '/bʁoːt/', translation: 'Pain' },
+            { word: 'Milch', phonetic: '/mɪlç/', translation: 'Lait' },
+            { word: 'Kaffee', phonetic: '/ˈkafe/', translation: 'Café' },
+            { word: 'Tee', phonetic: '/teː/', translation: 'Thé' },
+            { word: 'Apfel', phonetic: '/ˈapfəl/', translation: 'Pomme' },
+            { word: 'Banane', phonetic: '/baˈnaːnə/', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'de-1-test',
+          title: 'Kapitel 1 Test',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Alltägliche Ausdrücke',
+      description: 'Ausdrücke für den täglichen Gebrauch',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#616161',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'de-2-1',
+          title: 'Sich vorstellen',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Ich heiße...', phonetic: '/ɪç ˈhaɪ̯sə/', translation: 'Je m\'appelle...' },
+            { word: 'Wie geht es Ihnen?', phonetic: '/viː ɡeːt ɛs ˈiːnən/', translation: 'Comment allez-vous ?' },
+            { word: 'Mir geht es gut', phonetic: '/miːɐ̯ ɡeːt ɛs ɡuːt/', translation: 'Je vais bien' },
+            { word: 'Freut mich', phonetic: '/fʁɔɪ̯t mɪç/', translation: 'Enchanté' },
+            { word: 'Wie heißen Sie?', phonetic: '/viː ˈhaɪ̯sən ziː/', translation: 'Comment vous appelez-vous ?' },
+            { word: 'Woher kommen Sie?', phonetic: '/voˈheːɐ̯ ˈkɔmən ziː/', translation: 'D\'où venez-vous ?' },
+            { word: 'Ich komme aus...', phonetic: '/ɪç ˈkɔmə aʊ̯s/', translation: 'Je viens de...' },
+            { word: 'Wie alt sind Sie?', phonetic: '/viː alt zɪnt ziː/', translation: 'Quel âge avez-vous ?' },
+          ]
+        },
+        {
+          id: 'de-2-2',
+          title: 'Die Familie',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Familie', phonetic: '/faˈmiːli̯ə/', translation: 'Famille' },
+            { word: 'Mutter', phonetic: '/ˈmʊtɐ/', translation: 'Mère' },
+            { word: 'Vater', phonetic: '/ˈfaːtɐ/', translation: 'Père' },
+            { word: 'Bruder', phonetic: '/ˈbʁuːdɐ/', translation: 'Frère' },
+            { word: 'Schwester', phonetic: '/ˈʃvɛstɐ/', translation: 'Sœur' },
+            { word: 'Sohn', phonetic: '/zoːn/', translation: 'Fils' },
+            { word: 'Tochter', phonetic: '/ˈtɔxtɐ/', translation: 'Fille' },
+            { word: 'Freund/Freundin', phonetic: '/fʁɔɪ̯nt/ˈfʁɔɪ̯ndɪn/', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'de-2-3',
+          title: 'Zahlen 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Elf', phonetic: '/ɛlf/', translation: 'Onze' },
+            { word: 'Zwölf', phonetic: '/tsvœlf/', translation: 'Douze' },
+            { word: 'Dreizehn', phonetic: '/ˈdʁaɪ̯tseːn/', translation: 'Treize' },
+            { word: 'Vierzehn', phonetic: '/ˈfiːɐ̯tseːn/', translation: 'Quatorze' },
+            { word: 'Fünfzehn', phonetic: '/ˈfʏnftseːn/', translation: 'Quinze' },
+            { word: 'Sechzehn', phonetic: '/ˈzɛçtseːn/', translation: 'Seize' },
+            { word: 'Siebzehn', phonetic: '/ˈziːptseːn/', translation: 'Dix-sept' },
+            { word: 'Achtzehn', phonetic: '/ˈaxttseːn/', translation: 'Dix-huit' },
+            { word: 'Neunzehn', phonetic: '/ˈnɔɪ̯ntseːn/', translation: 'Dix-neuf' },
+            { word: 'Zwanzig', phonetic: '/ˈtsvantsɪç/', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'de-2-4',
+          title: 'Alltagsgegenstände',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Haus', phonetic: '/haʊ̯s/', translation: 'Maison' },
+            { word: 'Auto', phonetic: '/ˈaʊ̯to/', translation: 'Voiture' },
+            { word: 'Buch', phonetic: '/buːx/', translation: 'Livre' },
+            { word: 'Stift', phonetic: '/ʃtɪft/', translation: 'Stylo' },
+            { word: 'Telefon', phonetic: '/ˈteːləfoːn/', translation: 'Téléphone' },
+            { word: 'Schlüssel', phonetic: '/ˈʃlʏsəl/', translation: 'Clé' },
+            { word: 'Geld', phonetic: '/ɡɛlt/', translation: 'Argent' },
+            { word: 'Zeit', phonetic: '/tsaɪ̯t/', translation: 'Temps' },
+          ]
+        },
+        {
+          id: 'de-2-test',
+          title: 'Kapitel 2 Test',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Reisen',
+      description: 'Ausdrücke für Reisen',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'de-3-1',
+          title: 'Am Flughafen',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Flughafen', phonetic: '/ˈfluːkhaːfən/', translation: 'Aéroport' },
+            { word: 'Ticket', phonetic: '/ˈtɪkət/', translation: 'Billet' },
+            { word: 'Reisepass', phonetic: '/ˈʁaɪ̯zəpas/', translation: 'Passeport' },
+            { word: 'Gepäck', phonetic: '/ɡəˈpɛk/', translation: 'Bagages' },
+            { word: 'Flug', phonetic: '/fluːk/', translation: 'Vol' },
+            { word: 'Gate', phonetic: '/ɡeɪ̯t/', translation: 'Porte' },
+            { word: 'Boarding', phonetic: '/ˈbɔːrdɪŋ/', translation: 'Embarquement' },
+            { word: 'Verspätung', phonetic: '/fɛɐ̯ˈʃpɛːtʊŋ/', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'de-3-2',
+          title: 'Im Hotel',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Hotel', phonetic: '/hoˈtɛl/', translation: 'Hôtel' },
+            { word: 'Zimmer', phonetic: '/ˈtsɪmɐ/', translation: 'Chambre' },
+            { word: 'Reservierung', phonetic: '/ʁezɛʁˈviːʁʊŋ/', translation: 'Réservation' },
+            { word: 'Check-in', phonetic: '/tʃɛk ɪn/', translation: 'Enregistrement' },
+            { word: 'Check-out', phonetic: '/tʃɛk aʊ̯t/', translation: 'Départ' },
+            { word: 'Frühstück', phonetic: '/ˈfʁyːʃtʏk/', translation: 'Petit déjeuner' },
+            { word: 'Wi-Fi', phonetic: '/vi fi/', translation: 'Wi-Fi' },
+            { word: 'Rezeption', phonetic: '/ʁet͡sɛpˈt͡si̯oːn/', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'de-3-3',
+          title: 'Restaurant',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Restaurant', phonetic: '/ʁɛstoˈʁɑ̃ː/', translation: 'Restaurant' },
+            { word: 'Speisekarte', phonetic: '/ˈʃpaɪ̯zəkaʁtə/', translation: 'Menu' },
+            { word: 'Tisch', phonetic: '/tɪʃ/', translation: 'Table' },
+            { word: 'Bestellen', phonetic: '/bəˈʃtɛlən/', translation: 'Commander' },
+            { word: 'Rechnung', phonetic: '/ˈʁɛçnʊŋ/', translation: 'Addition' },
+            { word: 'Trinkgeld', phonetic: '/ˈtʁɪŋkɡɛlt/', translation: 'Pourboire' },
+            { word: 'Lecker', phonetic: '/ˈlɛkɐ/', translation: 'Délicieux' },
+            { word: 'Kellner/Kellnerin', phonetic: '/ˈkɛlnɐ/ˈkɛlnəʁɪn/', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'de-3-4',
+          title: 'Wegbeschreibung',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Wo ist...?', phonetic: '/voː ɪst/', translation: 'Où est... ?' },
+            { word: 'Links', phonetic: '/lɪŋks/', translation: 'Gauche' },
+            { word: 'Rechts', phonetic: '/ʁɛçts/', translation: 'Droite' },
+            { word: 'Geradeaus', phonetic: '/ɡəˈʁaːdəaʊ̯s/', translation: 'Tout droit' },
+            { word: 'Nahe', phonetic: '/ˈnaːə/', translation: 'Près' },
+            { word: 'Weit', phonetic: '/vaɪ̯t/', translation: 'Loin' },
+            { word: 'Karte', phonetic: '/ˈkaʁtə/', translation: 'Carte' },
+            { word: 'Straße', phonetic: '/ˈʃtʁaːsə/', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'de-3-test',
+          title: 'Kapitel 3 Test',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'Arbeit und Geschäft',
+      description: 'Beruflicher Wortschatz',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'de-4-1',
+          title: 'Büro',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Büro', phonetic: '/byˈʁoː/', translation: 'Bureau' },
+            { word: 'Computer', phonetic: '/kɔmˈpjuːtɐ/', translation: 'Ordinateur' },
+            { word: 'Meeting', phonetic: '/ˈmiːtɪŋ/', translation: 'Réunion' },
+            { word: 'E-Mail', phonetic: '/ˈiːmeɪ̯l/', translation: 'Email' },
+            { word: 'Zeitplan', phonetic: '/ˈtsaɪ̯tplaːn/', translation: 'Emploi du temps' },
+            { word: 'Präsentation', phonetic: '/pʁɛzɛntaˈt͡si̯oːn/', translation: 'Présentation' },
+            { word: 'Bericht', phonetic: '/bəˈʁɪçt/', translation: 'Rapport' },
+            { word: 'Frist', phonetic: '/fʁɪst/', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'de-4-2',
+          title: 'Berufe',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Arzt/Ärztin', phonetic: '/aʁtst/ˈɛʁtstɪn/', translation: 'Docteur' },
+            { word: 'Lehrer/Lehrerin', phonetic: '/ˈleːʁɐ/ˈleːʁəʁɪn/', translation: 'Professeur' },
+            { word: 'Ingenieur', phonetic: '/ɪnʒɛˈnjøːɐ̯/', translation: 'Ingénieur' },
+            { word: 'Anwalt/Anwältin', phonetic: '/ˈanvalt/ˈanvɛltɪn/', translation: 'Avocat' },
+            { word: 'Krankenschwester', phonetic: '/ˈkʁaŋkənˌʃvɛstɐ/', translation: 'Infirmier/Infirmière' },
+            { word: 'Polizist/Polizistin', phonetic: '/poliˈt͡sɪst/poliˈt͡sɪstɪn/', translation: 'Policier' },
+            { word: 'Koch/Köchin', phonetic: '/kɔx/ˈkœçɪn/', translation: 'Chef cuisinier' },
+            { word: 'Künstler/Künstlerin', phonetic: '/ˈkʏnstlɐ/ˈkʏnstləʁɪn/', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'de-4-3',
+          title: 'Zeit und Daten',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Montag', phonetic: '/ˈmoːntaːk/', translation: 'Lundi' },
+            { word: 'Dienstag', phonetic: '/ˈdiːnstaːk/', translation: 'Mardi' },
+            { word: 'Mittwoch', phonetic: '/ˈmɪtvɔx/', translation: 'Mercredi' },
+            { word: 'Donnerstag', phonetic: '/ˈdɔnɐstaːk/', translation: 'Jeudi' },
+            { word: 'Freitag', phonetic: '/ˈfʁaɪ̯taːk/', translation: 'Vendredi' },
+            { word: 'Samstag', phonetic: '/ˈzamstaːk/', translation: 'Samedi' },
+            { word: 'Sonntag', phonetic: '/ˈzɔntaːk/', translation: 'Dimanche' },
+            { word: 'Wochenende', phonetic: '/ˈvɔxənˌɛndə/', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'de-4-4',
+          title: 'Zahlen 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'Dreißig', phonetic: '/ˈdʁaɪ̯sɪç/', translation: 'Trente' },
+            { word: 'Vierzig', phonetic: '/ˈfiːɐ̯t͡sɪç/', translation: 'Quarante' },
+            { word: 'Fünfzig', phonetic: '/ˈfʏnft͡sɪç/', translation: 'Cinquante' },
+            { word: 'Sechzig', phonetic: '/ˈzɛçt͡sɪç/', translation: 'Soixante' },
+            { word: 'Siebzig', phonetic: '/ˈziːpt͡sɪç/', translation: 'Soixante-dix' },
+            { word: 'Achtzig', phonetic: '/ˈaxtt͡sɪç/', translation: 'Quatre-vingts' },
+            { word: 'Neunzig', phonetic: '/ˈnɔɪ̯nt͡sɪç/', translation: 'Quatre-vingt-dix' },
+            { word: 'Hundert', phonetic: '/ˈhʊndɐt/', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'de-4-test',
+          title: 'Kapitel 4 Test',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Kultur und Gesellschaft',
+      description: 'Soziales und kulturelles Leben',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'de-5-1',
+          title: 'Hobbys',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Musik', phonetic: '/muˈziːk/', translation: 'Musique' },
+            { word: 'Film', phonetic: '/fɪlm/', translation: 'Film' },
+            { word: 'Sport', phonetic: '/ʃpɔʁt/', translation: 'Sport' },
+            { word: 'Lesen', phonetic: '/ˈleːzən/', translation: 'Lecture' },
+            { word: 'Kochen', phonetic: '/ˈkɔxən/', translation: 'Cuisine' },
+            { word: 'Reisen', phonetic: '/ˈʁaɪ̯zən/', translation: 'Voyage' },
+            { word: 'Fotografie', phonetic: '/fotoɡʁaˈfiː/', translation: 'Photographie' },
+            { word: 'Malerei', phonetic: '/maːləˈʁaɪ̯/', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'de-5-2',
+          title: 'Emotionen',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Glücklich', phonetic: '/ˈɡlʏklɪç/', translation: 'Heureux' },
+            { word: 'Traurig', phonetic: '/ˈtʁaʊ̯ʁɪç/', translation: 'Triste' },
+            { word: 'Wütend', phonetic: '/ˈvyːtənt/', translation: 'En colère' },
+            { word: 'Aufgeregt', phonetic: '/ˈaʊ̯fɡəʁeːkt/', translation: 'Excité' },
+            { word: 'Müde', phonetic: '/ˈmyːdə/', translation: 'Fatigué' },
+            { word: 'Überrascht', phonetic: '/yːbɐˈʁaʃt/', translation: 'Surpris' },
+            { word: 'Angst', phonetic: '/aŋst/', translation: 'Effrayé' },
+            { word: 'Nervös', phonetic: '/nɛʁˈvøːs/', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'de-5-3',
+          title: 'Gesundheit',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Krankenhaus', phonetic: '/ˈkʁaŋkənhaʊ̯s/', translation: 'Hôpital' },
+            { word: 'Arzt', phonetic: '/aʁtst/', translation: 'Docteur' },
+            { word: 'Medizin', phonetic: '/mediˈt͡siːn/', translation: 'Médicament' },
+            { word: 'Schmerz', phonetic: '/ʃmɛʁt͡s/', translation: 'Douleur' },
+            { word: 'Kopfschmerzen', phonetic: '/ˈkɔp͡fʃmɛʁt͡sən/', translation: 'Mal de tête' },
+            { word: 'Fieber', phonetic: '/ˈfiːbɐ/', translation: 'Fièvre' },
+            { word: 'Gesund', phonetic: '/ɡəˈzʊnt/', translation: 'En bonne santé' },
+            { word: 'Krank', phonetic: '/kʁaŋk/', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'de-5-4',
+          title: 'Wetter',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: 'Sonnig', phonetic: '/ˈzɔnɪç/', translation: 'Ensoleillé' },
+            { word: 'Regnerisch', phonetic: '/ˈʁeːɡnəʁɪʃ/', translation: 'Pluvieux' },
+            { word: 'Bewölkt', phonetic: '/bəˈvœlkt/', translation: 'Nuageux' },
+            { word: 'Windig', phonetic: '/ˈvɪndɪç/', translation: 'Venteux' },
+            { word: 'Schnee', phonetic: '/ʃneː/', translation: 'Neige' },
+            { word: 'Heiß', phonetic: '/haɪ̯s/', translation: 'Chaud' },
+            { word: 'Kalt', phonetic: '/kalt/', translation: 'Froid' },
+            { word: 'Temperatur', phonetic: '/tɛmpəʁaˈtuːɐ̯/', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'de-5-test',
+          title: 'Kapitel 5 Test',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'Mittleres Grammatik',
+      description: 'Komplexe Satzstruktur',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'de-6-1',
+          title: 'Häufige Verben',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Essen', phonetic: '/ˈɛsən/', translation: 'Manger' },
+            { word: 'Trinken', phonetic: '/ˈtʁɪŋkən/', translation: 'Boire' },
+            { word: 'Schlafen', phonetic: '/ˈʃlaːfən/', translation: 'Dormir' },
+            { word: 'Arbeiten', phonetic: '/ˈaʁbaɪ̯tn̩/', translation: 'Travailler' },
+            { word: 'Lernen', phonetic: '/ˈlɛʁnən/', translation: 'Apprendre' },
+            { word: 'Sprechen', phonetic: '/ˈʃpʁɛçən/', translation: 'Parler' },
+            { word: 'Verstehen', phonetic: '/fɛɐ̯ˈʃteːən/', translation: 'Comprendre' },
+            { word: 'Schreiben', phonetic: '/ˈʃʁaɪ̯bən/', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'de-6-2',
+          title: 'Vergangenheitszeit',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Gestern', phonetic: '/ˈɡɛstɐn/', translation: 'Hier' },
+            { word: 'Letzte Woche', phonetic: '/ˈlɛt͡stə ˈvɔxə/', translation: 'La semaine dernière' },
+            { word: 'Letzten Monat', phonetic: '/ˈlɛt͡stən ˈmoːnat/', translation: 'Le mois dernier' },
+            { word: 'Letztes Jahr', phonetic: '/ˈlɛt͡stəs jaːɐ̯/', translation: 'L\'année dernière' },
+            { word: 'Vor', phonetic: '/foːɐ̯/', translation: 'Avant' },
+            { word: 'Vorher', phonetic: '/foːɐ̯ˈheːɐ̯/', translation: 'Il y a' },
+            { word: 'War/Waren', phonetic: '/vaːɐ̯/ˈvaːʁən/', translation: 'Était/Étaient' },
+            { word: 'Machte/Machten', phonetic: '/ˈmaxtə/ˈmaxtən/', translation: 'Faisait/Faisaient' },
+          ]
+        },
+        {
+          id: 'de-6-3',
+          title: 'Zukunftszeit',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Morgen', phonetic: '/ˈmɔʁɡən/', translation: 'Demain' },
+            { word: 'Nächste Woche', phonetic: '/ˈnɛːçstə ˈvɔxə/', translation: 'La semaine prochaine' },
+            { word: 'Nächsten Monat', phonetic: '/ˈnɛːçstən ˈmoːnat/', translation: 'Le mois prochain' },
+            { word: 'Nächstes Jahr', phonetic: '/ˈnɛːçstəs jaːɐ̯/', translation: 'L\'année prochaine' },
+            { word: 'Werde', phonetic: '/ˈveːɐ̯də/', translation: 'Vais' },
+            { word: 'Wirst', phonetic: '/vɪʁst/', translation: 'Vas' },
+            { word: 'Bald', phonetic: '/balt/', translation: 'Bientôt' },
+            { word: 'Später', phonetic: '/ˈʃpɛːtɐ/', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'de-6-4',
+          title: 'Vergleichende Adjektive',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'Größer', phonetic: '/ˈɡʁøːsɐ/', translation: 'Plus grand' },
+            { word: 'Kleiner', phonetic: '/ˈklaɪ̯nɐ/', translation: 'Plus petit' },
+            { word: 'Besser', phonetic: '/ˈbɛsɐ/', translation: 'Meilleur' },
+            { word: 'Schlechter', phonetic: '/ˈʃlɛçtɐ/', translation: 'Pire' },
+            { word: 'Schöner', phonetic: '/ˈʃøːnɐ/', translation: 'Plus beau' },
+            { word: 'Weniger teuer', phonetic: '/ˈveːnɪɡɐ ˈtɔɪ̯ɐ/', translation: 'Moins cher' },
+            { word: 'Am besten', phonetic: '/am ˈbɛstən/', translation: 'Le meilleur' },
+            { word: 'Am schlechtesten', phonetic: '/am ˈʃlɛçtəstən/', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'de-6-test',
+          title: 'Kapitel 6 Test',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: 'Fortgeschritten',
+      description: 'Spezialisierter Wortschatz',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'de-7-1',
+          title: 'Technologie',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Internet', phonetic: '/ˈɪntɐnɛt/', translation: 'Internet' },
+            { word: 'Smartphone', phonetic: '/ˈsmaʁtfoʊ̯n/', translation: 'Smartphone' },
+            { word: 'Software', phonetic: '/ˈsɔftwɛːɐ̯/', translation: 'Logiciel' },
+            { word: 'Hardware', phonetic: '/ˈhaːɐ̯dwɛːɐ̯/', translation: 'Matériel' },
+            { word: 'App', phonetic: '/ɛp/', translation: 'Application' },
+            { word: 'Passwort', phonetic: '/ˈpasvoːɐ̯t/', translation: 'Mot de passe' },
+            { word: 'Herunterladen', phonetic: '/hɛˈʁʊntɐlaːdən/', translation: 'Télécharger' },
+            { word: 'Hochladen', phonetic: '/ˈhoːxlaːdən/', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'de-7-2',
+          title: 'Wirtschaft',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Bank', phonetic: '/baŋk/', translation: 'Banque' },
+            { word: 'Geld', phonetic: '/ɡɛlt/', translation: 'Argent' },
+            { word: 'Gehalt', phonetic: '/ɡəˈhalt/', translation: 'Salaire' },
+            { word: 'Preis', phonetic: '/pʁaɪ̯s/', translation: 'Prix' },
+            { word: 'Markt', phonetic: '/maʁkt/', translation: 'Marché' },
+            { word: 'Investition', phonetic: '/ɪnvɛstiˈt͡si̯oːn/', translation: 'Investissement' },
+            { word: 'Steuer', phonetic: '/ˈʃtɔɪ̯ɐ/', translation: 'Taxe' },
+            { word: 'Budget', phonetic: '/byˈd͡ʒɛ/', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'de-7-3',
+          title: 'Politik',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Regierung', phonetic: '/ʁeˈɡiːʁʊŋ/', translation: 'Gouvernement' },
+            { word: 'Präsident', phonetic: '/pʁɛziˈdɛnt/', translation: 'Président' },
+            { word: 'Wahl', phonetic: '/vaːl/', translation: 'Élection' },
+            { word: 'Gesetz', phonetic: '/ɡəˈzɛt͡s/', translation: 'Loi' },
+            { word: 'Freiheit', phonetic: '/ˈfʁaɪ̯haɪ̯t/', translation: 'Liberté' },
+            { word: 'Demokratie', phonetic: '/demokʁaˈtiː/', translation: 'Démocratie' },
+            { word: 'Politik', phonetic: '/poliˈtiːk/', translation: 'Politique' },
+            { word: 'Wählen', phonetic: '/ˈvɛːlən/', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'de-7-4',
+          title: 'Umwelt',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'Umwelt', phonetic: '/ˈʊmvɛlt/', translation: 'Environnement' },
+            { word: 'Verschmutzung', phonetic: '/fɛɐ̯ˈʃmʊt͡sʊŋ/', translation: 'Pollution' },
+            { word: 'Klima', phonetic: '/ˈkliːma/', translation: 'Climat' },
+            { word: 'Recycling', phonetic: '/ʁiˈsaɪ̯klɪŋ/', translation: 'Recyclage' },
+            { word: 'Natur', phonetic: '/naˈtuːɐ̯/', translation: 'Nature' },
+            { word: 'Energie', phonetic: '/enɛʁˈɡiː/', translation: 'Énergie' },
+            { word: 'Nachhaltig', phonetic: '/ˈnaːxhaltɪç/', translation: 'Durable' },
+            { word: 'Ökosystem', phonetic: '/ˈøːkozysteːm/', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'de-7-test',
+          title: 'Abschlusstest',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Meisterschaft',
+      description: 'Sprachliche Verfeinerung',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'de-8-1',
+          title: 'Redewendungen',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Viel Glück', phonetic: '/fiːl ɡlʏk/', translation: 'Bonne chance' },
+            { word: 'Kinderleicht', phonetic: '/ˈkɪndɐlaɪ̯çt/', translation: 'Très facile' },
+            { word: 'Eine Stange Geld', phonetic: '/ˈaɪ̯nə ˈʃtaŋə ɡɛlt/', translation: 'Coûter très cher' },
+            { word: 'Die Nase ins Buch stecken', phonetic: '/diː ˈnaːzə ɪns buːx ˈʃtɛkən/', translation: 'Étudier sérieusement' },
+            { word: 'Wenn Schweine fliegen', phonetic: '/vɛn ˈʃvaɪ̯nə ˈfliːɡən/', translation: 'Quand les cochons voleront' },
+            { word: 'In den sauren Apfel beißen', phonetic: '/ɪn deːn ˈzaʊ̯ʁən ˈapfəl ˈbaɪ̯sən/', translation: 'Prendre son courage à deux mains' },
+            { word: 'Kurzschließen', phonetic: '/ˈkʊʁt͡sʃliːsən/', translation: 'Prendre des raccourcis' },
+            { word: 'Das Eis brechen', phonetic: '/das aɪ̯s ˈbʁɛçən/', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'de-8-2',
+          title: 'Formelle Ausdrücke',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Darüber hinaus', phonetic: '/daˈʁyːbɐ hɪˈnaʊ̯s/', translation: 'De plus' },
+            { word: 'Dennoch', phonetic: '/ˈdɛnɔx/', translation: 'Néanmoins' },
+            { word: 'Folglich', phonetic: '/ˈfɔlklɪç/', translation: 'Par conséquent' },
+            { word: 'Alternativ', phonetic: '/altɛʁnaˈtiːf/', translation: 'Alternativement' },
+            { word: 'Spezifisch', phonetic: '/ʃpeˈt͡siːfɪʃ/', translation: 'Spécifiquement' },
+            { word: 'Schließlich', phonetic: '/ˈʃliːslɪç/', translation: 'Finalement' },
+            { word: 'Erheblich', phonetic: '/ɛɐ̯ˈheːplɪç/', translation: 'Significativement' },
+            { word: 'Wesentlich', phonetic: '/ˈveːzəntlɪç/', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'de-8-3',
+          title: 'Verhandlung',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Vereinbarung', phonetic: '/fɛɐ̯ˈʔaɪ̯nbaːʁʊŋ/', translation: 'Accord' },
+            { word: 'Kompromiss', phonetic: '/kɔmpʁoˈmɪs/', translation: 'Compromis' },
+            { word: 'Verhandlung', phonetic: '/fɛɐ̯ˈhandlʊŋ/', translation: 'Négociation' },
+            { word: 'Vertrag', phonetic: '/fɛɐ̯ˈtʁaːk/', translation: 'Contrat' },
+            { word: 'Bedingungen', phonetic: '/bəˈdɪŋʊŋən/', translation: 'Conditions' },
+            { word: 'Frist', phonetic: '/fʁɪst/', translation: 'Date limite' },
+            { word: 'Partnerschaft', phonetic: '/ˈpaʁtnɐʃaft/', translation: 'Partenariat' },
+            { word: 'Lösung', phonetic: '/ˈløːzʊŋ/', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'de-8-4',
+          title: 'Deutsche Kultur',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'Kaffeeklatsch', phonetic: '/ˈkafeˌklatʃ/', translation: 'Heure du café' },
+            { word: 'Brotzeit', phonetic: '/ˈbʁoːtt͡saɪ̯t/', translation: 'Casse-croûte' },
+            { word: 'Biergarten', phonetic: '/ˈbiːɐ̯ɡaʁtn̩/', translation: 'Jardin à bière' },
+            { word: 'Weihnachtsmarkt', phonetic: '/ˈvaɪ̯naxt͡smaʁkt/', translation: 'Marché de Noël' },
+            { word: 'Brandenburger Tor', phonetic: '/ˈbʁandn̩bʊʁɡɐ toːɐ̯/', translation: 'Porte de Brandebourg' },
+            { word: 'Oktoberfest', phonetic: '/ɔkˈtoːbɐfɛst/', translation: 'Oktoberfest' },
+            { word: 'Autobahn', phonetic: '/ˈaʊ̯tobaːn/', translation: 'Autoroute' },
+            { word: 'Pünktlichkeit', phonetic: '/ˈpʏŋktlɪçkaɪ̯t/', translation: 'Ponctualité' },
+          ]
+        },
+        {
+          id: 'de-8-test',
+          title: 'Abschlussprüfung',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  ja: [
+    {
+      id: 1,
+      title: '基本',
+      description: '基本的な挨拶と表現',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#BC002D',
+      lessons: [
+        {
+          id: 'ja-1-1',
+          title: '挨拶',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'こんにちは', phonetic: 'konnichiwa', translation: 'Bonjour' },
+            { word: 'さようなら', phonetic: 'sayōnara', translation: 'Au revoir' },
+            { word: 'ありがとう', phonetic: 'arigatō', translation: 'Merci' },
+            { word: 'お願いします', phonetic: 'onegaishimasu', translation: 'S\'il vous plaît' },
+            { word: 'はい', phonetic: 'hai', translation: 'Oui' },
+            { word: 'いいえ', phonetic: 'iie', translation: 'Non' },
+            { word: 'すみません', phonetic: 'sumimasen', translation: 'Pardon' },
+            { word: '失礼します', phonetic: 'shitsurei shimasu', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'ja-1-2',
+          title: '数字 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '一', phonetic: 'ichi', translation: 'Un' },
+            { word: '二', phonetic: 'ni', translation: 'Deux' },
+            { word: '三', phonetic: 'san', translation: 'Trois' },
+            { word: '四', phonetic: 'shi/yon', translation: 'Quatre' },
+            { word: '五', phonetic: 'go', translation: 'Cinq' },
+            { word: '六', phonetic: 'roku', translation: 'Six' },
+            { word: '七', phonetic: 'shichi/nana', translation: 'Sept' },
+            { word: '八', phonetic: 'hachi', translation: 'Huit' },
+            { word: '九', phonetic: 'kyū/ku', translation: 'Neuf' },
+            { word: '十', phonetic: 'jū', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'ja-1-3',
+          title: '色',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: '赤', phonetic: 'aka', translation: 'Rouge' },
+            { word: '青', phonetic: 'ao', translation: 'Bleu' },
+            { word: '緑', phonetic: 'midori', translation: 'Vert' },
+            { word: '黄色', phonetic: 'kiiro', translation: 'Jaune' },
+            { word: '黒', phonetic: 'kuro', translation: 'Noir' },
+            { word: '白', phonetic: 'shiro', translation: 'Blanc' },
+            { word: 'オレンジ', phonetic: 'orenji', translation: 'Orange' },
+            { word: '紫', phonetic: 'murasaki', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'ja-1-4',
+          title: '基本的な食べ物',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '水', phonetic: 'mizu', translation: 'Eau' },
+            { word: '食べ物', phonetic: 'tabemono', translation: 'Nourriture' },
+            { word: 'パン', phonetic: 'pan', translation: 'Pain' },
+            { word: '牛乳', phonetic: 'gyūnyū', translation: 'Lait' },
+            { word: 'コーヒー', phonetic: 'kōhī', translation: 'Café' },
+            { word: 'お茶', phonetic: 'ocha', translation: 'Thé' },
+            { word: 'りんご', phonetic: 'ringo', translation: 'Pomme' },
+            { word: 'バナナ', phonetic: 'banana', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'ja-1-test',
+          title: '第1章テスト',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: '日常表現',
+      description: '日常生活の表現',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#E91E63',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'ja-2-1',
+          title: '自己紹介',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '私の名前は...です', phonetic: 'watashi no namae wa... desu', translation: 'Je m\'appelle...' },
+            { word: 'お元気ですか？', phonetic: 'ogenki desu ka?', translation: 'Comment allez-vous ?' },
+            { word: '元気です', phonetic: 'genki desu', translation: 'Je vais bien' },
+            { word: 'はじめまして', phonetic: 'hajimemashite', translation: 'Enchanté' },
+            { word: 'お名前は？', phonetic: 'onamae wa?', translation: 'Comment vous appelez-vous ?' },
+            { word: 'どこから来ましたか？', phonetic: 'doko kara kimashita ka?', translation: 'D\'où venez-vous ?' },
+            { word: '...から来ました', phonetic: '... kara kimashita', translation: 'Je viens de...' },
+            { word: 'おいくつですか？', phonetic: 'oikutsu desu ka?', translation: 'Quel âge avez-vous ?' },
+          ]
+        },
+        {
+          id: 'ja-2-2',
+          title: '家族',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '家族', phonetic: 'kazoku', translation: 'Famille' },
+            { word: '母', phonetic: 'haha', translation: 'Mère' },
+            { word: '父', phonetic: 'chichi', translation: 'Père' },
+            { word: '兄弟', phonetic: 'kyōdai', translation: 'Frère' },
+            { word: '姉妹', phonetic: 'shimai', translation: 'Sœur' },
+            { word: '息子', phonetic: 'musuko', translation: 'Fils' },
+            { word: '娘', phonetic: 'musume', translation: 'Fille' },
+            { word: '友達', phonetic: 'tomodachi', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'ja-2-3',
+          title: '数字 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '十一', phonetic: 'jūichi', translation: 'Onze' },
+            { word: '十二', phonetic: 'jūni', translation: 'Douze' },
+            { word: '十三', phonetic: 'jūsan', translation: 'Treize' },
+            { word: '十四', phonetic: 'jūshi/jūyon', translation: 'Quatorze' },
+            { word: '十五', phonetic: 'jūgo', translation: 'Quinze' },
+            { word: '十六', phonetic: 'jūroku', translation: 'Seize' },
+            { word: '十七', phonetic: 'jūshichi/jūnana', translation: 'Dix-sept' },
+            { word: '十八', phonetic: 'jūhachi', translation: 'Dix-huit' },
+            { word: '十九', phonetic: 'jūkyū/jūku', translation: 'Dix-neuf' },
+            { word: '二十', phonetic: 'nijū', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'ja-2-4',
+          title: '日常品',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '家', phonetic: 'ie', translation: 'Maison' },
+            { word: '車', phonetic: 'kuruma', translation: 'Voiture' },
+            { word: '本', phonetic: 'hon', translation: 'Livre' },
+            { word: 'ペン', phonetic: 'pen', translation: 'Stylo' },
+            { word: '電話', phonetic: 'denwa', translation: 'Téléphone' },
+            { word: '鍵', phonetic: 'kagi', translation: 'Clé' },
+            { word: 'お金', phonetic: 'okane', translation: 'Argent' },
+            { word: '時間', phonetic: 'jikan', translation: 'Temps' },
+          ]
+        },
+        {
+          id: 'ja-2-test',
+          title: '第2章テスト',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: '旅行',
+      description: '旅行の表現',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'ja-3-1',
+          title: '空港で',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '空港', phonetic: 'kūkō', translation: 'Aéroport' },
+            { word: 'チケット', phonetic: 'chiketto', translation: 'Billet' },
+            { word: 'パスポート', phonetic: 'pasupōto', translation: 'Passeport' },
+            { word: '荷物', phonetic: 'nimotsu', translation: 'Bagages' },
+            { word: '飛行機', phonetic: 'hikōki', translation: 'Vol' },
+            { word: 'ゲート', phonetic: 'gēto', translation: 'Porte' },
+            { word: '搭乗', phonetic: 'tōjō', translation: 'Embarquement' },
+            { word: '遅延', phonetic: 'chien', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'ja-3-2',
+          title: 'ホテルで',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'ホテル', phonetic: 'hoteru', translation: 'Hôtel' },
+            { word: '部屋', phonetic: 'heya', translation: 'Chambre' },
+            { word: '予約', phonetic: 'yoyaku', translation: 'Réservation' },
+            { word: 'チェックイン', phonetic: 'chekkuin', translation: 'Enregistrement' },
+            { word: 'チェックアウト', phonetic: 'chekkuauto', translation: 'Départ' },
+            { word: '朝食', phonetic: 'chōshoku', translation: 'Petit déjeuner' },
+            { word: 'Wi-Fi', phonetic: 'waifai', translation: 'Wi-Fi' },
+            { word: 'フロント', phonetic: 'furonto', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'ja-3-3',
+          title: 'レストラン',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'レストラン', phonetic: 'resutoran', translation: 'Restaurant' },
+            { word: 'メニュー', phonetic: 'menyū', translation: 'Menu' },
+            { word: 'テーブル', phonetic: 'tēburu', translation: 'Table' },
+            { word: '注文する', phonetic: 'chūmon suru', translation: 'Commander' },
+            { word: 'お会計', phonetic: 'okaikei', translation: 'Addition' },
+            { word: 'チップ', phonetic: 'chippu', translation: 'Pourboire' },
+            { word: '美味しい', phonetic: 'oishii', translation: 'Délicieux' },
+            { word: 'ウェイター/ウェイトレス', phonetic: 'weitā/weitoresu', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'ja-3-4',
+          title: '道案内',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '...はどこですか？', phonetic: '... wa doko desu ka?', translation: 'Où est... ?' },
+            { word: '左', phonetic: 'hidari', translation: 'Gauche' },
+            { word: '右', phonetic: 'migi', translation: 'Droite' },
+            { word: 'まっすぐ', phonetic: 'massugu', translation: 'Tout droit' },
+            { word: '近く', phonetic: 'chikaku', translation: 'Près' },
+            { word: '遠く', phonetic: 'tōku', translation: 'Loin' },
+            { word: '地図', phonetic: 'chizu', translation: 'Carte' },
+            { word: '道', phonetic: 'michi', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'ja-3-test',
+          title: '第3章テスト',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: '仕事とビジネス',
+      description: '専門用語',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'ja-4-1',
+          title: 'オフィス',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: 'オフィス', phonetic: 'ofisu', translation: 'Bureau' },
+            { word: 'コンピューター', phonetic: 'konpyūtā', translation: 'Ordinateur' },
+            { word: '会議', phonetic: 'kaigi', translation: 'Réunion' },
+            { word: 'メール', phonetic: 'mēru', translation: 'Email' },
+            { word: 'スケジュール', phonetic: 'sukejūru', translation: 'Emploi du temps' },
+            { word: 'プレゼンテーション', phonetic: 'purezentēshon', translation: 'Présentation' },
+            { word: '報告書', phonetic: 'hōkokusho', translation: 'Rapport' },
+            { word: '締め切り', phonetic: 'shimekiri', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'ja-4-2',
+          title: '職業',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '医者', phonetic: 'isha', translation: 'Docteur' },
+            { word: '先生', phonetic: 'sensei', translation: 'Professeur' },
+            { word: 'エンジニア', phonetic: 'enjinia', translation: 'Ingénieur' },
+            { word: '弁護士', phonetic: 'bengoshi', translation: 'Avocat' },
+            { word: '看護師', phonetic: 'kangoshi', translation: 'Infirmier/Infirmière' },
+            { word: '警察官', phonetic: 'keisatsukan', translation: 'Policier' },
+            { word: 'シェフ', phonetic: 'shefu', translation: 'Chef cuisinier' },
+            { word: '芸術家', phonetic: 'geijutsuka', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'ja-4-3',
+          title: '時間と日付',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '月曜日', phonetic: 'getsuyōbi', translation: 'Lundi' },
+            { word: '火曜日', phonetic: 'kayōbi', translation: 'Mardi' },
+            { word: '水曜日', phonetic: 'suiyōbi', translation: 'Mercredi' },
+            { word: '木曜日', phonetic: 'mokuyōbi', translation: 'Jeudi' },
+            { word: '金曜日', phonetic: 'kin\'yōbi', translation: 'Vendredi' },
+            { word: '土曜日', phonetic: 'doyōbi', translation: 'Samedi' },
+            { word: '日曜日', phonetic: 'nichiyōbi', translation: 'Dimanche' },
+            { word: '週末', phonetic: 'shūmatsu', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'ja-4-4',
+          title: '数字 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '三十', phonetic: 'sanju', translation: 'Trente' },
+            { word: '四十', phonetic: 'shijū/yonju', translation: 'Quarante' },
+            { word: '五十', phonetic: 'gojū', translation: 'Cinquante' },
+            { word: '六十', phonetic: 'rokujū', translation: 'Soixante' },
+            { word: '七十', phonetic: 'shichijū', translation: 'Soixante-dix' },
+            { word: '八十', phonetic: 'hachijū', translation: 'Quatre-vingts' },
+            { word: '九十', phonetic: 'kyūjū', translation: 'Quatre-vingt-dix' },
+            { word: '百', phonetic: 'hyaku', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'ja-4-test',
+          title: '第4章テスト',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: '文化と社会',
+      description: '社会的・文化的な生活',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'ja-5-1',
+          title: '趣味',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '音楽', phonetic: 'ongaku', translation: 'Musique' },
+            { word: '映画', phonetic: 'eiga', translation: 'Film' },
+            { word: 'スポーツ', phonetic: 'supōtsu', translation: 'Sport' },
+            { word: '読書', phonetic: 'dokusho', translation: 'Lecture' },
+            { word: '料理', phonetic: 'ryōri', translation: 'Cuisine' },
+            { word: '旅行', phonetic: 'ryokō', translation: 'Voyage' },
+            { word: '写真', phonetic: 'shashin', translation: 'Photographie' },
+            { word: '絵画', phonetic: 'kaiga', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'ja-5-2',
+          title: '感情',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '嬉しい', phonetic: 'ureshii', translation: 'Heureux' },
+            { word: '悲しい', phonetic: 'kanashii', translation: 'Triste' },
+            { word: '怒っている', phonetic: 'okotte iru', translation: 'En colère' },
+            { word: '興奮している', phonetic: 'kōfun shite iru', translation: 'Excité' },
+            { word: '疲れた', phonetic: 'tsukareta', translation: 'Fatigué' },
+            { word: '驚いた', phonetic: 'odoroita', translation: 'Surpris' },
+            { word: '怖い', phonetic: 'kowai', translation: 'Effrayé' },
+            { word: '緊張している', phonetic: 'kinchō shite iru', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'ja-5-3',
+          title: '健康',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '病院', phonetic: 'byōin', translation: 'Hôpital' },
+            { word: '医者', phonetic: 'isha', translation: 'Docteur' },
+            { word: '薬', phonetic: 'kusuri', translation: 'Médicament' },
+            { word: '痛み', phonetic: 'itami', translation: 'Douleur' },
+            { word: '頭痛', phonetic: 'zutsū', translation: 'Mal de tête' },
+            { word: '熱', phonetic: 'netsu', translation: 'Fièvre' },
+            { word: '健康', phonetic: 'kenkō', translation: 'En bonne santé' },
+            { word: '病気', phonetic: 'byōki', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'ja-5-4',
+          title: '天気',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '晴れ', phonetic: 'hare', translation: 'Ensoleillé' },
+            { word: '雨', phonetic: 'ame', translation: 'Pluvieux' },
+            { word: '曇り', phonetic: 'kumori', translation: 'Nuageux' },
+            { word: '風が強い', phonetic: 'kaze ga tsuyoi', translation: 'Venteux' },
+            { word: '雪', phonetic: 'yuki', translation: 'Neige' },
+            { word: '暑い', phonetic: 'atsui', translation: 'Chaud' },
+            { word: '寒い', phonetic: 'samui', translation: 'Froid' },
+            { word: '温度', phonetic: 'ondo', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'ja-5-test',
+          title: '第5章テスト',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: '中級文法',
+      description: '複雑な文構造',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'ja-6-1',
+          title: '一般的な動詞',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '食べる', phonetic: 'taberu', translation: 'Manger' },
+            { word: '飲む', phonetic: 'nomu', translation: 'Boire' },
+            { word: '寝る', phonetic: 'neru', translation: 'Dormir' },
+            { word: '働く', phonetic: 'hataraku', translation: 'Travailler' },
+            { word: '学ぶ', phonetic: 'manabu', translation: 'Apprendre' },
+            { word: '話す', phonetic: 'hanasu', translation: 'Parler' },
+            { word: '理解する', phonetic: 'rikai suru', translation: 'Comprendre' },
+            { word: '書く', phonetic: 'kaku', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'ja-6-2',
+          title: '過去時制',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '昨日', phonetic: 'kinō', translation: 'Hier' },
+            { word: '先週', phonetic: 'senshū', translation: 'La semaine dernière' },
+            { word: '先月', phonetic: 'sengetsu', translation: 'Le mois dernier' },
+            { word: '去年', phonetic: 'kyonen', translation: 'L\'année dernière' },
+            { word: '前に', phonetic: 'mae ni', translation: 'Avant' },
+            { word: '...前に', phonetic: '... mae ni', translation: 'Il y a...' },
+            { word: 'でした', phonetic: 'deshita', translation: 'Était' },
+            { word: 'しました', phonetic: 'shimashita', translation: 'A fait' },
+          ]
+        },
+        {
+          id: 'ja-6-3',
+          title: '未来時制',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '明日', phonetic: 'ashita', translation: 'Demain' },
+            { word: '来週', phonetic: 'raishū', translation: 'La semaine prochaine' },
+            { word: '来月', phonetic: 'raigetsu', translation: 'Le mois prochain' },
+            { word: '来年', phonetic: 'rainen', translation: 'L\'année prochaine' },
+            { word: 'するつもりです', phonetic: 'suru tsumori desu', translation: 'Vais faire' },
+            { word: 'する予定です', phonetic: 'suru yotei desu', translation: 'Va faire' },
+            { word: 'すぐに', phonetic: 'sugu ni', translation: 'Bientôt' },
+            { word: '後で', phonetic: 'ato de', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'ja-6-4',
+          title: '比較形容詞',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: 'より大きい', phonetic: 'yori ōkii', translation: 'Plus grand' },
+            { word: 'より小さい', phonetic: 'yori chiisai', translation: 'Plus petit' },
+            { word: 'より良い', phonetic: 'yori yoi', translation: 'Meilleur' },
+            { word: 'より悪い', phonetic: 'yori warui', translation: 'Pire' },
+            { word: 'より美しい', phonetic: 'yori utsukushii', translation: 'Plus beau' },
+            { word: 'より安い', phonetic: 'yori yasui', translation: 'Moins cher' },
+            { word: '一番良い', phonetic: 'ichiban yoi', translation: 'Le meilleur' },
+            { word: '一番悪い', phonetic: 'ichiban warui', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'ja-6-test',
+          title: '第6章テスト',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: '上級',
+      description: '専門用語',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'ja-7-1',
+          title: '技術',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: 'インターネット', phonetic: 'intānetto', translation: 'Internet' },
+            { word: 'スマートフォン', phonetic: 'sumātofon', translation: 'Smartphone' },
+            { word: 'ソフトウェア', phonetic: 'sofutowea', translation: 'Logiciel' },
+            { word: 'ハードウェア', phonetic: 'hādowea', translation: 'Matériel' },
+            { word: 'アプリ', phonetic: 'apuri', translation: 'Application' },
+            { word: 'パスワード', phonetic: 'pasuwādo', translation: 'Mot de passe' },
+            { word: 'ダウンロードする', phonetic: 'daunrōdo suru', translation: 'Télécharger' },
+            { word: 'アップロードする', phonetic: 'appurōdo suru', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'ja-7-2',
+          title: '経済',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '銀行', phonetic: 'ginkō', translation: 'Banque' },
+            { word: 'お金', phonetic: 'okane', translation: 'Argent' },
+            { word: '給料', phonetic: 'kyūryō', translation: 'Salaire' },
+            { word: '価格', phonetic: 'kakaku', translation: 'Prix' },
+            { word: '市場', phonetic: 'shijō', translation: 'Marché' },
+            { word: '投資', phonetic: 'tōshi', translation: 'Investissement' },
+            { word: '税金', phonetic: 'zeikin', translation: 'Taxe' },
+            { word: '予算', phonetic: 'yosan', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'ja-7-3',
+          title: '政治',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '政府', phonetic: 'seifu', translation: 'Gouvernement' },
+            { word: '大統領', phonetic: 'daitōryō', translation: 'Président' },
+            { word: '選挙', phonetic: 'senkyo', translation: 'Élection' },
+            { word: '法律', phonetic: 'hōritsu', translation: 'Loi' },
+            { word: '自由', phonetic: 'jiyū', translation: 'Liberté' },
+            { word: '民主主義', phonetic: 'minshu shugi', translation: 'Démocratie' },
+            { word: '政治', phonetic: 'seiji', translation: 'Politique' },
+            { word: '投票する', phonetic: 'tōhyō suru', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'ja-7-4',
+          title: '環境',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '環境', phonetic: 'kankyō', translation: 'Environnement' },
+            { word: '汚染', phonetic: 'osen', translation: 'Pollution' },
+            { word: '気候', phonetic: 'kikō', translation: 'Climat' },
+            { word: 'リサイクル', phonetic: 'risaikuru', translation: 'Recyclage' },
+            { word: '自然', phonetic: 'shizen', translation: 'Nature' },
+            { word: 'エネルギー', phonetic: 'enerugī', translation: 'Énergie' },
+            { word: '持続可能な', phonetic: 'jizoku kanō na', translation: 'Durable' },
+            { word: '生態系', phonetic: 'seitaikei', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'ja-7-test',
+          title: '最終テスト',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'マスター',
+      description: '言語の完成',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'ja-8-1',
+          title: '慣用句',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '頑張って', phonetic: 'ganbatte', translation: 'Bonne chance' },
+            { word: '朝飯前', phonetic: 'asameshi mae', translation: 'Très facile' },
+            { word: '高くつく', phonetic: 'takaku tsuku', translation: 'Coûter très cher' },
+            { word: '一生懸命勉強する', phonetic: 'isshōkenmei benkyō suru', translation: 'Étudier sérieusement' },
+            { word: '猿も木から落ちる', phonetic: 'saru mo ki kara ochiru', translation: 'Quand les cochons voleront' },
+            { word: '歯を食いしばる', phonetic: 'ha o kuishibaru', translation: 'Prendre son courage à deux mains' },
+            { word: '近道をする', phonetic: 'chikamichi o suru', translation: 'Prendre des raccourcis' },
+            { word: '氷を破る', phonetic: 'kōri o yaburu', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'ja-8-2',
+          title: '正式な表現',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: 'さらに', phonetic: 'sara ni', translation: 'De plus' },
+            { word: 'それにもかかわらず', phonetic: 'sore ni mo kakawarazu', translation: 'Néanmoins' },
+            { word: 'したがって', phonetic: 'shitagatte', translation: 'Par conséquent' },
+            { word: 'あるいは', phonetic: 'aruiwa', translation: 'Alternativement' },
+            { word: '具体的に', phonetic: 'gutaiteki ni', translation: 'Spécifiquement' },
+            { word: '最終的に', phonetic: 'saishūteki ni', translation: 'Finalement' },
+            { word: '著しく', phonetic: 'ichijirushiku', translation: 'Significativement' },
+            { word: '本質的に', phonetic: 'honshitsuteki ni', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'ja-8-3',
+          title: '交渉',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '合意', phonetic: 'gōi', translation: 'Accord' },
+            { word: '妥協', phonetic: 'dakyō', translation: 'Compromis' },
+            { word: '交渉', phonetic: 'kōshō', translation: 'Négociation' },
+            { word: '契約', phonetic: 'keiyaku', translation: 'Contrat' },
+            { word: '条件', phonetic: 'jōken', translation: 'Conditions' },
+            { word: '期限', phonetic: 'kigen', translation: 'Date limite' },
+            { word: 'パートナーシップ', phonetic: 'pātonāshippu', translation: 'Partenariat' },
+            { word: '解決', phonetic: 'kaiketsu', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'ja-8-4',
+          title: '日本文化',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '茶道', phonetic: 'sadō', translation: 'Cérémonie du thé' },
+            { word: '寿司', phonetic: 'sushi', translation: 'Sushi' },
+            { word: '富士山', phonetic: 'fujisan', translation: 'Mont Fuji' },
+            { word: '桜', phonetic: 'sakura', translation: 'Cerisier' },
+            { word: '着物', phonetic: 'kimono', translation: 'Kimono' },
+            { word: '禅', phonetic: 'zen', translation: 'Zen' },
+            { word: '温泉', phonetic: 'onsen', translation: 'Source thermale' },
+            { word: '侍', phonetic: 'samurai', translation: 'Samouraï' },
+          ]
+        },
+        {
+          id: 'ja-8-test',
+          title: '最終試験',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  ko: [
+    {
+      id: 1,
+      title: '기본',
+      description: '기본 인사와 표현',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#003478',
+      lessons: [
+        {
+          id: 'ko-1-1',
+          title: '인사말',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: '안녕하세요', phonetic: 'annyeonghaseyo', translation: 'Bonjour' },
+            { word: '안녕히 가세요', phonetic: 'annyeonghi gaseyo', translation: 'Au revoir' },
+            { word: '감사합니다', phonetic: 'gamsahamnida', translation: 'Merci' },
+            { word: '제발', phonetic: 'jebal', translation: 'S\'il vous plaît' },
+            { word: '네', phonetic: 'ne', translation: 'Oui' },
+            { word: '아니요', phonetic: 'aniyo', translation: 'Non' },
+            { word: '죄송합니다', phonetic: 'joesonghamnida', translation: 'Pardon' },
+            { word: '실례합니다', phonetic: 'sillyehamnida', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'ko-1-2',
+          title: '숫자 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '일', phonetic: 'il', translation: 'Un' },
+            { word: '이', phonetic: 'i', translation: 'Deux' },
+            { word: '삼', phonetic: 'sam', translation: 'Trois' },
+            { word: '사', phonetic: 'sa', translation: 'Quatre' },
+            { word: '오', phonetic: 'o', translation: 'Cinq' },
+            { word: '육', phonetic: 'yuk', translation: 'Six' },
+            { word: '칠', phonetic: 'chil', translation: 'Sept' },
+            { word: '팔', phonetic: 'pal', translation: 'Huit' },
+            { word: '구', phonetic: 'gu', translation: 'Neuf' },
+            { word: '십', phonetic: 'sip', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'ko-1-3',
+          title: '색깔',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: '빨간색', phonetic: 'ppalgansaek', translation: 'Rouge' },
+            { word: '파란색', phonetic: 'paransaek', translation: 'Bleu' },
+            { word: '초록색', phonetic: 'choroksaek', translation: 'Vert' },
+            { word: '노란색', phonetic: 'noransaek', translation: 'Jaune' },
+            { word: '검정색', phonetic: 'geomjeongsaek', translation: 'Noir' },
+            { word: '하얀색', phonetic: 'hayansaek', translation: 'Blanc' },
+            { word: '주황색', phonetic: 'juhwangsaek', translation: 'Orange' },
+            { word: '보라색', phonetic: 'borasaek', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'ko-1-4',
+          title: '기본 음식',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '물', phonetic: 'mul', translation: 'Eau' },
+            { word: '음식', phonetic: 'eumsik', translation: 'Nourriture' },
+            { word: '빵', phonetic: 'ppang', translation: 'Pain' },
+            { word: '우유', phonetic: 'uyu', translation: 'Lait' },
+            { word: '커피', phonetic: 'keopi', translation: 'Café' },
+            { word: '차', phonetic: 'cha', translation: 'Thé' },
+            { word: '사과', phonetic: 'sagwa', translation: 'Pomme' },
+            { word: '바나나', phonetic: 'banana', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'ko-1-test',
+          title: '제1장 테스트',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: '일상 표현',
+      description: '일상 생활 표현',
+      level: 1,
+      locked: true,
+      icon: '💬',
+      color: '#1976D2',
+      requiredChapter: 1,
+      lessons: [
+        {
+          id: 'ko-2-1',
+          title: '자기소개',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '제 이름은...입니다', phonetic: 'je ireumeun...imnida', translation: 'Je m\'appelle...' },
+            { word: '안녕하세요?', phonetic: 'annyeonghaseyo?', translation: 'Comment allez-vous ?' },
+            { word: '저는 잘 지냅니다', phonetic: 'jeoneun jal jinaemnida', translation: 'Je vais bien' },
+            { word: '만나서 반갑습니다', phonetic: 'mannaseo bangapseumnida', translation: 'Enchanté' },
+            { word: '성함이 어떻게 되세요?', phonetic: 'seonghami eotteoke doeseyo?', translation: 'Comment vous appelez-vous ?' },
+            { word: '어디에서 오셨나요?', phonetic: 'eodieseo osyeonnayo?', translation: 'D\'où venez-vous ?' },
+            { word: '...에서 왔습니다', phonetic: '...eseo wasseumnida', translation: 'Je viens de...' },
+            { word: '연세가 어떻게 되세요?', phonetic: 'yeonsega eotteoke doeseyo?', translation: 'Quel âge avez-vous ?' },
+          ]
+        },
+        {
+          id: 'ko-2-2',
+          title: '가족',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '가족', phonetic: 'gajok', translation: 'Famille' },
+            { word: '어머니', phonetic: 'eomeoni', translation: 'Mère' },
+            { word: '아버지', phonetic: 'abeoji', translation: 'Père' },
+            { word: '형제', phonetic: 'hyeongje', translation: 'Frère' },
+            { word: '자매', phonetic: 'jamae', translation: 'Sœur' },
+            { word: '아들', phonetic: 'adeul', translation: 'Fils' },
+            { word: '딸', phonetic: 'ttal', translation: 'Fille' },
+            { word: '친구', phonetic: 'chingu', translation: 'Ami/Amie' },
+          ]
+        },
+        {
+          id: 'ko-2-3',
+          title: '숫자 11-20',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '십일', phonetic: 'sibil', translation: 'Onze' },
+            { word: '십이', phonetic: 'sibi', translation: 'Douze' },
+            { word: '십삼', phonetic: 'sipsam', translation: 'Treize' },
+            { word: '십사', phonetic: 'sipsa', translation: 'Quatorze' },
+            { word: '십오', phonetic: 'sibo', translation: 'Quinze' },
+            { word: '십육', phonetic: 'simnyuk', translation: 'Seize' },
+            { word: '십칠', phonetic: 'sipchil', translation: 'Dix-sept' },
+            { word: '십팔', phonetic: 'sippal', translation: 'Dix-huit' },
+            { word: '십구', phonetic: 'sipgu', translation: 'Dix-neuf' },
+            { word: '이십', phonetic: 'isip', translation: 'Vingt' },
+          ]
+        },
+        {
+          id: 'ko-2-4',
+          title: '일상용품',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: '집', phonetic: 'jip', translation: 'Maison' },
+            { word: '차', phonetic: 'cha', translation: 'Voiture' },
+            { word: '책', phonetic: 'chaek', translation: 'Livre' },
+            { word: '펜', phonetic: 'pen', translation: 'Stylo' },
+            { word: '전화', phonetic: 'jeonhwa', translation: 'Téléphone' },
+            { word: '열쇠', phonetic: 'yeolsoe', translation: 'Clé' },
+            { word: '돈', phonetic: 'don', translation: 'Argent' },
+            { word: '시간', phonetic: 'sigan', translation: 'Temps' },
+          ]
+        },
+        {
+          id: 'ko-2-test',
+          title: '제2장 테스트',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: '여행',
+      description: '여행 표현',
+      level: 2,
+      locked: true,
+      icon: '✈️',
+      color: '#FF9800',
+      requiredChapter: 2,
+      lessons: [
+        {
+          id: 'ko-3-1',
+          title: '공항에서',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '공항', phonetic: 'gonghang', translation: 'Aéroport' },
+            { word: '티켓', phonetic: 'tiket', translation: 'Billet' },
+            { word: '여권', phonetic: 'yeogwon', translation: 'Passeport' },
+            { word: '짐', phonetic: 'jim', translation: 'Bagages' },
+            { word: '비행기', phonetic: 'bihaenggi', translation: 'Vol' },
+            { word: '게이트', phonetic: 'geiteu', translation: 'Porte' },
+            { word: '탑승', phonetic: 'tapseung', translation: 'Embarquement' },
+            { word: '지연', phonetic: 'jiyeon', translation: 'Retard' },
+          ]
+        },
+        {
+          id: 'ko-3-2',
+          title: '호텔에서',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '호텔', phonetic: 'hotel', translation: 'Hôtel' },
+            { word: '방', phonetic: 'bang', translation: 'Chambre' },
+            { word: '예약', phonetic: 'yeyak', translation: 'Réservation' },
+            { word: '체크인', phonetic: 'chekeuin', translation: 'Enregistrement' },
+            { word: '체크아웃', phonetic: 'chekeuaut', translation: 'Départ' },
+            { word: '아침 식사', phonetic: 'achim siksa', translation: 'Petit déjeuner' },
+            { word: '와이파이', phonetic: 'waipai', translation: 'Wi-Fi' },
+            { word: '프런트', phonetic: 'peureonteu', translation: 'Réception' },
+          ]
+        },
+        {
+          id: 'ko-3-3',
+          title: '레스토랑',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '레스토랑', phonetic: 'reseutorang', translation: 'Restaurant' },
+            { word: '메뉴', phonetic: 'menyu', translation: 'Menu' },
+            { word: '테이블', phonetic: 'teibeul', translation: 'Table' },
+            { word: '주문하다', phonetic: 'jumunhada', translation: 'Commander' },
+            { word: '계산서', phonetic: 'gyesanseo', translation: 'Addition' },
+            { word: '팁', phonetic: 'tip', translation: 'Pourboire' },
+            { word: '맛있는', phonetic: 'masinneun', translation: 'Délicieux' },
+            { word: '웨이터/웨이트리스', phonetic: 'weiteo/weiteuriseu', translation: 'Serveur/Serveuse' },
+          ]
+        },
+        {
+          id: 'ko-3-4',
+          title: '길 안내',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '...는 어디에 있나요?', phonetic: '...neun eodie innayo?', translation: 'Où est... ?' },
+            { word: '왼쪽', phonetic: 'oenjjok', translation: 'Gauche' },
+            { word: '오른쪽', phonetic: 'oreunjjok', translation: 'Droite' },
+            { word: '직진', phonetic: 'jikjin', translation: 'Tout droit' },
+            { word: '가까이', phonetic: 'gakkai', translation: 'Près' },
+            { word: '멀리', phonetic: 'meolli', translation: 'Loin' },
+            { word: '지도', phonetic: 'jido', translation: 'Carte' },
+            { word: '길', phonetic: 'gil', translation: 'Rue' },
+          ]
+        },
+        {
+          id: 'ko-3-test',
+          title: '제3장 테스트',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: '직업과 비즈니스',
+      description: '전문 용어',
+      level: 2,
+      locked: true,
+      icon: '💼',
+      color: '#4CAF50',
+      requiredChapter: 3,
+      lessons: [
+        {
+          id: 'ko-4-1',
+          title: '사무실',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '사무실', phonetic: 'samusil', translation: 'Bureau' },
+            { word: '컴퓨터', phonetic: 'keompyuteo', translation: 'Ordinateur' },
+            { word: '회의', phonetic: 'hoeui', translation: 'Réunion' },
+            { word: '이메일', phonetic: 'imeil', translation: 'Email' },
+            { word: '일정', phonetic: 'iljeong', translation: 'Emploi du temps' },
+            { word: '발표', phonetic: 'balpyo', translation: 'Présentation' },
+            { word: '보고서', phonetic: 'bogoseo', translation: 'Rapport' },
+            { word: '마감일', phonetic: 'magamil', translation: 'Date limite' },
+          ]
+        },
+        {
+          id: 'ko-4-2',
+          title: '직업',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '의사', phonetic: 'uisa', translation: 'Docteur' },
+            { word: '선생님', phonetic: 'seonsaengnim', translation: 'Professeur' },
+            { word: '엔지니어', phonetic: 'enjinieo', translation: 'Ingénieur' },
+            { word: '변호사', phonetic: 'byeonhosa', translation: 'Avocat' },
+            { word: '간호사', phonetic: 'ganhosa', translation: 'Infirmier/Infirmière' },
+            { word: '경찰관', phonetic: 'gyeongchalgwan', translation: 'Policier' },
+            { word: '셰프', phonetic: 'syepeu', translation: 'Chef cuisinier' },
+            { word: '예술가', phonetic: 'yesulga', translation: 'Artiste' },
+          ]
+        },
+        {
+          id: 'ko-4-3',
+          title: '시간과 날짜',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '월요일', phonetic: 'woryoil', translation: 'Lundi' },
+            { word: '화요일', phonetic: 'hwayoil', translation: 'Mardi' },
+            { word: '수요일', phonetic: 'suyoil', translation: 'Mercredi' },
+            { word: '목요일', phonetic: 'mogyoil', translation: 'Jeudi' },
+            { word: '금요일', phonetic: 'geumyoil', translation: 'Vendredi' },
+            { word: '토요일', phonetic: 'toyoil', translation: 'Samedi' },
+            { word: '일요일', phonetic: 'iryoil', translation: 'Dimanche' },
+            { word: '주말', phonetic: 'jumal', translation: 'Week-end' },
+          ]
+        },
+        {
+          id: 'ko-4-4',
+          title: '숫자 21-100',
+          type: 'vocabulary',
+          duration: 15,
+          xp: 70,
+          words: [
+            { word: '삼십', phonetic: 'samsip', translation: 'Trente' },
+            { word: '사십', phonetic: 'sasip', translation: 'Quarante' },
+            { word: '오십', phonetic: 'osip', translation: 'Cinquante' },
+            { word: '육십', phonetic: 'yuksip', translation: 'Soixante' },
+            { word: '칠십', phonetic: 'chilsip', translation: 'Soixante-dix' },
+            { word: '팔십', phonetic: 'palsip', translation: 'Quatre-vingts' },
+            { word: '구십', phonetic: 'gusip', translation: 'Quatre-vingt-dix' },
+            { word: '백', phonetic: 'baek', translation: 'Cent' },
+          ]
+        },
+        {
+          id: 'ko-4-test',
+          title: '제4장 테스트',
+          type: 'chapter_test',
+          duration: 20,
+          xp: 150,
+          passingScore: 75,
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: '문화와 사회',
+      description: '사회적·문화적 생활',
+      level: 3,
+      locked: true,
+      icon: '🎭',
+      color: '#9C27B0',
+      requiredChapter: 4,
+      lessons: [
+        {
+          id: 'ko-5-1',
+          title: '취미',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '음악', phonetic: 'eumak', translation: 'Musique' },
+            { word: '영화', phonetic: 'yeonghwa', translation: 'Film' },
+            { word: '스포츠', phonetic: 'seupocheu', translation: 'Sport' },
+            { word: '독서', phonetic: 'dokseo', translation: 'Lecture' },
+            { word: '요리', phonetic: 'yori', translation: 'Cuisine' },
+            { word: '여행', phonetic: 'yeohaeng', translation: 'Voyage' },
+            { word: '사진', phonetic: 'sajin', translation: 'Photographie' },
+            { word: '회화', phonetic: 'hoehwa', translation: 'Peinture' },
+          ]
+        },
+        {
+          id: 'ko-5-2',
+          title: '감정',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '행복한', phonetic: 'haengbokan', translation: 'Heureux' },
+            { word: '슬픈', phonetic: 'seulpeun', translation: 'Triste' },
+            { word: '화난', phonetic: 'hwanan', translation: 'En colère' },
+            { word: '흥분한', phonetic: 'heungbunhan', translation: 'Excité' },
+            { word: '피곤한', phonetic: 'pigonhan', translation: 'Fatigué' },
+            { word: '놀란', phonetic: 'nollan', translation: 'Surpris' },
+            { word: '무서운', phonetic: 'museoun', translation: 'Effrayé' },
+            { word: '긴장한', phonetic: 'ginjanghan', translation: 'Nerveux' },
+          ]
+        },
+        {
+          id: 'ko-5-3',
+          title: '건강',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '병원', phonetic: 'byeongwon', translation: 'Hôpital' },
+            { word: '의사', phonetic: 'uisa', translation: 'Docteur' },
+            { word: '약', phonetic: 'yak', translation: 'Médicament' },
+            { word: '통증', phonetic: 'tongjeung', translation: 'Douleur' },
+            { word: '두통', phonetic: 'dutong', translation: 'Mal de tête' },
+            { word: '열', phonetic: 'yeol', translation: 'Fièvre' },
+            { word: '건강한', phonetic: 'geonganghan', translation: 'En bonne santé' },
+            { word: '아픈', phonetic: 'apeun', translation: 'Malade' },
+          ]
+        },
+        {
+          id: 'ko-5-4',
+          title: '날씨',
+          type: 'vocabulary',
+          duration: 18,
+          xp: 80,
+          words: [
+            { word: '맑은', phonetic: 'malgeun', translation: 'Ensoleillé' },
+            { word: '비 오는', phonetic: 'bi oneun', translation: 'Pluvieux' },
+            { word: '흐린', phonetic: 'heurim', translation: 'Nuageux' },
+            { word: '바람이 센', phonetic: 'barami sen', translation: 'Venteux' },
+            { word: '눈', phonetic: 'nun', translation: 'Neige' },
+            { word: '더운', phonetic: 'deoun', translation: 'Chaud' },
+            { word: '추운', phonetic: 'chuun', translation: 'Froid' },
+            { word: '온도', phonetic: 'ondo', translation: 'Température' },
+          ]
+        },
+        {
+          id: 'ko-5-test',
+          title: '제5장 테스트',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: '중급 문법',
+      description: '복잡한 문장 구조',
+      level: 3,
+      locked: true,
+      icon: '📚',
+      color: '#795548',
+      requiredChapter: 5,
+      lessons: [
+        {
+          id: 'ko-6-1',
+          title: '일반적인 동사',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '먹다', phonetic: 'meokda', translation: 'Manger' },
+            { word: '마시다', phonetic: 'masida', translation: 'Boire' },
+            { word: '자다', phonetic: 'jada', translation: 'Dormir' },
+            { word: '일하다', phonetic: 'ilhada', translation: 'Travailler' },
+            { word: '배우다', phonetic: 'baeuda', translation: 'Apprendre' },
+            { word: '말하다', phonetic: 'malhada', translation: 'Parler' },
+            { word: '이해하다', phonetic: 'ihaehada', translation: 'Comprendre' },
+            { word: '쓰다', phonetic: 'sseuda', translation: 'Écrire' },
+          ]
+        },
+        {
+          id: 'ko-6-2',
+          title: '과거 시제',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '어제', phonetic: 'eoje', translation: 'Hier' },
+            { word: '지난주', phonetic: 'jinanju', translation: 'La semaine dernière' },
+            { word: '지난달', phonetic: 'jinandal', translation: 'Le mois dernier' },
+            { word: '작년', phonetic: 'jangnyeon', translation: 'L\'année dernière' },
+            { word: '전에', phonetic: 'jeone', translation: 'Avant' },
+            { word: '...전에', phonetic: '... jeone', translation: 'Il y a...' },
+            { word: '이었어요/있었어요', phonetic: 'ieosseoyo/isseosseoyo', translation: 'Était/Avait' },
+            { word: '했어요', phonetic: 'haesseoyo', translation: 'A fait' },
+          ]
+        },
+        {
+          id: 'ko-6-3',
+          title: '미래 시제',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '내일', phonetic: 'naeil', translation: 'Demain' },
+            { word: '다음주', phonetic: 'daeumju', translation: 'La semaine prochaine' },
+            { word: '다음달', phonetic: 'daeumdal', translation: 'Le mois prochain' },
+            { word: '내년', phonetic: 'naenyeon', translation: 'L\'année prochaine' },
+            { word: '할 거예요', phonetic: 'hal geoyeyo', translation: 'Vais faire' },
+            { word: '갈 거예요', phonetic: 'gal geoyeyo', translation: 'Vais aller' },
+            { word: '곧', phonetic: 'got', translation: 'Bientôt' },
+            { word: '나중에', phonetic: 'najunge', translation: 'Plus tard' },
+          ]
+        },
+        {
+          id: 'ko-6-4',
+          title: '비교 형용사',
+          type: 'grammar',
+          duration: 20,
+          xp: 90,
+          words: [
+            { word: '더 큰', phonetic: 'deo keun', translation: 'Plus grand' },
+            { word: '더 작은', phonetic: 'deo jageun', translation: 'Plus petit' },
+            { word: '더 좋은', phonetic: 'deo joeun', translation: 'Meilleur' },
+            { word: '더 나쁜', phonetic: 'deo nappeun', translation: 'Pire' },
+            { word: '더 아름다운', phonetic: 'deo areumdaun', translation: 'Plus beau' },
+            { word: '더 싼', phonetic: 'deo ssan', translation: 'Moins cher' },
+            { word: '가장 좋은', phonetic: 'gajang joeun', translation: 'Le meilleur' },
+            { word: '가장 나쁜', phonetic: 'gajang nappeun', translation: 'Le pire' },
+          ]
+        },
+        {
+          id: 'ko-6-test',
+          title: '제6장 테스트',
+          type: 'chapter_test',
+          duration: 25,
+          xp: 200,
+          passingScore: 80,
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: '고급',
+      description: '전문 용어',
+      level: 4,
+      locked: true,
+      icon: '🎓',
+      color: '#FF5722',
+      requiredChapter: 6,
+      lessons: [
+        {
+          id: 'ko-7-1',
+          title: '기술',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '인터넷', phonetic: 'inteonet', translation: 'Internet' },
+            { word: '스마트폰', phonetic: 'seumateupon', translation: 'Smartphone' },
+            { word: '소프트웨어', phonetic: 'sopeuteuweeo', translation: 'Logiciel' },
+            { word: '하드웨어', phonetic: 'hadeuweeo', translation: 'Matériel' },
+            { word: '앱', phonetic: 'aep', translation: 'Application' },
+            { word: '비밀번호', phonetic: 'bimilbeonho', translation: 'Mot de passe' },
+            { word: '다운로드하다', phonetic: 'daullodeuhada', translation: 'Télécharger' },
+            { word: '업로드하다', phonetic: 'eomnodeuhada', translation: 'Téléverser' },
+          ]
+        },
+        {
+          id: 'ko-7-2',
+          title: '경제',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '은행', phonetic: 'eunhaeng', translation: 'Banque' },
+            { word: '돈', phonetic: 'don', translation: 'Argent' },
+            { word: '월급', phonetic: 'wolgeup', translation: 'Salaire' },
+            { word: '가격', phonetic: 'gagyeok', translation: 'Prix' },
+            { word: '시장', phonetic: 'sijang', translation: 'Marché' },
+            { word: '투자', phonetic: 'tuja', translation: 'Investissement' },
+            { word: '세금', phonetic: 'segeum', translation: 'Taxe' },
+            { word: '예산', phonetic: 'yesan', translation: 'Budget' },
+          ]
+        },
+        {
+          id: 'ko-7-3',
+          title: '정치',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '정부', phonetic: 'jeongbu', translation: 'Gouvernement' },
+            { word: '대통령', phonetic: 'daetongnyeong', translation: 'Président' },
+            { word: '선거', phonetic: 'seongeo', translation: 'Élection' },
+            { word: '법', phonetic: 'beop', translation: 'Loi' },
+            { word: '자유', phonetic: 'jayu', translation: 'Liberté' },
+            { word: '민주주의', phonetic: 'minjujuui', translation: 'Démocratie' },
+            { word: '정치', phonetic: 'jeongchi', translation: 'Politique' },
+            { word: '투표하다', phonetic: 'tupyohada', translation: 'Voter' },
+          ]
+        },
+        {
+          id: 'ko-7-4',
+          title: '환경',
+          type: 'vocabulary',
+          duration: 22,
+          xp: 100,
+          words: [
+            { word: '환경', phonetic: 'hwangyeong', translation: 'Environnement' },
+            { word: '오염', phonetic: 'oyeom', translation: 'Pollution' },
+            { word: '기후', phonetic: 'gihu', translation: 'Climat' },
+            { word: '재활용', phonetic: 'jaehwaryong', translation: 'Recyclage' },
+            { word: '자연', phonetic: 'jayeon', translation: 'Nature' },
+            { word: '에너지', phonetic: 'eneoji', translation: 'Énergie' },
+            { word: '지속 가능한', phonetic: 'jisok ganeunghan', translation: 'Durable' },
+            { word: '생태계', phonetic: 'saengtaegye', translation: 'Écosystème' },
+          ]
+        },
+        {
+          id: 'ko-7-test',
+          title: '최종 테스트',
+          type: 'chapter_test',
+          duration: 30,
+          xp: 250,
+          passingScore: 85,
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: '마스터',
+      description: '언어 완성',
+      level: 5,
+      locked: true,
+      icon: '🏆',
+      color: '#FFD700',
+      requiredChapter: 7,
+      lessons: [
+        {
+          id: 'ko-8-1',
+          title: '관용구',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '행운을 빕니다', phonetic: 'haenguneul bimnida', translation: 'Bonne chance' },
+            { word: '식은 죽 먹기', phonetic: 'sigeun juk meokgi', translation: 'Très facile' },
+            { word: '눈에 불을 켜다', phonetic: 'nune bureul kyeoda', translation: 'Coûter très cher' },
+            { word: '열심히 공부하다', phonetic: 'yeolsimhi gongbuhada', translation: 'Étudier sérieusement' },
+            { word: '하늘에서 별 따기', phonetic: 'haneureseo byeol ttagi', translation: 'Quand les cochons voleront' },
+            { word: '용기를 내다', phonetic: 'yonggireul naeda', translation: 'Prendre son courage à deux mains' },
+            { word: '지름길을 가다', phonetic: 'jireumgireul gada', translation: 'Prendre des raccourcis' },
+            { word: '분위기를 띄우다', phonetic: 'bunwigireul ttiuda', translation: 'Briser la glace' },
+          ]
+        },
+        {
+          id: 'ko-8-2',
+          title: '공식적인 표현',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '더욱이', phonetic: 'deougi', translation: 'De plus' },
+            { word: '그럼에도 불구하고', phonetic: 'geureomedo bulguhago', translation: 'Néanmoins' },
+            { word: '따라서', phonetic: 'ttaraseo', translation: 'Par conséquent' },
+            { word: '대안적으로', phonetic: 'daeanjeogeuro', translation: 'Alternativement' },
+            { word: '구체적으로', phonetic: 'guchejeogeuro', translation: 'Spécifiquement' },
+            { word: '최종적으로', phonetic: 'choijongjeogeuro', translation: 'Finalement' },
+            { word: '현저하게', phonetic: 'hyeonjeohage', translation: 'Significativement' },
+            { word: '본질적으로', phonetic: 'bonjiljeogeuro', translation: 'Essentiellement' },
+          ]
+        },
+        {
+          id: 'ko-8-3',
+          title: '협상',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '합의', phonetic: 'habui', translation: 'Accord' },
+            { word: '타협', phonetic: 'tahyeop', translation: 'Compromis' },
+            { word: '협상', phonetic: 'hyeopsang', translation: 'Négociation' },
+            { word: '계약', phonetic: 'gyeyak', translation: 'Contrat' },
+            { word: '조건', phonetic: 'jogeon', translation: 'Conditions' },
+            { word: '마감 기한', phonetic: 'magam gihan', translation: 'Date limite' },
+            { word: '파트너십', phonetic: 'pateoneosip', translation: 'Partenariat' },
+            { word: '해결', phonetic: 'haegyeol', translation: 'Résolution' },
+          ]
+        },
+        {
+          id: 'ko-8-4',
+          title: '한국 문화',
+          type: 'vocabulary',
+          duration: 25,
+          xp: 120,
+          words: [
+            { word: '차 문화', phonetic: 'cha munhwa', translation: 'Culture du thé' },
+            { word: '김치', phonetic: 'gimchi', translation: 'Kimchi' },
+            { word: '한복', phonetic: 'hanbok', translation: 'Hanbok' },
+            { word: '경복궁', phonetic: 'gyeongbokgung', translation: 'Palais Gyeongbok' },
+            { word: '불고기', phonetic: 'bulgogi', translation: 'Bulgogi' },
+            { word: '태권도', phonetic: 'taegwondo', translation: 'Taekwondo' },
+            { word: '한글', phonetic: 'hangeul', translation: 'Hangeul' },
+            { word: '인사', phonetic: 'insa', translation: 'Salutations' },
+          ]
+        },
+        {
+          id: 'ko-8-test',
+          title: '최종 시험',
+          type: 'chapter_test',
+          duration: 35,
+          xp: 300,
+          passingScore: 90,
+        }
+      ]
+    }
+  ],
+  it: [
+    // Structure complète similaire aux autres langues (8 chapitres)
+    {
+      id: 1,
+      title: 'Le basi',
+      description: 'Saluti ed espressioni essenziali',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#009246',
+      lessons: [
+        {
+          id: 'it-1-1',
+          title: 'Saluti',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Ciao', phonetic: '/ˈtʃa.o/', translation: 'Bonjour/Au revoir' },
+            { word: 'Arrivederci', phonetic: '/ar.ri.ve.ˈder.tʃi/', translation: 'Au revoir' },
+            { word: 'Grazie', phonetic: '/ˈɡrat.tsje/', translation: 'Merci' },
+            { word: 'Per favore', phonetic: '/per fa.ˈvo.re/', translation: 'S\'il vous plaît' },
+            { word: 'Sì', phonetic: '/si/', translation: 'Oui' },
+            { word: 'No', phonetic: '/nɔ/', translation: 'Non' },
+            { word: 'Scusa', phonetic: '/ˈsku.za/', translation: 'Pardon' },
+            { word: 'Mi scusi', phonetic: '/mi ˈsku.zi/', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'it-1-2',
+          title: 'Numeri 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Uno', phonetic: '/ˈu.no/', translation: 'Un' },
+            { word: 'Due', phonetic: '/ˈdu.e/', translation: 'Deux' },
+            { word: 'Tre', phonetic: '/tre/', translation: 'Trois' },
+            { word: 'Quattro', phonetic: '/ˈkwat.tro/', translation: 'Quatre' },
+            { word: 'Cinque', phonetic: '/ˈtʃin.kwe/', translation: 'Cinq' },
+            { word: 'Sei', phonetic: '/ˈsɛ.i/', translation: 'Six' },
+            { word: 'Sette', phonetic: '/ˈsɛt.te/', translation: 'Sept' },
+            { word: 'Otto', phonetic: '/ˈɔt.to/', translation: 'Huit' },
+            { word: 'Nove', phonetic: '/ˈnɔ.ve/', translation: 'Neuf' },
+            { word: 'Dieci', phonetic: '/ˈdjɛ.tʃi/', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'it-1-3',
+          title: 'Colori',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Rosso', phonetic: '/ˈros.so/', translation: 'Rouge' },
+            { word: 'Blu', phonetic: '/ˈblu/', translation: 'Bleu' },
+            { word: 'Verde', phonetic: '/ˈver.de/', translation: 'Vert' },
+            { word: 'Giallo', phonetic: '/ˈdʒal.lo/', translation: 'Jaune' },
+            { word: 'Nero', phonetic: '/ˈne.ro/', translation: 'Noir' },
+            { word: 'Bianco', phonetic: '/ˈbjan.ko/', translation: 'Blanc' },
+            { word: 'Arancione', phonetic: '/a.ran.ˈtʃo.ne/', translation: 'Orange' },
+            { word: 'Viola', phonetic: '/ˈvjɔ.la/', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'it-1-4',
+          title: 'Cibo base',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Acqua', phonetic: '/ˈak.kwa/', translation: 'Eau' },
+            { word: 'Cibo', phonetic: '/ˈtʃi.bo/', translation: 'Nourriture' },
+            { word: 'Pane', phonetic: '/ˈpa.ne/', translation: 'Pain' },
+            { word: 'Latte', phonetic: '/ˈlat.te/', translation: 'Lait' },
+            { word: 'Caffè', phonetic: '/kaf.ˈfɛ/', translation: 'Café' },
+            { word: 'Tè', phonetic: '/tɛ/', translation: 'Thé' },
+            { word: 'Mela', phonetic: '/ˈme.la/', translation: 'Pomme' },
+            { word: 'Banana', phonetic: '/ba.ˈna.na/', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'it-1-test',
+          title: 'Test del capitolo 1',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    // Continuer avec 7 autres chapitres complets (similaires à l'espagnol/français)
+  ],
+  ru: [
+    // Structure complète similaire aux autres langues (8 chapitres)
+    {
+      id: 1,
+      title: 'Основы',
+      description: 'Основные приветствия и выражения',
+      level: 1,
+      locked: false,
+      icon: '👋',
+      color: '#D52B1E',
+      lessons: [
+        {
+          id: 'ru-1-1',
+          title: 'Приветствия',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Привет', phonetic: '/prʲɪˈvʲet/', translation: 'Bonjour' },
+            { word: 'До свидания', phonetic: '/də‿svʲɪˈdanʲɪjə/', translation: 'Au revoir' },
+            { word: 'Спасибо', phonetic: '/spɐˈsʲibə/', translation: 'Merci' },
+            { word: 'Пожалуйста', phonetic: '/pɐˈʐalʊjstə/', translation: 'S\'il vous plaît' },
+            { word: 'Да', phonetic: '/da/', translation: 'Oui' },
+            { word: 'Нет', phonetic: '/nʲet/', translation: 'Non' },
+            { word: 'Извините', phonetic: '/ɪzvʲɪˈnʲitʲe/', translation: 'Pardon' },
+            { word: 'Простите', phonetic: '/prɐˈsʲtʲitʲe/', translation: 'Excusez-moi' },
+          ]
+        },
+        {
+          id: 'ru-1-2',
+          title: 'Числа 1-10',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Один', phonetic: '/ɐˈdʲin/', translation: 'Un' },
+            { word: 'Два', phonetic: '/dva/', translation: 'Deux' },
+            { word: 'Три', phonetic: '/trʲi/', translation: 'Trois' },
+            { word: 'Четыре', phonetic: '/t͡ɕɪˈtɨrʲɪ/', translation: 'Quatre' },
+            { word: 'Пять', phonetic: '/pʲætʲ/', translation: 'Cinq' },
+            { word: 'Шесть', phonetic: '/ʂɛsʲtʲ/', translation: 'Six' },
+            { word: 'Семь', phonetic: '/sɛmʲ/', translation: 'Sept' },
+            { word: 'Восемь', phonetic: '/ˈvosʲɪmʲ/', translation: 'Huit' },
+            { word: 'Девять', phonetic: '/ˈdʲevʲɪtʲ/', translation: 'Neuf' },
+            { word: 'Десять', phonetic: '/ˈdʲesʲɪtʲ/', translation: 'Dix' },
+          ]
+        },
+        {
+          id: 'ru-1-3',
+          title: 'Цвета',
+          type: 'vocabulary',
+          duration: 10,
+          xp: 50,
+          words: [
+            { word: 'Красный', phonetic: '/ˈkrasnɨj/', translation: 'Rouge' },
+            { word: 'Синий', phonetic: '/ˈsʲinʲɪj/', translation: 'Bleu' },
+            { word: 'Зелёный', phonetic: '/zʲɪˈlʲɵnɨj/', translation: 'Vert' },
+            { word: 'Жёлтый', phonetic: '/ˈʐoltɨj/', translation: 'Jaune' },
+            { word: 'Чёрный', phonetic: '/ˈt͡ɕɵrnɨj/', translation: 'Noir' },
+            { word: 'Белый', phonetic: '/ˈbʲelɨj/', translation: 'Blanc' },
+            { word: 'Оранжевый', phonetic: '/ɐˈranʐɨvɨj/', translation: 'Orange' },
+            { word: 'Фиолетовый', phonetic: '/fʲɪɐˈlʲetɨvɨj/', translation: 'Violet' },
+          ]
+        },
+        {
+          id: 'ru-1-4',
+          title: 'Основная еда',
+          type: 'vocabulary',
+          duration: 12,
+          xp: 60,
+          words: [
+            { word: 'Вода', phonetic: '/vɐˈda/', translation: 'Eau' },
+            { word: 'Еда', phonetic: '/jɪˈda/', translation: 'Nourriture' },
+            { word: 'Хлеб', phonetic: '/xlʲep/', translation: 'Pain' },
+            { word: 'Молоко', phonetic: '/mɐˈlokə/', translation: 'Lait' },
+            { word: 'Кофе', phonetic: '/ˈkofʲɪ/', translation: 'Café' },
+            { word: 'Чай', phonetic: '/t͡ɕæj/', translation: 'Thé' },
+            { word: 'Яблоко', phonetic: '/ˈjæbləkə/', translation: 'Pomme' },
+            { word: 'Банан', phonetic: '/bɐˈnan/', translation: 'Banane' },
+          ]
+        },
+        {
+          id: 'ru-1-test',
+          title: 'Тест главы 1',
+          type: 'chapter_test',
+          duration: 15,
+          xp: 100,
+          passingScore: 70,
+        }
+      ]
+    },
+    // Continuer avec 7 autres chapitres complets
+  ],
+};
+
+// Types de questions pour les tests
+export const QUESTION_TYPES = {
+  TRANSLATE: 'translate',
+  MULTIPLE_CHOICE: 'multiple_choice',
+  FILL_BLANK: 'fill_blank',
+  LISTENING: 'listening',
+  SPEAKING: 'speaking',
+  MATCH: 'match',
+};
+
+// Configuration des API
+export const API_CONFIG = {
+  // Audio service
+  TTS_SERVICE: {
+    google: 'https://translate.google.com/translate_tts',
+    responsiveVoice: 'https://code.responsivevoice.org/getvoice.php',
+  },
+  // Dictionnaire API
+  DICTIONARY: {
+    endpoint: 'https://api.dictionaryapi.dev/api/v2/entries',
+  },
+  // Translation API
+  MY_MEMORY: {
+    endpoint: 'https://api.mymemory.translated.net/get',
+  },
+  // Libre Translate
+  LIBRE_TRANSLATE: {
+    endpoint: 'https://libretranslate.de/translate',
+  },
+};
+
+// XP et récompenses
+export const XP_VALUES = {
+  LESSON_COMPLETED: 50,
+  CHAPTER_TEST_PASSED: 100,
+  PERFECT_SCORE: 150,
+  FIRST_TRY: 25,
+  STREAK_BONUS: 10,
+  DAILY_GOAL: 100,
+  REVIEW_LESSON: 30,
+  PRONUNCIATION_PRACTICE: 20,
+  TRANSLATION_EXERCISE: 40,
+};
+
+// Seuils de niveau
+export const LEVEL_THRESHOLDS = [
+  { level: 1, xp: 0 },
+  { level: 2, xp: 500 },
+  { level: 3, xp: 1200 },
+  { level: 4, xp: 2000 },
+  { level: 5, xp: 3000 },
+  { level: 6, xp: 4500 },
+  { level: 7, xp: 6500 },
+  { level: 8, xp: 9000 },
+  { level: 9, xp: 12000 },
+  { level: 10, xp: 16000 },
+  { level: 11, xp: 21000 },
+  { level: 12, xp: 27000 },
+  { level: 13, xp: 34000 },
+  { level: 14, xp: 42000 },
+  { level: 15, xp: 51000 },
+  { level: 16, xp: 61000 },
+  { level: 17, xp: 72000 },
+  { level: 18, xp: 84000 },
+  { level: 19, xp: 97000 },
+  { level: 20, xp: 111000 },
+];
+
+// Badges et récompenses
+export const BADGES = {
+  FAST_LEARNER: {
+    id: 'fast_learner',
+    name: 'Apprenant rapide',
+    description: 'Terminez 5 leçons en une journée',
+    icon: '⚡',
+  },
+  PERFECTIONIST: {
+    id: 'perfectionist',
+    name: 'Perfectionniste',
+    description: 'Obtenez 100% à 3 tests consécutifs',
+    icon: '🏆',
+  },
+  CONSISTENT: {
+    id: 'consistent',
+    name: 'Constant',
+    description: 'Apprenez pendant 7 jours consécutifs',
+    icon: '📅',
+  },
+  POLYGLOT: {
+    id: 'polyglot',
+    name: 'Polyglotte',
+    description: 'Apprenez 3 langues différentes',
+    icon: '🌍',
+  },
+  NIGHT_OWL: {
+    id: 'night_owl',
+    name: 'Oiseau de nuit',
+    description: 'Apprenez après minuit',
+    icon: '🦉',
+  },
+  EARLY_BIRD: {
+    id: 'early_bird',
+    name: 'Lève-tôt',
+    description: 'Apprenez avant 7h du matin',
+    icon: '🌅',
+  },
+};
+
+// Thèmes d'apprentissage
+export const LEARNING_THEMES = [
+  { id: 'travel', name: 'Voyage', icon: '✈️', color: '#4A90E2' },
+  { id: 'business', name: 'Affaires', icon: '💼', color: '#34C759' },
+  { id: 'food', name: 'Nourriture', icon: '🍕', color: '#FF9500' },
+  { id: 'shopping', name: 'Shopping', icon: '🛍️', color: '#FF2D55' },
+  { id: 'health', name: 'Santé', icon: '🏥', color: '#5856D6' },
+  { id: 'social', name: 'Social', icon: '👥', color: '#FFCC00' },
+  { id: 'technology', name: 'Technologie', icon: '💻', color: '#8E8E93' },
+  { id: 'culture', name: 'Culture', icon: '🎭', color: '#AF52DE' },
+];
+
+// Difficulté des leçons
+export const LESSON_DIFFICULTY = {
+  EASY: { level: 1, name: 'Facile', color: '#34C759', xp: 50 },
+  MEDIUM: { level: 2, name: 'Moyen', color: '#FF9500', xp: 75 },
+  HARD: { level: 3, name: 'Difficile', color: '#FF3B30', xp: 100 },
+  EXPERT: { level: 4, name: 'Expert', color: '#5856D6', xp: 150 },
+};
+
+// Objectifs quotidiens
+export const DAILY_GOALS = [
+  { id: 'complete_1_lesson', name: 'Terminer 1 leçon', xp: 50 },
+  { id: 'complete_3_lessons', name: 'Terminer 3 leçons', xp: 150 },
+  { id: 'practice_pronunciation', name: 'Pratiquer la prononciation', xp: 30 },
+  { id: 'review_old_lessons', name: 'Réviser les anciennes leçons', xp: 40 },
+  { id: 'complete_test', name: 'Terminer un test', xp: 100 },
+  { id: 'learn_10_words', name: 'Apprendre 10 nouveaux mots', xp: 80 },
+];
+
+export default {
+  LANGUAGES,
+  CURRICULUM,
+  QUESTION_TYPES,
+  API_CONFIG,
+  XP_VALUES,
+  LEVEL_THRESHOLDS,
+  BADGES,
+  LEARNING_THEMES,
+  LESSON_DIFFICULTY,
+  DAILY_GOALS,
+};
