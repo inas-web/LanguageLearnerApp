@@ -409,35 +409,13 @@ expo build:ios
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## 🤝 Contribution
 
-Les contributions sont les bienvenues !
 
-1. Fork le projet
-2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
-4. Push sur la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
-
-## 👥 Auteurs
-
-- **Votre Nom** - *Développement initial*
-
-## 🙏 Remerciements
-
-- Duolingo pour l'inspiration
 - Firebase pour l'infrastructure
 - MyMemory pour l'API de traduction gratuite
 - Expo pour le framework mobile
 
-## 📧 Support
 
-Pour toute question ou problème :
-- 📧 Email : support@polyglotacademy.com
-- 💬 Discord : [Lien Discord]
-- 🐦 Twitter : [@PolyglotAcademy]
-
----
 
 **Bon apprentissage ! 🎓🌍**
 
