@@ -2,7 +2,7 @@
 
 Application mobile complète pour apprendre des langues avec système de progression par chapitres, API de traduction, et tests automatisés.
 
-## 🎯 Fonctionnalités principales
+## 🎯 Fonctionnalités principales :
 
 ### ✅ Système d'apprentissage progressif
 - **Chapitres structurés** : Progression chapitre par chapitre
