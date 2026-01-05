@@ -12,7 +12,7 @@ export default function App() {
     // Simulation du chargement des ressources
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1200);
     
     // Configurer l'audio
     setupAudio();
